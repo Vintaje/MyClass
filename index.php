@@ -44,7 +44,10 @@ if($partes_ruta[0] == 'www.myclass.es'){
             case 'pagina':
                 $ruta_elegida = 'vistas/pagina.php';
 
+            case 'home':
+                $ruta_elegida = 'vistas/home.php';
         }
+
 
     }else{
         $ruta_elegida = 'vistas/404.php';
@@ -55,10 +58,3 @@ if($partes_ruta[0] == 'www.myclass.es'){
 }
 
 include_once $ruta_elegida;
-
-echo "hola";
-echo "quepatio";
-
-
-
-hola tio que pa tio ta gilipoya tio;
