@@ -9,7 +9,7 @@ Version 1.1
 CEO:
 Emilio Rubiales
 Carlos Gonzales
-Jorge
+Jorge Segade
 Adrian Sanchez
 */
 
