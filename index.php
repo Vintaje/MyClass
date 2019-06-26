@@ -54,4 +54,4 @@ if($partes_ruta[0] == 'www.myclass.es'){
 }
 
 
-include_once $ruta_elegida
+include_once $ruta_elegida;
