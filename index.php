@@ -58,3 +58,6 @@ include_once $ruta_elegida;
 
 echo "hola";
 echo "quepatio";
+
+
+hola tio que pa tio ta gilipoya tio;
