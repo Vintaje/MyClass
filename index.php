@@ -46,18 +46,19 @@ if($partes_ruta[0] == 'www.myclass.es'){
 
         }
 
+    }else{
+        $ruta_elegida = 'vistas/404.php';
+    
     }
-
-}else{
-    $ruta_elegida = 'vistas/404.php';
+    
 
 }
-
 
 include_once $ruta_elegida;
 
 echo "hola";
 echo "quepatio";
+
 
 
 hola tio que pa tio ta gilipoya tio;
