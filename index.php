@@ -63,3 +63,5 @@ if($partes_ruta[0] == 'www.myclass.es'){
 }
 
 include_once $ruta_elegida;
+
+echo "myClass";
