@@ -1,6 +1,6 @@
 <?php
 
 define('NOMBRE_SERVIDOR', 'localhost');
-define('NOMBRE_USUARIO', 'usuario');
-define('PASSWORD', 'password');
-define('NOMBRE_DB', 'nombre_db');
+define('NOMBRE_USUARIO', 'root');
+define('PASSWORD', 'root');
+define('NOMBRE_DB', 'myclass');

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-06-2019 a las 13:36:11
+-- Tiempo de generación: 27-06-2019 a las 13:45:03
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -81,6 +81,7 @@ CREATE TABLE `usergroup` (
 CREATE TABLE `usernotas` (
   `COD_USER` varchar(255) NOT NULL,
   `COD_TAREA` varchar(255) NOT NULL,
+  `ENTREGA` varchar(255) DEFAULT '0',
   `NOTA` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
