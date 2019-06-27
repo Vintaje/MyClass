@@ -1,3 +1,7 @@
+DROP DATABASE MYCLASS;
+CREATE DATABASE MYCLASS;
+USE MYCLASS;
+
 -- phpMyAdmin SQL Dump
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
@@ -101,7 +105,8 @@ CREATE TABLE `usuario` (
   `FECHA_REG` date NOT NULL,
   `EDAD` int(10) NOT NULL,
   `DNI` varchar(255) DEFAULT NULL,
-  `ADMIN_VALUE` tinyint(1) NOT NULL DEFAULT 0
+  `ADMIN_VALUE` tinyint(1) NOT NULL DEFAULT 0,
+  `SEXO` CHAR(1) NOT NULL DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
