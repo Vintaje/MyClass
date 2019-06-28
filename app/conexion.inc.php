@@ -14,7 +14,7 @@ class conexion
 
     function desconectarBD()
     {
-        if ($conexion != null) {
+        if (isset(self::$conexion)) {
             $conexion = null;
         }
     }
