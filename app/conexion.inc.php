@@ -8,7 +8,7 @@ class conexion
     function conectarBD()
     {
         if (!isset($conexion)) {
-            return $conexion = mysqli_connect(NOMBRE_SERVIDOR, NOMBRE_USUARIO, PASSWORD, NOMBRE_DB);
+            return self::$conexion = mysqli_connect(NOMBRE_SERVIDOR, NOMBRE_USUARIO, PASSWORD, NOMBRE_DB);
         }
     }
 
@@ -24,4 +24,6 @@ class conexion
         return self::$conexion;
 
     }
+
+    
 }
