@@ -1,6 +1,7 @@
 
 {%extends 'plantillas/doc-declaracion.inc.php' %}
 
+
 {% block titulo %}
         <title>My Class | Inicio</title>
 {% endblock %}
