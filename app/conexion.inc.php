@@ -5,25 +5,31 @@ class conexion
 {
     private static $conexion;
 
-    function conectarBD()
-    {
-        if (!isset($conexion)) {
-            return self::$conexion = mysqli_connect(NOMBRE_SERVIDOR, NOMBRE_USUARIO, PASSWORD, NOMBRE_DB);
+    public static function conectarBD()
+    {  
+        //Conexion con PDO
+        try {
+            if (!isset($conexion)) {
+                self::$conexion = new PDO('mysql:host='.NOMBRE_SERVIDOR.'; dbname='.NOMBRE_DB, NOMBRE_USUARIO, PASSWORD);
+                self::$conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                self::$conexion -> exec("SET CHARACTER SET utf8mb4");
+            }
+        } catch (PDOException $ex) {
+            print "ERROR:" . $ex -> getMessage() . "<br>";
+            die();
         }
     }
 
-    function desconectarBD()
+
+    public static function desconectarBD()
     {
         if (isset(self::$conexion)) {
             $conexion = null;
         }
     }
 
-    function getConexion(){
+    public static function getConexion(){
 
         return self::$conexion;
-
     }
-
-    
 }
