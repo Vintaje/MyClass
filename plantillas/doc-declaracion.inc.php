@@ -31,6 +31,13 @@
 
     ?>
 
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+
+
 </head>
 
 <body>
+    <?php
+        conexion :: conectarBD();
+    ?>
