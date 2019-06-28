@@ -1,3 +1,9 @@
+-- Ejecutar antes del siguiente script
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'root' WITH GRANT OPTION;
+
+
+
+-- Ejecutar despues del grant
 DROP DATABASE MYCLASS;
 CREATE DATABASE MYCLASS;
 USE MYCLASS;
