@@ -1,5 +1,6 @@
 <?php
 
+
 class Grupo {
     private $codigo;
     private $nombre;
