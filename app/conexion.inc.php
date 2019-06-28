@@ -1,5 +1,5 @@
 <?php
-include_once 'config.inc.php';
+include_once 'config/config.inc.php';
 
 class conexion
 {
@@ -13,11 +13,16 @@ class conexion
                 self::$conexion = new PDO('mysql:host='.NOMBRE_SERVIDOR.'; dbname='.NOMBRE_DB, NOMBRE_USUARIO, PASSWORD);
                 self::$conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 self::$conexion -> exec("SET CHARACTER SET utf8mb4");
+
+
+                
             }
+            
         } catch (PDOException $ex) {
             print "ERROR:" . $ex -> getMessage() . "<br>";
             die();
         }
+
     }
 
 

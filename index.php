@@ -14,53 +14,65 @@ Adrian Sanchez
 */
 
 
-?>
-
-
-<?
-
 /**
- * Indexar URL
+ * Composer Slim
+ * 
  */
 
+include_once 'app/conexion.inc.php';
 
- /**
-  * www.myclass.es/pagina
-  * 
-  */
+conexion :: conectarBD();
 
-$url = parse_url($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
 
-$ruta = $url['path'];
+require 'vendor/autoload.php';
 
-$partes_ruta[0] = explode('/', $ruta);
-$partes_ruta = array_filter($partes_ruta);
-$partes_ruta = array_slice($partes_ruta,0);
-
-$ruta_elegida = 'vistas/404.php';
+// Get container
+$container = new \Slim\Container(); //Create Your container
 
 
-if($partes_ruta[0] == 'www.myclass.es'){
+// Register component on container
+$container['view'] = function ($container) {
+    $view = new \Slim\Views\Twig('vistas');
 
-    if(count($partes_ruta) == 1){
-        $ruta_elegida = 'vistas/home.php';
-    } else if(count($partes_ruta) == 2){
-        switch($partes_ruta[1]){
-            case 'pagina':
-                $ruta_elegida = 'vistas/pagina.php';
+    // Instantiate and add Slim specific extension
+    $router = $container->get('router');
+    $uri = \Slim\Http\Uri::createFromEnvironment(new \Slim\Http\Environment($_SERVER));
+    $view->addExtension(new \Slim\Views\TwigExtension($router, $uri));
 
-            case 'home':
-                $ruta_elegida = 'vistas/home.php';
-        }
+    return $view;
+};
 
 
-    }else{
-        $ruta_elegida = 'vistas/404.php';
-    
-    }
-    
 
-}
+//Override the default Not Found Handler before creating App
+$container['notFoundHandler'] = function ($container) {
+    return function ($request, $response) use ($container) {
+            return $container['view']->render($response, '404.php')->withStatus(404);
+    };
+};
 
-include_once $ruta_elegida;
+//Create Slim
 
+$app = new \Slim\App($container);
+
+
+$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
+    return $this->view->render($response, 'home.php',['name' => $args['name']]);
+});
+
+//Ejecutar Home
+$app->get('/home', function ($request, $response, $args) {
+    return $this->view->render($response, 'home.php');
+})->setName('inicio');
+
+// Run app
+$app->run();
+
+
+
+
+
+
+conexion::desconectarBD();
