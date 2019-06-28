@@ -8,7 +8,7 @@ class Grupo
     private $owner;
 
     //
-    //Constructor
+    //  Constructor
     //
     public function __construct($codigo, $nombre, $capacidad, $owner)
     {
@@ -19,7 +19,7 @@ class Grupo
     }
 
     //
-    //Getters
+    //  Getters
     //
     public function getCodigo()
     {
