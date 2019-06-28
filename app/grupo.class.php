@@ -8,7 +8,7 @@ class Grupo {
     private $owner;
 
 //
-//Constructor
+//  Constructor
 //
 public function __construct($codigo, $nombre, $capacidad, $owner){
     $this -> codigo = $codigo;
@@ -18,7 +18,7 @@ public function __construct($codigo, $nombre, $capacidad, $owner){
 }
 
 //
-//Getters
+//  Getters
 //
 public function getCodigo(){
     return $this -> codigo;
