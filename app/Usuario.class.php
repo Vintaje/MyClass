@@ -1,5 +1,8 @@
 <?php
 class Usuario
+
+//Atributos
+
 {
     private $codigo;
     private $password;
@@ -11,7 +14,7 @@ class Usuario
     private $edad;
     private $dni;
     private $avatar;
-
+//constructor
     public function __construct($correo, $nombre_completo, $codigo, $password, $sexo, $familia_prof, $fecha_reg, $edad, $dni, $avatar)
     {
         $this->correo = $correo;
@@ -25,7 +28,7 @@ class Usuario
         $this->sexo = $sexo;
         $this->fecha_reg = $fecha_reg;
     }
-
+//getter && setter
     public function getCodigo()
     {
         return $this->codigo;
@@ -107,7 +110,7 @@ class Usuario
     }
 
 
-    
+
 
 
 
