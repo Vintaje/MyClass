@@ -8,13 +8,13 @@ class conexion
     function conectarBD()
     {
         if (!isset($conexion)) {
-            return $conexion = mysqli_connect(NOMBRE_SERVIDOR, NOMBRE_USUARIO, PASSWORD, NOMBRE_DB);
+            return self::$conexion = mysqli_connect(NOMBRE_SERVIDOR, NOMBRE_USUARIO, PASSWORD, NOMBRE_DB);
         }
     }
 
     function desconectarBD()
     {
-        if ($conexion != null) {
+        if (isset(self::$conexion)) {
             $conexion = null;
         }
     }
@@ -24,4 +24,6 @@ class conexion
         return self::$conexion;
 
     }
+
+    
 }
