@@ -17,7 +17,8 @@ Adrian Sanchez
 ?>
 
 
-<?
+<?php
+include_once 'app/conexion.inc.php';
 
 /**
  * Indexar URL
@@ -29,23 +30,22 @@ Adrian Sanchez
   * 
   */
 
-$url = parse_url($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
-
-$ruta = $url['path'];
-
-$partes_ruta[0] = explode('/', $ruta);
-$partes_ruta = array_filter($partes_ruta);
-$partes_ruta = array_slice($partes_ruta,0);
-
+$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+print_r($uri_path);
+$uri_segments = explode('/', $uri_path);
+$uri_segments = array_filter($uri_segments);
+$uri_segments = array_slice($uri_segments,0);
+  
+print_r($uri_segments);
 $ruta_elegida = 'vistas/404.php';
 
 
-if($partes_ruta[0] == 'www.myclass.es'){
+if($uri_segments[0] == 'www.myclass.es'){
 
-    if(count($partes_ruta) == 1){
+    if(count($uri_segments) == 1){
         $ruta_elegida = 'vistas/home.php';
-    } else if(count($partes_ruta) == 2){
-        switch($partes_ruta[1]){
+    } else if(count($uri_segments) == 2){
+        switch($uri_segments[1]){
             case 'pagina':
                 $ruta_elegida = 'vistas/pagina.php';
 
