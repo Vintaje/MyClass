@@ -13,7 +13,7 @@ class RepositorioGrupo{
             
             try {
                 
-                $sqlInsert = "INSERT INTO grupo(codigo,nombre, capacidad) VALUES(:codigo, :nombre, :capacidad, 0)";
+                $sqlInsert = "INSERT INTO grupo(codigo,nombre, capacidad) VALUES(:codigo, :nombre, :capacidad)";
 
                 $sentencia = $conexion -> prepare($sqlInsert);
                 
@@ -38,8 +38,9 @@ class RepositorioGrupo{
 
     }
 
-
+    //
     //Metodo para modificar datos de la tabla grupos
+    //
     public static function UpdGrupo($conexion, $codigo, $modificar, $datosModificados){
         $grupo_modificado = false;
 
