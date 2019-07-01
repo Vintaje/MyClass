@@ -1,7 +1,6 @@
 <?php
 
-class kernel
-{
+class kernel{
     //-------------------------------------------------------------------------------------- Emilio
     public static function encrypt($param)
     {
@@ -157,6 +156,7 @@ class kernel
 //--------------------------------------------------------------------------------------Jorge
 
 public static function del(){
+    $conexion= conexion::getConexion();
     
 }
 
