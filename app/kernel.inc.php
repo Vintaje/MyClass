@@ -1,15 +1,17 @@
 <?php
 
-class kernel{
-//-------------------------------------------------------------------------------------- Emilio
-    public static function encrypt($param){
+class kernel
+{
+    //-------------------------------------------------------------------------------------- Emilio
+    public static function encrypt($param)
+    {
         $salt = "MyClassCEOS++_??*";
 
-        $encrypted = hash('sha256',$salt.$param);
+        $encrypted = hash('sha256', $salt . $param);
 
         return $encrypted;
     }
-}
+
 
 
 
@@ -154,6 +156,9 @@ class kernel{
 
 //--------------------------------------------------------------------------------------Jorge
 
+public static function del(){
+    
+}
 
 
 
@@ -163,9 +168,7 @@ class kernel{
 
 
 
-
-
-
+}
 
 
 
