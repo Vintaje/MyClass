@@ -4,6 +4,8 @@ include_once 'Grupo.class.php';
 
 class RepositorioGrupo{
 
+
+    
     //  INSERT
     //Metodo para insertar grupos
     //
@@ -39,6 +41,8 @@ class RepositorioGrupo{
 
     }
 
+
+
     //  UPDATE
     // Metodo para modificar datos de la tabla grupos
     //
@@ -61,27 +65,42 @@ class RepositorioGrupo{
         return $grupo_modificado;
     }
 
+
+
     //  SELECT
     // SELECT DE LA TABLA GRUPO
     //
     public static function getGrupo($conexion, $codigo){
-        $grupo_seleccionado = false;
+        $grupo = null;
 
         if (isset($conexion)) {
             
             try {
                 
-                $sqlSelect = "SELECT * FROM grupo WHERE codigo=$codigo";
+                $sqlSelect = "SELECT codigo, nombre, capacidad,cod_owner FROM grupo WHERE codigo=$codigo";
+                $sentencia= $conexion-> prepare($sqlSelect);
+                $sentencia->bindParam(':codigo', $codigo, PDO::PARAM_STR);
+                $sentencia->execute();
 
-                $grupo_seleccionado = $sqlSelect -> execute();
+                $resultado = $sentencia-> fetch();
 
+                if (!empty($resultado)) {
+                    $grupo = new Grupo(
+                        $resultado['codigo'],
+                        $resultado['nombre'],
+                        $resultado['capacidad'],
+                        $resultado['cod_owner']
+                    );
+                }
 
             } catch (\PDOException $ex) {
                 print 'ERROR' . $ex->getMessage();
             }
         }
-        return $grupo_seleccionado;
+        return $grupo;
     }
+
+
 
     //  DELETE
     //  METODO QUE BORRA UN GRUPO
