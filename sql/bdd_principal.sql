@@ -105,6 +105,7 @@ CREATE TABLE `usuario` (
   `ID` int(10) NOT NULL,
   `CODIGO` varchar(255) NOT NULL,
   `CORREO` varchar(255) NOT NULL,
+  `PASSWD` varchar(255) NOT NULL,
   `AVATAR` varchar(255) NOT NULL DEFAULT 'www.myclass.es/img/avatardefault.jpg',
   `NOMBRE_FULL` varchar(255) NOT NULL,
   `FAMILIA_PROF` varchar(255) NOT NULL,
