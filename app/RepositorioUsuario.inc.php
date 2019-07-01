@@ -3,7 +3,7 @@ include_once 'Usuario.class.php';
 
 class RepositorioUsuario
 {
-    public static function insertar_usuario($conexion, $usuario)
+    public static function setUsuario($conexion, $usuario)
     {
         $usuario_insertado = false;
 
@@ -41,5 +41,44 @@ class RepositorioUsuario
         }
 
         return $usuario_insertado;
+    }
+
+    public static function getUsuario($conexion, $codigo)
+    {
+        $usuario = null;
+
+        if (isset($conexion)) {
+            try {
+                $sql = "select CODIGO,CORREO,PASSWD,AVATAR,NOMBRE_FULL,FAMILIA_PROF,FECHA_REG,EDAD,DNI,SEXO from usuario where codigo = :codigo";
+
+                $sentencia = $conexion->prepare($sql);
+
+                $sentencia->bindParam(':codigo', $codigo, PDO::PARAM_STR);
+
+                $sentencia->execute();
+
+                $resultado = $sentencia->fetch();
+
+
+                if (!empty($resultado)) {
+                    $usuario = new Usuario(
+                        $resultado['correo'],
+                        $resultado['nombre_full'],
+                        $resultado['codigo'],
+                        $resultado['passwd'],
+                        $resultado['sexo'],
+                        $resultado['familia_prof'],
+                        $resultado['fecha_reg'],
+                        $resultado['edad'],
+                        $resultado['dni'],
+                        $resultado['avatar']
+                    );
+                }
+            } catch (PDOException $ex) {
+                print 'ERROR' . $ex->getMessage();
+            }
+        }
+
+        return $usuario;
     }
 }
