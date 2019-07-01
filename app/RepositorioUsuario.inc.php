@@ -104,10 +104,10 @@ class RepositorioUsuario
                     case 4: //modo 4 actualizar sexo de usuario.
                         $sql = "update usuario set sexo = :sexo where codigo = :codigo";
                         break;
-                        case 5: //modo 5 actualizar correo de usuario.
+                    case 5: //modo 5 actualizar correo de usuario.
                         $sql = "update usuario set correo = :correo where codigo = :codigo";
                         break;
-                        case 6: //modo 6 actualizar familia_prof de usuario.
+                    case 6: //modo 6 actualizar familia_prof de usuario.
                         $sql = "update usuario set familia_prof = :familia_prof where codigo = :codigo";
                         break;
                 }
@@ -122,8 +122,6 @@ class RepositorioUsuario
                 $avatartemp = $usuario->GetAvatar();
                 $nombretemp = $usuario->GetNombreCompleto();
                 $familia_proftemp = $usuario->getFamiliaProf();
-                $edadtemp = $usuario->getEdad();
-                $dnitemp = $usuario->getDni();
                 $sexotemp = $usuario->getSexo();
 
                 $sentencia = $conexion->prepare($sql);
@@ -133,8 +131,6 @@ class RepositorioUsuario
                 $sentencia->bindParam(':avatar', $avatartemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':nombre_full', $nombretemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':familia_prof', $familia_proftemp, PDO::PARAM_STR);
-                $sentencia->bindParam(':edad', $edadtemp, PDO::PARAM_INT);
-                $sentencia->bindParam(':dni', $dnitemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':sexo', $sexotemp, PDO::PARAM_STR_CHAR);
 
                 $usuario_actualizado = $sentencia->execute();
@@ -144,5 +140,32 @@ class RepositorioUsuario
         }
 
         return $usuario_actualizado;
+    }
+
+    public static function delUsuario($conexion, $usuario)
+    {
+        $usuario_borrado = false;
+
+        if (isset($conexion)) {
+            try {
+
+
+                $sql = "delete from usuarios where codigo = :codigo";
+
+
+                $codigotemp = $usuario->GetCodigo();
+
+
+                $sentencia = $conexion->prepare($sql);
+                $sentencia->bindParam(':codigo', $codigotemp, PDO::PARAM_STR);
+
+
+                $usuario_borrado = $sentencia->execute();
+            } catch (PDOException $ex) {
+                print 'ERROR' . $ex->getMessage();
+            }
+        }
+
+        return $usuario_borrado;
     }
 }
