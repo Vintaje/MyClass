@@ -48,7 +48,7 @@ class RepositorioGrupo{
             
             try {
                 
-                $sqlUpdate = "update usuarios set $modificar=$datosModificados where codigo=$codigo";
+                $sqlUpdate = "UPDATE usuarios SET $modificar=$datosModificados WHERE codigo=$codigo";
 
                 $grupo_modificado = $sqlUpdate -> execute();
 
@@ -70,9 +70,9 @@ class RepositorioGrupo{
             
             try {
                 
-                $sqlSelect = "select * from grupo where codigo=$codigo";
+                $sqlSelect = "SELECT * FROM grupo WHERE codigo=$codigo";
 
-                $grupo_modificado = $sqlSelect -> execute();
+                $grupo_seleccionado = $sqlSelect -> execute();
 
 
             } catch (\PDOException $ex) {
