@@ -3,18 +3,18 @@
 class kernel{
 //-------------------------------------------------------------------------------------- Emilio
     public static function encrypt($param){
-        $salt = "MyClassCEOS++_??*";
+        $hash = password_hash($param, PASSWORD_DEFAULT);
 
-        $encrypted = hash('sha256',$salt.$param);
-
-        return $encrypted;
+        return $hash;
     }
-}
+
+
+    public static function getNoticias(){
+        $conexion = conexion::getConexion();
 
 
 
-
-
+    }
 
 
 
@@ -203,3 +203,4 @@ class kernel{
 
 
 //--------------------------------------------------------------------------------------
+}
