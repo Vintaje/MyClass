@@ -19,6 +19,7 @@ Adrian Sanchez
 
 <?php
 include_once 'app/conexion.inc.php';
+include_once 'app/kernel.inc.php';
 
 /**
  * Indexar URL
@@ -83,7 +84,6 @@ include_once 'plantillas/doc-declaracion.inc.php';
  */
 
 include_once $ruta_elegida;
-
 
 /**
  * Plantilla de cierre 
