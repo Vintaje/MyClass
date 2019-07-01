@@ -60,4 +60,26 @@ class RepositorioGrupo{
         return $grupo_modificado;
     }
 
+    //
+    // SELECT DE LA TABLA GRUPO
+    //
+    public static function GetGrupo($conexion, $codigo){
+        $grupo_seleccionado = false;
+
+        if (isset($conexion)) {
+            
+            try {
+                
+                $sqlSelect = "select * from grupo where codigo=$codigo";
+
+                $grupo_modificado = $sqlSelect -> execute();
+
+
+            } catch (\PDOException $ex) {
+                print 'ERROR' . $ex->getMessage();
+            }
+        }
+        return $grupo_seleccionado;
+    }
+
 }
