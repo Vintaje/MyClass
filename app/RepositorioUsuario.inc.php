@@ -24,7 +24,7 @@ class RepositorioUsuario
                 $sexotemp = $usuario->getSexo();
 
                 $sentencia = $conexion->prepare($sql);
-                $sentencia->bindParam('codigo', $codigotemp, PDO::PARAM_STR);
+                $sentencia->bindParam(':codigo', $codigotemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':correo', $correotemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':passwd', $passwdtemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':avatar', $avatartemp, PDO::PARAM_STR);
