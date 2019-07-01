@@ -68,7 +68,7 @@ CREATE TABLE `tareas` (
   `COD_GRUPO` varchar(255) NOT NULL,
   `TITLE_TAREA` varchar(255) NOT NULL,
   `BODY_TAREA` varchar(255) NOT NULL,
-  `FECHA_ENTREGA` date NOT NULL
+  `FECHA_ENTREGA` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -109,7 +109,7 @@ CREATE TABLE `usuario` (
   `AVATAR` varchar(255) NOT NULL DEFAULT 'www.myclass.es/img/avatardefault.jpg',
   `NOMBRE_FULL` varchar(255) NOT NULL,
   `FAMILIA_PROF` varchar(255) NOT NULL,
-  `FECHA_REG` date NOT NULL,
+  `FECHA_REG` datetime NOT NULL,
   `EDAD` int(10) NOT NULL,
   `DNI` varchar(255) DEFAULT NULL,
   `ADMIN_VALUE` tinyint(1) NOT NULL DEFAULT 0,
