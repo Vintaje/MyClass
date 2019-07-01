@@ -48,13 +48,13 @@ if($uri_segments[0] == 'myclass'){
     } else if(count($uri_segments) == 2){
         switch($uri_segments[1]){
             case 'home':
-            $ruta_elegida = 'vistas/home.php';
+                $ruta_elegida = 'vistas/home.php';
             
-            $titulo = 'MyClass | Home';
+                $titulo = 'MyClass | Home';
             break;
-        case 'wip':
-            $ruta_elegida = 'vistas/wip.php';
-            $titulo = 'MyClass | Mantenimiento';
+            case 'wip':
+                $ruta_elegida = 'vistas/wip.php';
+                $titulo = 'MyClass | Mantenimiento';
             break;
         }
 
