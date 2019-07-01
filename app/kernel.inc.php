@@ -157,21 +157,18 @@ class kernel{
 
 public static function del(){
     $conexion= conexion::getConexion();
-    
-}
-
-
-
-
-
-
-
-
 
 }
 
 
 
+
+
+
+
+
+
+}
 
 
 
