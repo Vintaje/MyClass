@@ -4,7 +4,6 @@ include_once 'Grupo.class.php';
 
 class RepositorioGrupo{
 
-    $conexion = conexion::getConexion();
 
     //Metodo para insertar grupos
     public static function SetGrupo($conexion, $grupo){
