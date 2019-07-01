@@ -1,18 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>MyClass | 404</title>
-
-<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
-
-
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
     <style>
         
         * {
@@ -139,7 +126,7 @@ body {
 </div>
 <h2>Page not found</h2>
 <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
-<a href="..">home page</a>
+<a href="../myclass">home page</a>
 </div>
 </div>
 
@@ -151,5 +138,4 @@ body {
 
   gtag('config', 'UA-23581568-13');
 </script>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="cc9c0996c2b54fd47a497423-|49" defer=""></script></body>
-</html>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="cc9c0996c2b54fd47a497423-|49" defer=""></script>

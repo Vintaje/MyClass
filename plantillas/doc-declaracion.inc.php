@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MyClass | Home</title>
+
     <meta name="keywords" content="MyClass, Classroom, Class, FTPClass">
     <meta name="description" content="Web MyClass de gestion de grupos, alumnos y archivos compartidos">
     <meta name="image" content="">
@@ -22,7 +22,10 @@
     <meta name="twitter:title" content="">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
-    <?php
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+<?php
     if (!isset($titulo) || empty($titulo)) {
         $titulo = 'My Class';
     }
@@ -41,3 +44,5 @@
     <?php
         conexion :: conectarBD();
     ?>
+
+   
