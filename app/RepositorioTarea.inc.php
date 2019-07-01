@@ -73,6 +73,7 @@ class RepositorioTarea{
                 print 'Error en la inserción' . $ex->getMessage();
             }
         }
+        return $tarea_insertada;
     }
 
     //Método para modificar la fecha de entraga de una tarea
@@ -95,8 +96,10 @@ class RepositorioTarea{
                 print 'Error al actualizar la fecha' . $ex->getMessage();
             }
         }
+        return $actualizadas; 
     }
 
+    //Método para borrar una tarea
     public static function delTarea($tarea){
         $conexion = conexion::getConexion();
         $borradas = false; 
@@ -115,6 +118,6 @@ class RepositorioTarea{
                 print 'Error en el borrado' . $ex->getMessage();
             }
         }
-
+        return $borradas; 
     }
 }
