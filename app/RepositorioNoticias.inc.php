@@ -7,7 +7,7 @@ class RepositorioNoticias{
 
     public static function getNoticias(){
         $conexion = conexion::getConexion(); 
-        $tareas = array(); 
+        $noticia = array(); 
 
         if(isset($conexion)){
             try{
