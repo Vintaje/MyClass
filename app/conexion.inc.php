@@ -6,16 +6,16 @@ class conexion
     private static $conexion;
 
     public static function conectarBD()
-    {  
+    {
         //Conexion con PDO
         try {
             if (!isset($conexion)) {
-                self::$conexion = new PDO('mysql:host='.NOMBRE_SERVIDOR.'; dbname='.NOMBRE_DB, NOMBRE_USUARIO, PASSWORD);
-                self::$conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                self::$conexion -> exec("SET CHARACTER SET utf8mb4");
+                self::$conexion = new PDO('mysql:host=' . NOMBRE_SERVIDOR . '; dbname=' . NOMBRE_DB, NOMBRE_USUARIO, PASSWORD);
+                self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                self::$conexion->exec("SET CHARACTER SET utf8mb4");
             }
         } catch (PDOException $ex) {
-            print "ERROR:" . $ex -> getMessage() . "<br>";
+            print "ERROR:" . $ex->getMessage() . "<br>";
             die();
         }
     }
@@ -28,7 +28,8 @@ class conexion
         }
     }
 
-    public static function getConexion(){
+    public static function getConexion()
+    {
 
         return self::$conexion;
     }

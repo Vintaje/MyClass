@@ -28,47 +28,42 @@ include_once 'app/kernel.inc.php';
  */
 
 
- /**
-  * www.myclass.es/pagina
-  * 
-  */
+/**
+ * www.myclass.es/pagina
+ * 
+ */
 
 $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri_segments = explode('/', $uri_path);
 $uri_segments = array_filter($uri_segments);
-$uri_segments = array_slice($uri_segments,0);
-  
+$uri_segments = array_slice($uri_segments, 0);
+
 
 $ruta_elegida = 'vistas/404.php';
 $titulo = 'MyClass | 404';
 
 
-if($uri_segments[0] == 'myclass'){
+if ($uri_segments[0] == 'myclass') {
 
-    if(count($uri_segments) == 1){
+    if (count($uri_segments) == 1) {
         $ruta_elegida = 'vistas/home.php';
         $titulo = 'MyClass | Home';
-    } else if(count($uri_segments) == 2){
-        switch($uri_segments[1]){
+    } else if (count($uri_segments) == 2) {
+        switch ($uri_segments[1]) {
             case 'home':
                 $ruta_elegida = 'vistas/home.php';
-            
+
                 $titulo = 'MyClass | Home';
-            break;
+                break;
             case 'wip':
                 $ruta_elegida = 'vistas/wip.php';
                 $titulo = 'MyClass | Mantenimiento';
-            break;
+                break;
         }
-
-
-    }else{
+    } else {
         $ruta_elegida = 'vistas/404.php';
         $titulo = 'MyClass | 404';
-    
     }
-    
-
 }
 
 
@@ -78,7 +73,7 @@ if($uri_segments[0] == 'myclass'){
 /**
  * Plantilla de abertura 
  */
-include_once 'plantillas/doc-declaracion.inc.php'; 
+include_once 'plantillas/doc-declaracion.inc.php';
 
 
 /**
@@ -91,6 +86,4 @@ include_once $ruta_elegida;
  * Plantilla de cierre 
  */
 
-include_once 'plantillas/doc-cierre.inc.php'; 
-
-
+include_once 'plantillas/doc-cierre.inc.php';
