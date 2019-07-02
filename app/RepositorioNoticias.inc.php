@@ -1,4 +1,4 @@
-como<?php
+<?php
 
 
 
