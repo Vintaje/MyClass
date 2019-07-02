@@ -25,7 +25,7 @@
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/estilos.css" rel="stylesheet">
-<?php
+    <?php
     if (!isset($titulo) || empty($titulo)) {
         $titulo = 'My Class';
     }
@@ -42,7 +42,5 @@
 
 <body>
     <?php
-        conexion :: conectarBD();
+    conexion::conectarBD();
     ?>
-
-   

@@ -2,61 +2,64 @@ como<?php
 
 
 
-class RepositorioNoticias{
+class RepositorioNoticias
+{
 
 
-    public static function getNoticias(){
-        $conexion = conexion::getConexion(); 
-        $noticias = array(); 
+    public static function getNoticias()
+    {
+        $conexion = conexion::getConexion();
+        $noticias = array();
 
-        if(isset($conexion)){
-            try{
-                
-                $sql = "SELECT * FROM NOTICIAS"; 
-                
-                $sentencia = $conexion -> prepare($sql); 
-                $sentencia -> execute(); 
-                $resultado = $sentencia->fetchAll(); 
+        if (isset($conexion)) {
+            try {
 
-                if(count($resultado)){
-                    foreach($resultado as $fila){
+                $sql = "SELECT * FROM NOTICIAS";
+
+                $sentencia = $conexion->prepare($sql);
+                $sentencia->execute();
+                $resultado = $sentencia->fetchAll();
+
+                if (count($resultado)) {
+                    foreach ($resultado as $fila) {
                         $noticias[] = new Noticia(
-                        $fila['agregador'],
-                        $fila['familia_prof']);
+                            $fila['agregador'],
+                            $fila['familia_prof']
+                        );
                     }
                 } else {
                     print 'No hay noticias';
                 }
             } catch (PDOException $ex) {
-                print 'Error de SQL' . $ex->getMessage(); 
+                print 'Error de SQL' . $ex->getMessage();
             }
         }
-        return $noticias; 
-
+        return $noticias;
     }
 
-    public static function getFamilias(){
-        $conexion = conexion::getConexion(); 
-        $noticias = array(); 
+    public static function getFamilias()
+    {
+        $conexion = conexion::getConexion();
+        $noticias = array();
 
-        if(isset($conexion)){
-            try{
-                
-                $sql = "SELECT FAMILIA_PROF FROM NOTICIAS"; 
-                
-                $sentencia = $conexion -> prepare($sql); 
-                $sentencia -> execute(); 
-                $resultado = $sentencia->fetchAll(); 
+        if (isset($conexion)) {
+            try {
 
-                if(count($resultado)){
-                    foreach($resultado as $fila){
+                $sql = "SELECT FAMILIA_PROF FROM NOTICIAS";
+
+                $sentencia = $conexion->prepare($sql);
+                $sentencia->execute();
+                $resultado = $sentencia->fetchAll();
+
+                if (count($resultado)) {
+                    foreach ($resultado as $fila) {
                         $noticias[] = $fila['familia_prof'];
                     }
                 } else {
                     print 'No hay noticias';
                 }
             } catch (PDOException $ex) {
-                print 'Error de SQL' . $ex->getMessage(); 
+                print 'Error de SQL' . $ex->getMessage();
             }
         }
         return $noticias;
@@ -65,35 +68,33 @@ class RepositorioNoticias{
 
 
 
-    public static function setNoticia($noticia){
+    public static function setNoticia($noticia)
+    {
         $conexion = conexion::getConexion();
-        $noticia_insertada = false; 
+        $noticia_insertada = false;
 
-        if(isset($conexion)){
-            try{
+        if (isset($conexion)) {
+            try {
                 $sql = "INSERT INTO NOTICIAS (AGREGADOR, FAMILIA_PROF) VALUES (:agregador, :familia_prof)";
 
-                $sentencia = $conexion -> prepare($sql); 
+                $sentencia = $conexion->prepare($sql);
 
                 //Se meten los datos del objeto en variables
-                $agregador = $noticia-> getAgregador();
-                $familia_prof = $noticia-> getFamilia();
+                $agregador = $noticia->getAgregador();
+                $familia_prof = $noticia->getFamilia();
 
 
                 //Hacemos el insert sustituyendo las variables creadas por las de la sentencia
 
-                $sentencia -> bindParam(':agregador', $agregador, PDO::PARAM_STR); 
-                $sentencia -> bindParam(':familia_prof', $familia_prof, PDO::PARAM_STR); 
+                $sentencia->bindParam(':agregador', $agregador, PDO::PARAM_STR);
+                $sentencia->bindParam(':familia_prof', $familia_prof, PDO::PARAM_STR);
 
-                
-                $noticia_insertada = $sentencia-> execute(); 
 
-            } catch (PDOException $ex){
+                $noticia_insertada = $sentencia->execute();
+            } catch (PDOException $ex) {
                 print 'Error al crear la noticia' . $ex->getMessage();
             }
         }
         return $noticia_insertada;
     }
-
-
 }

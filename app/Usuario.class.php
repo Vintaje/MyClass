@@ -15,7 +15,7 @@ class Usuario
     private $dni;
     private $avatar;
 
-//constructor
+    //constructor
 
     public function __construct($correo, $nombre_completo, $codigo, $password, $sexo, $familia_prof, $fecha_reg, $edad, $dni, $avatar)
     {
@@ -31,7 +31,7 @@ class Usuario
         $this->fecha_reg = $fecha_reg;
     }
 
-//getter && setter
+    //getter && setter
 
     public function getCodigo()
     {
@@ -112,12 +112,4 @@ class Usuario
     {
         $this->avatar = $avatar;
     }
-
-
-
-
-
-
-
-
 }
