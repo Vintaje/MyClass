@@ -1,4 +1,5 @@
 <?php
+//Carlos González Díez
 //Incluimos la clase que vamos a necesitar
 include_once 'Tarea.class.php'; 
 class RepositorioTarea{
@@ -70,7 +71,7 @@ class RepositorioTarea{
                 $tarea_insertada = $sentencia-> execute(); 
 
             } catch (PDOException $ex){
-                print 'Error en la inserción' . $ex->getMessage();
+                print 'Error al crear la tarea' . $ex->getMessage();
             }
         }
         return $tarea_insertada;
