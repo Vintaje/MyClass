@@ -7,7 +7,7 @@ class RepositorioNoticias{
 
     public static function getNoticias(){
         $conexion = conexion::getConexion(); 
-        $noticia = array(); 
+        $noticias = array(); 
 
         if(isset($conexion)){
             try{
@@ -20,7 +20,7 @@ class RepositorioNoticias{
 
                 if(count($resultado)){
                     foreach($resultado as $fila){
-                        $noticia[] = new Noticia(
+                        $noticias[] = new Noticia(
                         $fila['agregador'],
                         $fila['familia_prof'];
                     }
@@ -37,7 +37,7 @@ class RepositorioNoticias{
 
     public static function getFamilias(){
         $conexion = conexion::getConexion(); 
-        $tareas = array(); 
+        $noticias = array(); 
 
         if(isset($conexion)){
             try{
@@ -50,7 +50,7 @@ class RepositorioNoticias{
 
                 if(count($resultado)){
                     foreach($resultado as $fila){
-                        $noticia[] = $fila['familia_prof'];
+                        $noticias[] = $fila['familia_prof'];
                     }
                 } else {
                     print 'No hay noticias';
@@ -76,7 +76,7 @@ class RepositorioNoticias{
                 $sentencia = $conexion -> prepare($sql); 
 
                 //Se meten los datos del objeto en variables
-                $agregador = $noticia-> getAgreagador();
+                $agregador = $noticia-> getAgregador();
                 $familia_prof = $noticia-> getFamilia();
 
 
