@@ -22,7 +22,7 @@ class RepositorioNoticias{
                     foreach($resultado as $fila){
                         $noticias[] = new Noticia(
                         $fila['agregador'],
-                        $fila['familia_prof'];
+                        $fila['familia_prof']);
                     }
                 } else {
                     print 'No hay noticias';
