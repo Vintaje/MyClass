@@ -10,7 +10,7 @@ html div{
 .feeds{
     overflow: hidden !important;
     overflow-y: scroll !important;
-    max-height: 300px !important;
+    max-height: 600px !important;
     padding: 10px;
     /*border: 1px black solid !important;*/
     background-color: var(--main-content) !important;
@@ -34,10 +34,14 @@ html div{
 }
 #banner{
     width: 90%;
+    height: 200px !important;
     /*border: 1px black solid !important;*/
 }
 .main{
     margin: auto 10px !important;
     padding: 20px !important;
     
+}
+.login img{
+    width: 100%;
 }
