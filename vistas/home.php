@@ -3,7 +3,7 @@
     <div class="col-md-6">
         <div class="row">
             <div class="col-md-12 d-flex p-2">
-                <img id="banner" src="img/homebanner.jpg" alt="banner" class="center" />
+                <img id="banner" src="img/homebanner.jpg" alt="banner" class="rounded mx-auto d-block" />
             </div>
         </div>
         <div class="row">

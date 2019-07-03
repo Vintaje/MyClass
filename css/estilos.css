@@ -1,14 +1,17 @@
 .feeds{
     overflow: hidden !important;
     overflow-y: scroll !important;
-    max-height: 500px !important;
+    max-height: 300px !important;
     padding: 10px;
+    border: 1px black solid !important;
 }
 
 .article img{
     width: 200px !important;
     float: left;
     margin-right: 5px;
+
+    
 }
 .article{
     text-align: justify;
@@ -16,4 +19,5 @@
 }
 #banner{
     width: 90%;
+    border: 1px black solid !important;
 }
