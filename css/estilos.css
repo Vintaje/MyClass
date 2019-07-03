@@ -12,7 +12,7 @@ html div{
     overflow-y: scroll !important;
     max-height: 300px !important;
     padding: 10px;
-    border: 1px black solid !important;
+    /*border: 1px black solid !important;*/
     background-color: var(--main-content) !important;
 }
 .card-body{
@@ -34,7 +34,7 @@ html div{
 }
 #banner{
     width: 90%;
-    border: 1px black solid !important;
+    /*border: 1px black solid !important;*/
 }
 .main{
     margin: auto 10px !important;
