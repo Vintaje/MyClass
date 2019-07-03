@@ -7,7 +7,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="container">
+            <div class="container main">
+            <div class="row">
                 <div class="container">
                     <div class="feeds" id="feed"></div>
                 </div>
@@ -52,6 +53,8 @@
                         return xhr;
                     }
                 </script>
+            </div>
+            <div class="row">
                 <div class="container">
                     <div class="feeds" id="feed1"></div>
                 </div>
@@ -73,6 +76,7 @@
                                     date;
                                 for (var i = 0; i < 4; i++) {
                                     dv = document.createElement("div");
+                                    dv.classList.add("card-body");
                                     date = new Date(entry[i].pubDate);
                                     dv.innerHTML = '<a class="title" href="' + entry[i].link + '" target="_blank">' + entry[i].title + '</a><br/>' + '<p class="date">' + date.toDateString().substr(4) + '</p>' + '<br/><div class="article">' + entry[i].content.substring(0, 600) + '...</div>';
                                     dv.innerHTML += '<hr/>';
@@ -95,6 +99,7 @@
                         return xhr;
                     }
                 </script>
+            </div>
             </div>
         </div>
     </div>
