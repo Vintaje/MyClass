@@ -16,7 +16,7 @@
 
         <div class="row">
             <div class="container main">
-                <iframe width="100%" height="700" src="https://www.inoreader.com/stream/user/1004821469/tag/myclass/view/html?cs=m&t=MyClass%20News&ta=j&n=10&w=full&fs=12" frameborder="0" tabindex="-1"></iframe>
+                <iframe width="100%" height="728" src="https://www.inoreader.com/stream/user/1004821469/tag/myclass/view/html?cs=m&t=MyClass%20News&ta=j&n=10&w=full&fs=12" frameborder="0" tabindex="-1"></iframe>
             </div>
         </div>
     </div>
