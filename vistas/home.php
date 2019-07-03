@@ -1,5 +1,3 @@
-
-
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
@@ -25,8 +23,6 @@
     <div class="col-md-4">
         <div class="row">
             <div class="container main">
-
-                
                 <div class="card-body login">
                     <h3 class="card-title">Iniciar Sesion</h3>
                     <div class="col-md-12">
@@ -48,6 +44,31 @@
                 </div>
             </div>
 
+        </div>
+        <div class="row">
+            <div class="container main">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="far fa-question-circle"></i> About us
+                    </div>
+                </div>
+                <div class="card-body" id="aboutusbody">
+                    En myClass tenemos un objetivo claro: Ofrecer a todos los estudiantes, en cualquier nivel
+                    de estudios una plataforma en la que puedan compartir sus conocimientos a través de distintas
+                    herramientas. <br/>
+
+                    Pero no solo eso. En myClass, nos preocupamos de tu presente (ofreciéndote noticias en función de tu
+                    familia profesional) y de tu futuro (conectándote con una red de empresas que buscan tu talento). <br/>
+
+                    Así que, ¿qué esperas? ¡Entra en la clase del futuro! <br/>
+
+                    #myClassCeos <br/>
+
+                    <form action="https://twitter.com/MyClassCEOs">
+                        <input class="btn btn-primary" type="submit" value="Twitter" id="inputTwitter">
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-md-2"></div>

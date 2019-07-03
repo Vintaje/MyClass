@@ -5,7 +5,7 @@ conexion::desconectarBD();
 
 <br>
 <div class="footer">
-    <p class="text-center rights" style="color: #fff;">MyClass © | <a href="https://twitter.com/MyClassCEOs">'Twitter'</a> |</p>
+    <p class="text-center rights" style="color: #fff;">MyClass ©</p>
 </div>
 
 

@@ -25,6 +25,9 @@
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/estilos.css" rel="stylesheet">
+
+    <!--Para iconos-->
+    <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
     <?php
     if (!isset($titulo) || empty($titulo)) {
         $titulo = 'My Class';
