@@ -1,0 +1,19 @@
+.feeds{
+    overflow: hidden !important;
+    overflow-y: scroll !important;
+    max-height: 500px !important;
+    padding: 10px;
+}
+
+.article img{
+    width: 200px !important;
+    float: left;
+    margin-right: 5px;
+}
+.article{
+    text-align: justify;
+
+}
+#banner{
+    width: 90%;
+}
