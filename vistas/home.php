@@ -16,7 +16,7 @@
 
         <div class="row">
             <div class="container main">
-                <iframe width="100%" height="800" src="https://www.inoreader.com/stream/user/1004821469/tag/myclass/view/html?cs=m&t=MyClass%20News&ta=j&n=10&w=full&fs=12" frameborder="0" tabindex="-1"></iframe>
+                <iframe width="100%" height="700" src="https://www.inoreader.com/stream/user/1004821469/tag/myclass/view/html?cs=m&t=MyClass%20News&ta=j&n=10&w=full&fs=12" frameborder="0" tabindex="-1"></iframe>
             </div>
         </div>
     </div>
@@ -24,20 +24,25 @@
         <div class="row">
             <div class="container main">
 
+                
+                <div class="card-body login">
+                    <h3 class="card-title">Iniciar Sesion</h3>
+                    <div class="col-md-12">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">Introduce tu email.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Contraseña</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
 
-                <div class="card-body">
-                    <div class="col-md-6 login">
-                        <form id="login">
-                            <label type="text">Email</label>
-                            <input id="email" type="text" placeholder="usuario@email.com" />
-                            <label type="text">Contraseña</label>
-                            <input id="passwd" type="password" placeholder="" />
-                            <button onclick="doSomethin()" class="btn btn-primary float-right"> Iniciar Sesion</button>
+                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
                         </form>
                     </div>
-                    <div class="col-md-6 login">
-                        <img class="" src="img/loginimg.png" alt="loginImage">
-                    </div>
+
                 </div>
             </div>
 

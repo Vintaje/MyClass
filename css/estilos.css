@@ -18,23 +18,10 @@ html div{
 .card-body{
     background-color: var(--main-content) !important;
 }
-.article img{
-    width: 200px !important;
-    float: left;
-    margin-right: 5px;
-    
-    
-}
-.article{
-    text-align: justify;
-    background-color: var(--main-content) !important;
-}
-.article *{
-    background-color: var(--main-content) !important;
-}
+
 #banner{
     width: 90%;
-    height: 200px !important;
+    height: 150px !important;
     /*border: 1px black solid !important;*/
 }
 .main{
@@ -42,6 +29,6 @@ html div{
     padding: 20px !important;
     
 }
-.login img{
-    width: 100%;
+.login div{
+    background-color: var(--main-content) !important;
 }
