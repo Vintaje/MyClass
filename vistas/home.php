@@ -53,7 +53,7 @@
     
             <div class="row">
            
-                <div class="col-md-12 mx-auto"></div>
+                <div class="col-md-12 mx-auto">
                    
                     <h5><i class="far fa-question-circle"></i> About us</h5>
                     <p class="desc">En myClass tenemos un objetivo claro: Ofrecer a todos los estudiantes, en cualquier nivel
