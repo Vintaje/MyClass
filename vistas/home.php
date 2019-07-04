@@ -53,23 +53,28 @@
                     </div>
                 </div>
                 <div class="card-body" id="aboutusbody">
-                    En myClass tenemos un objetivo claro: Ofrecer a todos los estudiantes, en cualquier nivel
-                    de estudios una plataforma en la que puedan compartir sus conocimientos a través de distintas
-                    herramientas. <br/>
+                    <div class="row">
+                        En myClass tenemos un objetivo claro: Ofrecer a todos los estudiantes, en cualquier nivel
+                        de estudios una plataforma en la que puedan compartir sus conocimientos a través de distintas
+                        herramientas. <br />
 
-                    Pero no solo eso. En myClass, nos preocupamos de tu presente (ofreciéndote noticias en función de tu
-                    familia profesional) y de tu futuro (conectándote con una red de empresas que buscan tu talento). <br/>
+                        Pero no solo eso. En myClass, nos preocupamos de tu presente (ofreciéndote noticias en función de tu
+                        familia profesional) y de tu futuro (conectándote con una red de empresas que buscan tu talento). <br />
 
-                    Así que, ¿qué esperas? ¡Entra en la clase del futuro! <br/>
+                        Así que, ¿qué esperas? ¡Entra en la clase del futuro! <br />
 
-                    #myClassCeos <br/>
+                        #myClassCeos <br />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10">
 
-                    <form action="https://twitter.com/MyClassCEOs">
-                        <input class="btn btn-primary" type="submit" value="Twitter" id="inputTwitter">
-                    </form>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="https://twitter.com/MyClassCEOs" target="_blank"><img class="rrss" src="img/twitter.png" alt="twit" /></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="col-md-2"></div>
     </div>
-    <div class="col-md-2"></div>
-</div>
