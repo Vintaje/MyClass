@@ -86,8 +86,3 @@ include_once 'plantillas/doc-declaracion.inc.php';
 
 include_once $ruta_elegida;
 
-/**
- * Plantilla de cierre 
- */
-
-include_once 'plantillas/doc-cierre.inc.php';
