@@ -30,7 +30,7 @@ and open the template in the editor.
 
 
             <div class="container">
-                <center>
+                <div>
                     <div class="middle">
                         <div id="login">
 
@@ -62,7 +62,7 @@ and open the template in the editor.
                         </div>
 
                     </div>
-                </center>
+                </div>
             </div>
 
         </div>
