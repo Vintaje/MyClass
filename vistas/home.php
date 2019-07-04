@@ -70,7 +70,7 @@
 
                         </div>
                         <div class="col-md-2">
-                            <a href="https://twitter.com/MyClassCEOs" target="_blank"><img class="rrss" src="img/twitter.png" alt="twit" /></a>
+                            <a href="https://twitter.com/MyClassCEOs" target="_blank"><img class="rrss" src="img/twitter.jpg" alt="twit" /></a>
                         </div>
                     </div>
                 </div>
