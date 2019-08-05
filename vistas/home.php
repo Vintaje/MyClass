@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/styleHome.css" />
+<link rel="stylesheet" href="css/styleHome.css"/>
 
 <?php
 
