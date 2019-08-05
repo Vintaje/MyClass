@@ -51,7 +51,7 @@
     <?php
     conexion::conectarBD();
 
-    if ($ruta_elegida == 'vistas/home.php') {
+    if ($ruta_elegida == 'vistas/home.php' || $ruta_elegida == 'vistas/wip.php') {
 
         ?>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
