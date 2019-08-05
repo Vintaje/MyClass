@@ -14,9 +14,17 @@
             <label for="inputAddress">Nombre completo</label>
             <input type="text" class="form-control" id="inputAddress">
         </div>
-        <div class="form-group">
-            <label for="inputAddress2">Familia profesional</label>
-            <input type="text" class="form-control" id="inputAddress2">
+
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Familia Profesional</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Familias</option>
+                    <option value="1"> Informática</option>
+                    <option value="2">Comercio</option>
+                    <option value="3">Mecánica</option>
+                </select>
+            </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -41,6 +49,7 @@
                 </label>
             </div>
         </div>
+
         <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
 
