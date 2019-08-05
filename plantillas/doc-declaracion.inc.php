@@ -51,7 +51,7 @@
     <?php
     conexion::conectarBD();
 
-    if ($ruta_elegida == 'vistas/home.php' || $ruta_elegida == 'vistas/wip.php') {
+  /*  if ($ruta_elegida == 'vistas/home.php' || $ruta_elegida == 'vistas/wip.php') {
 
         ?>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -100,6 +100,8 @@
         </nav>
     <?php
     }
+
+    */
     ?>
     <script>
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
