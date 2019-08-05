@@ -2,20 +2,20 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <input type="email" class="form-control" id="inputEmail4">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword4">
     </div>
   </div>
   <div class="form-group">
     <label for="inputAddress">Nombre completo</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <input type="text" class="form-control" id="inputAddress" >
   </div>
   <div class="form-group">
     <label for="inputAddress2">Familia profesional</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    <input type="text" class="form-control" id="inputAddress2">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
