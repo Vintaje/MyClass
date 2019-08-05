@@ -63,6 +63,10 @@ if ($uri_segments[0] == 'myclass') {
                 $ruta_elegida = 'vistas/registro.php';
                 $titulo = 'MyClass | Registro'; 
                 break; 
+            case 'IniciarSesion':
+                $ruta_elegida = 'vistas/iniciar_sesion.php';
+                $titulo = 'MyClass | IniciarSesion'; 
+                break; 
         }
     } else {
         $ruta_elegida = 'vistas/404.php';
