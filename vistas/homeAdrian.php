@@ -1,30 +1,7 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+<?php
+    
+?>
 
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/bootstrap-reboot.min.css" type="text/css"/>
-        <link rel="stylesheet" href="css/styleHome.css" type="text/css">
-
-
-    </head>
-    <body>
-
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.min.js"></script>
-
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.min.js"></script>
 
         <div class="main" style="padding: 0px !important; margin: 0px !important;">
 
@@ -67,5 +44,11 @@ and open the template in the editor.
 
         </div>
 
-    </body>
-</html>
+
+        
+<?php
+    
+?>
+
+
+
