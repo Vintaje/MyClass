@@ -41,12 +41,7 @@
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/estilos.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap-reboot.min.css" type="text/css"/>
-    <link rel="stylesheet" href="css/styleHome.css" type="text/css">
 
 </head>
 
@@ -59,8 +54,3 @@
             // some code..
         }
     </script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.min.js"></script>
