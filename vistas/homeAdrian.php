@@ -26,7 +26,7 @@ and open the template in the editor.
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.min.js"></script>
 
-        <div class="main">
+        <div class="main" style="padding: 0px !important; margin: 0px !important;">
 
 
             <div class="container">
