@@ -6,10 +6,6 @@
             <h1>Iniciar sesión</h1>
             <form>
                 <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter username">
-                </div>
-                <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email">
                 </div>
