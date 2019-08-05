@@ -59,9 +59,10 @@ if ($uri_segments[0] == 'myclass') {
                 $ruta_elegida = 'vistas/wip.php';
                 $titulo = 'MyClass | Mantenimiento';
                 break;
-                /***
-                 * 
-                 */
+            case 'registro':
+                $ruta_elegida = 'vistas/registro.php';
+                $titulo = 'MyClass | Registro'; 
+                break; 
         }
     } else {
         $ruta_elegida = 'vistas/404.php';
