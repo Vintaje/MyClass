@@ -19,7 +19,7 @@
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Familia Profesional</label>
                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option selected>Familias</option>
+                    <option disabled selected value>Familias</option>
                     <option value="1"> Informática</option>
                     <option value="2">Comercio</option>
                     <option value="3">Mecánica</option>
@@ -34,7 +34,7 @@
             <div class="form-group col-md-4">
                 <label for="inputState">State</label>
                 <select id="inputState" class="form-control">
-                    <option selected>Sexo</option>
+                    <option disabled selected value>Sexo</option>
                     <option>Hombre</option>
                     <option>Mujer</option>
                     <option>Prefiero no contestar</option>
