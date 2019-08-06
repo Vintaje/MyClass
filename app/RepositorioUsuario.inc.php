@@ -44,7 +44,7 @@ class RepositorioUsuario
         return $usuario_insertado;
     }
     
-//codigo cambiado por email.
+//codigo cambiado por correo.
 
     public static function getUsuario($conexion,$correo)
     {
