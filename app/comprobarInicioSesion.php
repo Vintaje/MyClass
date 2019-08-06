@@ -2,6 +2,9 @@
 include_once 'kernel.inc.php';
 include_once 'RepositorioUsuario.inc.php';
 
+    $conexion = new conexion();
+    $conexion->conectarBD();
+
     $emailForm=$_POST['email'];
     $pwdForm=$_POST['pwd'];
 
@@ -10,7 +13,7 @@ include_once 'RepositorioUsuario.inc.php';
 
     $repo = new RepositorioUsuario();
 
-    $usuarioCompleto = $repo->getUsuario($emailForm);
+    $usuarioCompleto = $repo->getUsuario($conexion,$emailForm);
     if($usuarioCompleto==null){
         echo "error usuario no encontrado";
     }else{

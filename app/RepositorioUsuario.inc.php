@@ -46,13 +46,9 @@ class RepositorioUsuario
     
 //codigo cambiado por email.
 
-    public static function getUsuario($correo)
+    public static function getUsuario($conexion,$correo)
     {
         $usuario = null;
-
-        //emilio duda conexión así o en todas las llamadas a métodos como parámetro???
-        $conexion = new conexion();
-        $conexion->conectarBD();
 
         if (isset($conexion)) {
             try {
