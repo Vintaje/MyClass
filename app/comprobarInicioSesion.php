@@ -10,13 +10,12 @@ include_once 'RepositorioUsuario.inc.php';
 
     $kernel = new kernel();
 
-
-    echo $emailForm;
+    //echo $kernel-> encrypt_decrypt("encrypt","prueba@gmail.com");
 
     $conexion = new conexion();
     $conexion->conectarBD();
         
-    $usuarioCompleto = RepositorioUsuario::getUsuario($conexion,$emailForm);
+    $usuarioCompleto = RepositorioUsuario::getUsuario($conexion,$kernel-> encrypt_decrypt("encrypt",$emailForm));
     if($usuarioCompleto==null){
         echo "error usuario no encontrado";
     }else{
