@@ -52,9 +52,9 @@ class RepositorioUsuario
 
         if (isset($conexion)) {
             try {
-                $sql = "select CODIGO,CORREO,PASSWD,AVATAR,NOMBRE_FULL,FAMILIA_PROF,FECHA_REG,EDAD,DNI,SEXO from usuario where codigo = :codigo";
+                $sql = "select CODIGO,CORREO,PASSWD,AVATAR,NOMBRE_FULL,FAMILIA_PROF,FECHA_REG,EDAD,DNI,SEXO from usuario where correo = :correo";
 
-                $sentencia = $conexion->mysqli_prepare($sql);
+                $sentencia = $conexion->prepare($sql);
 
                 $sentencia->bindParam(':correo', $correo, PDO::PARAM_STR);
 
