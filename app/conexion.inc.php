@@ -3,7 +3,7 @@ include_once 'config.inc.php';
 
 class conexion
 {
-    private static $conexion;
+    public static $conexion;
 
     public static function conectarBD()
     {
