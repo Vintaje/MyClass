@@ -58,7 +58,7 @@ class RepositorioUsuario
             try {
                 $sql = "select CODIGO,CORREO,PASSWD,AVATAR,NOMBRE_FULL,FAMILIA_PROF,FECHA_REG,EDAD,DNI,SEXO from usuario where codigo = :codigo";
 
-                $sentencia = $conexion->prepare($sql);
+                $sentencia = $conexion->mysqli_prepare($sql);
 
                 $sentencia->bindParam(':correo', $correo, PDO::PARAM_STR);
 
