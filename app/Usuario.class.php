@@ -31,6 +31,7 @@ class Usuario
         $this->fecha_reg = $fecha_reg;
     }
 
+
     //getter && setter
 
     public function getCodigo()
