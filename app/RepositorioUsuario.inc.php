@@ -43,12 +43,15 @@ class RepositorioUsuario
 
         return $usuario_insertado;
     }
-    
-//codigo cambiado por correo.
 
-    public static function getUsuario($conexion,$correo)
+    //codigo cambiado por correo.
+
+    public static function getUsuario($conexion,$correo_user)
     {
+        $correo=strval($correo_user);
         $usuario = null;
+
+        $conexion = conexion::getConexion();
 
         if (isset($conexion)) {
             try {
@@ -56,25 +59,26 @@ class RepositorioUsuario
 
                 $sentencia = $conexion->prepare($sql);
 
-                $sentencia->bindParam(':correo', $correo, PDO::PARAM_STR);
-
+                $sentencia->bindParam(':correo', $correo, PDO::PARAM_STR, 255);
+                
                 $sentencia->execute();
 
                 $resultado = $sentencia->fetch();
 
 
                 if (!empty($resultado)) {
+                    
                     $usuario = new Usuario(
-                        $resultado['correo'],
-                        $resultado['nombre_full'],
-                        $resultado['codigo'],
-                        $resultado['passwd'],
-                        $resultado['sexo'],
-                        $resultado['familia_prof'],
-                        $resultado['fecha_reg'],
-                        $resultado['edad'],
-                        $resultado['dni'],
-                        $resultado['avatar']
+                        $resultado['CORREO'],
+                        $resultado['NOMBRE_FULL'],
+                        $resultado['CODIGO'],
+                        $resultado['PASSWD'],
+                        $resultado['SEXO'],
+                        $resultado['FAMILIA_PROF'],
+                        $resultado['FECHA_REG'],
+                        $resultado['EDAD'],
+                        $resultado['DNI'],
+                        $resultado['AVATAR']
                     );
                 }
             } catch (PDOException $ex) {
@@ -82,7 +86,7 @@ class RepositorioUsuario
             }
         }
 
-        $conexion->desconectarBD();
+        conexion::desconectarBD();
 
         return $usuario;
     }

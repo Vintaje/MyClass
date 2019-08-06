@@ -23,9 +23,9 @@ class conexion
 
     public static function desconectarBD()
     {
-        /*if (isset(self::$conexion)) {
+        if (isset(self::$conexion)) {
             $conexion = null;
-        }*/
+        }
     }
 
     public static function getConexion()

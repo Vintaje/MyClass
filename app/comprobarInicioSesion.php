@@ -11,9 +11,12 @@ include_once 'RepositorioUsuario.inc.php';
     $kernel = new kernel();
 
 
-    $repo = new RepositorioUsuario();
+    echo $emailForm;
 
-    $usuarioCompleto = $repo->getUsuario($conexion,$emailForm);
+    $conexion = new conexion();
+    $conexion->conectarBD();
+        
+    $usuarioCompleto = RepositorioUsuario::getUsuario($conexion,$emailForm);
     if($usuarioCompleto==null){
         echo "error usuario no encontrado";
     }else{
@@ -23,4 +26,3 @@ include_once 'RepositorioUsuario.inc.php';
 
    //lanza Fatal error: Uncaught Error: Call to undefined method 
    //conexion::prepare() in C:\xampp\htdocs\myclass\app\RepositorioUsuario.inc.php:61 
-?>
