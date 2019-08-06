@@ -23,8 +23,8 @@ class RepositorioNoticias
                 if (count($resultado)) {
                     foreach ($resultado as $fila) {
                         $noticias[] = new Noticia(
-                            $fila['agregador'],
-                            $fila['familia_prof']
+                            $fila['AGREGADOR'],
+                            $fila['FAMILIA_PROF']
                         );
                     }
                 } else {
@@ -53,7 +53,7 @@ class RepositorioNoticias
 
                 if (count($resultado)) {
                     foreach ($resultado as $fila) {
-                        $noticias[] = $fila['familia_prof'];
+                        $noticias[] = $fila['FAMILIA_PROF'];
                     }
                 } else {
                     print 'No hay noticias';

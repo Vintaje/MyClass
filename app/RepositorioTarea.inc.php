@@ -23,11 +23,11 @@ class RepositorioTarea
                 if (count($resultado)) {
                     foreach ($resultado as $fila) {
                         $tareas[] = new Tarea(
-                            $fila['codigo'],
-                            $fila['cod_grupo'],
-                            $fila['title_tarea'],
-                            $fila['body_tarea'],
-                            $fila["fecha_entrega"]
+                            $fila['CODIGO'],
+                            $fila['COD_GRUPO'],
+                            $fila['TITLE_TAREA'],
+                            $fila['BODY_TAREA'],
+                            $fila["FECHA_ENTREGA"]
                         );
                     }
                 } else {
