@@ -31,6 +31,11 @@ class Usuario
         $this->fecha_reg = $fecha_reg;
     }
 
+    public function logear($correo, $password){
+        $this->correo = $correo;
+        $this->password = $password;
+    }
+
     //getter && setter
 
     public function getCodigo()
