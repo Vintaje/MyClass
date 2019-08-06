@@ -32,6 +32,7 @@
                 <input type="text" class="form-control" id="inputCity" required>
             </div>
             <div class="form-group col-md-4">
+                <label for="inputState">Sexo</label>
                 <select id="inputState" class="form-control">
                     <option disabled selected value>Sexo</option>
                     <option>Hombre</option>
