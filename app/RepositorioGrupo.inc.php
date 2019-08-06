@@ -85,10 +85,10 @@ class RepositorioGrupo
 
                 if (!empty($resultado)) {
                     $grupo = new Grupo(
-                        $resultado['codigo'],
-                        $resultado['nombre'],
-                        $resultado['capacidad'],
-                        $resultado['cod_owner']
+                        $resultado['CODIGO'],
+                        $resultado['NOMBRE'],
+                        $resultado['CAPACIDAD'],
+                        $resultado['COD_OWNER']
                     );
                 }
             } catch (\PDOException $ex) {
