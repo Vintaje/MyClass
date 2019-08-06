@@ -12,7 +12,7 @@ class conexion
             if (!isset($conexion)) {
                 self::$conexion = new PDO('mysql:host=' . NOMBRE_SERVIDOR . '; dbname=' . NOMBRE_DB, NOMBRE_USUARIO, PASSWORD);
                 self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                self::$conexion->exec("SET CHARACTER SET utf8mb4");
+                //self::$conexion->exec("SET CHARACTER SET utf8mb4");
             }
         } catch (PDOException $ex) {
             print "ERROR:" . $ex->getMessage() . "<br>";
@@ -23,9 +23,9 @@ class conexion
 
     public static function desconectarBD()
     {
-        if (isset(self::$conexion)) {
+        /*if (isset(self::$conexion)) {
             $conexion = null;
-        }
+        }*/
     }
 
     public static function getConexion()
