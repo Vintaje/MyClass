@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/iniciar_sesion.css" />
 
-<div class="container" id="registration-form">
+<div class="container foto" id="registration-form">
         <div class="image"></div>
         <div class="frm">
             <h1>MyClass</h1>
