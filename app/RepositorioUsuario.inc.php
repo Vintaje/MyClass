@@ -1,5 +1,6 @@
 <?php
 include_once 'Usuario.class.php';
+include_once 'conexion.inc.php';
 
 class RepositorioUsuario
 {
@@ -42,10 +43,16 @@ class RepositorioUsuario
 
         return $usuario_insertado;
     }
+    
+//codigo cambiado por email.
 
-    public static function getUsuario($conexion, $codigo)
+    public static function getUsuario($correo)
     {
         $usuario = null;
+
+        //emilio duda conexión así o en todas las llamadas a métodos como parámetro???
+        $conexion = new conexion();
+        $conexion->conectarBD();
 
         if (isset($conexion)) {
             try {
@@ -53,7 +60,7 @@ class RepositorioUsuario
 
                 $sentencia = $conexion->prepare($sql);
 
-                $sentencia->bindParam(':codigo', $codigo, PDO::PARAM_STR);
+                $sentencia->bindParam(':correo', $correo, PDO::PARAM_STR);
 
                 $sentencia->execute();
 
@@ -78,6 +85,8 @@ class RepositorioUsuario
                 print 'ERROR' . $ex->getMessage();
             }
         }
+
+        $conexion->desconectarBD();
 
         return $usuario;
     }
