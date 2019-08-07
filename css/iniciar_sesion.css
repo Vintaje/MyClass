@@ -60,4 +60,18 @@
         width: 100%;
         margin-top: 20px;
     }
+    #a_registro {
+        margin: 200px 0 0 0;
+    }
+    .a_registro {
+        text-align: center;
+        margin: 20px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .a_registro {
+        margin: 20px;
+        display: inline;
+    }
 }
