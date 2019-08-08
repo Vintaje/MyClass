@@ -90,4 +90,4 @@ include_once 'plantillas/doc-declaracion.inc.php';
 
 include_once $ruta_elegida;
 
-include_once 'plantillas/doc-declaracion.inc.php';
+include_once 'plantillas/doc-cierre.inc.php';
