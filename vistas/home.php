@@ -3,7 +3,7 @@
 <div class="container foto" id="registration-form">
     <div class="image"></div>
     <div class="frm">
-        <h1>MyClass</h1>
+    <h1 class="display-4 mb-5 mt-3">myClass</h1>
         <h2>Iniciar Sesión</h2>
         <form method="POST" action="app/comprobarInicioSesion.php">
             <div class="form-group">

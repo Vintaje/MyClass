@@ -61,12 +61,12 @@ if ($uri_segments[0] == 'myclass') {
                 break;
             case 'registro':
                 $ruta_elegida = 'vistas/registro.php';
-                $titulo = 'MyClass | Registro'; 
-                break; 
-            case 'IniciarSesion':
-                $ruta_elegida = 'vistas/iniciar_sesion.php';
-                $titulo = 'MyClass | IniciarSesion'; 
-                break; 
+                $titulo = 'MyClass | Registro';
+                break;
+            case 'panel-usuario':
+                //$ruta_elegida = 'vistas/panel-usuario.php';
+                $titulo = 'MyClass | Panel de Control';
+                break;
         }
     } else {
         $ruta_elegida = 'vistas/404.php';
