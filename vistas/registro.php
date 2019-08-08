@@ -31,7 +31,7 @@
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Familia Profesional</label>
                 <select class="custom-select mr-sm-2" name="familia" required>
-                    <option disabled selected value>Familias</option>
+                    <option disabled selected value>General</option>
                     <option value="1"> Informática</option>
                     <option value="2">Comercio</option>
                     <option value="3">Mecánica</option>
