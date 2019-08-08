@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="css/iniciar_sesion.css" />
-
+<div class="row">
 <div class="container foto" id="registration-form">
     <div class="image"></div>
     <div class="frm">
@@ -21,4 +21,5 @@
 
         </form>
     </div>
+</div>
 </div>
