@@ -1,4 +1,3 @@
-<p>
 Lorem Ipsum
 "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
 "No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor."
@@ -11,4 +10,3 @@ Donec pharetra, ex nec lacinia mattis, augue mi ultricies quam, non fermentum ne
 Mauris pulvinar vulputate facilisis. Vestibulum eget eleifend eros. Quisque sit amet tempor arcu, et tempus purus. Mauris sit amet leo vel urna aliquam condimentum id condimentum ligula. Ut eget tortor luctus, dictum orci sed, sagittis dui. Nulla sagittis elit enim, dignissim dapibus turpis vehicula id. Maecenas dignissim placerat nulla, a rutrum ipsum vehicula et. Nam maximus tempus purus, nec mattis eros vulputate imperdiet. Sed quis dolor odio. Pellentesque id purus ligula.
 
 Nullam a nulla quis nisi imperdiet rhoncus. Curabitur et libero tellus. Sed eu tortor vitae orci commodo bibendum. Aenean a mollis neque. Etiam tincidunt tortor ut nulla tristique molestie. Mauris condimentum enim nulla, eget varius lectus elementum non. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam feugiat, eros vel tristique viverra, sem ipsum sodales mi, bibendum tristique risus est sodales turpis.
-</p>

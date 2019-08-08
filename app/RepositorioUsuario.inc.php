@@ -24,6 +24,9 @@ class RepositorioUsuario
                 $dnitemp = $usuario->getDni();
                 $sexotemp = $usuario->getSexo();
 
+                $conexion = conexion::getConexion();
+
+
                 $sentencia = $conexion->prepare($sql);
                 $sentencia->bindParam(':codigo', $codigotemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':correo', $correotemp, PDO::PARAM_STR);
@@ -133,6 +136,9 @@ class RepositorioUsuario
                 $familia_proftemp = $usuario->getFamiliaProf();
                 $sexotemp = $usuario->getSexo();
 
+                $conexion = conexion::getConexion();
+
+
                 $sentencia = $conexion->prepare($sql);
                 $sentencia->bindParam(':codigo', $codigotemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':correo', $correotemp, PDO::PARAM_STR);
@@ -163,6 +169,8 @@ class RepositorioUsuario
 
 
                 $codigotemp = $usuario->GetCodigo();
+
+                $conexion = conexion::getConexion();
 
 
                 $sentencia = $conexion->prepare($sql);
