@@ -2,6 +2,7 @@
 include_once 'kernel.inc.php';
 include_once 'RepositorioUsuario.inc.php';
 include_once 'Redireccion.inc.php';
+include_once 'ControlSesion.inc.php';
 
 $conexion = new conexion();
 $conexion->conectarBD();
@@ -27,6 +28,7 @@ if ($usuarioCompleto == null) {
     if ($usuarioCompleto->getPassword() == $pwdForm) {
         echo "Sesión iniciada";
         $url = '../panel-usuario';
+        ControlSesion::IniciarSesion($usuarioCompleto->getCodigo, $usuarioCompleto->getNombreCompleto());
         Redireccion::redirigir($url);
     } else {
         //pass no correcta
