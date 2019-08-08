@@ -1,7 +1,7 @@
 <div class="container d-flex justify-content-center ">
 
     <form method="POST" action="app/comprobarRegistro.php">
-        <h1 class="display-4 mb-5 mt-3">myClass Registro</h1>
+        <h1 class="display-4 mb-5 mt-3"><a href="home">myClass</a> Registro</h1>
 
         <div class="form-row ">
             <div class="form-group col-md-6 ">
@@ -9,7 +9,7 @@
                 <input type="email" class="form-control" name="Email" required>
             </div>
             <div class="form-group col-md-6 ">
-                <label for="inputPassword4">Contraseña</label>
+                <label for="inputPassword4">Contraseña (Mínimo 8 caracteres)</label>
                 <input id="pwd1" type="password" onfocusout="comprobarPass(1)" class="form-control" name="Password" required>
             </div>
             <div class="form-group col-md-6 ">
@@ -73,7 +73,7 @@
         var pass1 = document.getElementById("pwd1").value;
         var pass2 = document.getElementById("pwd2").value;
         //se comparan y se comprueba si está alguna vacía
-        if (pass1 === pass2 && pass1.length != 0 && pass2.length != 0) {
+        if (pass1 === pass2 && pass1.length >=8 && pass2.length >=8) {
             //se muestra la alerta verde
             document.getElementById('danger').style.display = 'none';
 
