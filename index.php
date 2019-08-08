@@ -22,7 +22,6 @@ include_once 'app/conexion.inc.php';
 conexion::conectarBD();
 
 include_once 'app/kernel.inc.php';
-include_once 'app/ControlSesion.inc.php';
 
 /**
  * Indexar URL
