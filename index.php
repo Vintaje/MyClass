@@ -67,6 +67,10 @@ if ($uri_segments[0] == 'myclass') {
                 //$ruta_elegida = 'vistas/panel-usuario.php';
                 $titulo = 'MyClass | Panel de Control';
                 break;
+            case 'condiciones':
+                $ruta_elegida = 'vistas/condiciones.php';
+                $titulo = 'MyClass | Condiciones de uso';
+                break;
         }
     } else {
         $ruta_elegida = 'vistas/404.php';
