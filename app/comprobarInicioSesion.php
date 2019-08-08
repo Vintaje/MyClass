@@ -12,7 +12,7 @@ $pwdForm = $_POST['pwd'];
 
 $kernel = new kernel();
 
-//echo $kernel-> encrypt_decrypt("encrypt","prueba@gmail.com");
+//echo $kernel-> encrypt_decrypt("decrypt","dDB0aDliTnZuU1hCajU0Sk10Smtqdz09");
 
 $conexion = new conexion();
 $conexion->conectarBD();
@@ -25,7 +25,7 @@ if ($usuarioCompleto == null) {
     $emailBD = $usuarioCompleto->getCorreo();
     //echo $kernel-> encrypt_decrypt("decrypt",$emailBD);
 
-    if ($usuarioCompleto->getPassword() == $pwdForm) {
+    if ($usuarioCompleto->getPassword() ==  $kernel->encrypt_decrypt("encrypt", $pwdForm)) {
         echo "Sesión iniciada";
         $url = '../panel-usuario';
         ControlSesion::IniciarSesion($usuarioCompleto->getCodigo, $usuarioCompleto->getNombreCompleto());
