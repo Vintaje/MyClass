@@ -2,6 +2,16 @@
     a:hover {
         text-decoration: none !important;
     }
+    @media (max-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    .display-4 {
+        font-size: 1.75rem;
+        font-weight: 150;
+        line-height: 1;
+    }
+}
 </style>
 
 <div class="container d-flex justify-content-center ">
