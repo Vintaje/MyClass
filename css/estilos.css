@@ -103,11 +103,13 @@ html div{
   transition: 0.5ms all; 
 }
 
+/*Ajustar footer para todo el ancho de la pantalla */
 #footer{
-  background-color: #2c2f33;
-  color: snow;
+  background-color: #d7caf5;
+  color:black;
   width: 100% !important;
   padding: 0px !important;
   margin: 0px !important;
 }
+
 
