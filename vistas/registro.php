@@ -1,3 +1,9 @@
+<style>
+    a:hover {
+        text-decoration: none !important;
+    }
+</style>
+
 <div class="container d-flex justify-content-center ">
 
     <form method="POST" action="app/comprobarRegistro.php">
@@ -62,7 +68,7 @@
             </div>
         </div>
 
-        <button  id="botonSubmit" type="submit" class="btn btn-primary">Enviar</button>
+        <button id="botonSubmit" type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </div>
 <script type="text/javascript">
@@ -73,7 +79,7 @@
         var pass1 = document.getElementById("pwd1").value;
         var pass2 = document.getElementById("pwd2").value;
         //se comparan y se comprueba si está alguna vacía
-        if (pass1 === pass2 && pass1.length >=8 && pass2.length >=8) {
+        if (pass1 === pass2 && pass1.length >= 8 && pass2.length >= 8) {
             //se muestra la alerta verde
             document.getElementById('danger').style.display = 'none';
 
@@ -93,9 +99,9 @@
             document.getElementById('danger').style.display = 'block';
 
             //se oculta la alerta roja a los 3s
-           /*setTimeout(function() {
-                document.getElementById('danger').style.display = 'none';
-            }, 3000);*/
+            /*setTimeout(function() {
+                 document.getElementById('danger').style.display = 'none';
+             }, 3000);*/
             //se vacían los campos pass
             if (num == 2) {
                 document.getElementById('pwd1').value = '';
