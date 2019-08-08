@@ -1,6 +1,7 @@
 <?php
 include_once 'kernel.inc.php';
 include_once 'RepositorioUsuario.inc.php';
+include_once 'Redireccion.inc.php';
 
 $conexion = new conexion();
 $conexion->conectarBD();
@@ -25,6 +26,8 @@ if ($usuarioCompleto == null) {
 
     if ($usuarioCompleto->getPassword() == $pwdForm) {
         echo "Sesión iniciada";
+        $url = '../panel-usuario';
+        Redireccion::redirigir($url);
     } else {
         //pass no correcta
         echo "Usuario o contraseña incorrectos";
