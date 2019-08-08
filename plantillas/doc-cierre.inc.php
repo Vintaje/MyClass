@@ -2,14 +2,14 @@
 conexion::desconectarBD();
 ?>
 
-<div class="row">
+<div class="row" id="footer">
     <div class="container">
         <footer class="page-footer font-small stylish-color-dark pt-4">
             <div class="container text-center text-md-left">
 
                 <div class="row">
-
-                    <div class="col-md-12 mx-auto">
+                    
+                    <div class="col-md-12 mx-auto text-center">
 
                         <h5><i class="far fa-question-circle"></i> About us</h5>
                         <p class="desc">En myClass tenemos un objetivo claro: Ofrecer a todos los estudiantes, en cualquier nivel
