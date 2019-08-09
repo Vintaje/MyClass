@@ -69,11 +69,11 @@
             </div>
             <div class="form-group col-md-6 ">
                 <label for="inputState">Sexo</label>
-                <select name="sexo" class="form-control">
+                <select class="custom-select mr-sm-2" name="sexo" class="form-control" required>
                     <option disabled selected value>Sexo</option>
-                    <option>Hombre</option>
-                    <option>Mujer</option>
                     <option>Prefiero no contestar</option>
+                    <option>Mujer</option>
+                    <option>Hombre</option>
                 </select>
             </div>
         </div>
