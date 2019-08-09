@@ -2,16 +2,18 @@
     a:hover {
         text-decoration: none !important;
     }
+
     @media (max-width: 768px) {
-    .container {
-        max-width: 720px;
+        .container {
+            max-width: 720px;
+        }
+
+        .display-4 {
+            font-size: 1.75rem;
+            font-weight: 150;
+            line-height: 1;
+        }
     }
-    .display-4 {
-        font-size: 1.75rem;
-        font-weight: 150;
-        line-height: 1;
-    }
-}
 </style>
 
 <div class="container d-flex justify-content-center ">
@@ -19,20 +21,26 @@
     <form method="POST" action="app/comprobarRegistro.php">
         <h1 class="display-4 mb-5 mt-3"><a href="home">myClass</a> Registro</h1>
 
-        <div class="form-row ">
+        <div class="form-row">
             <div class="form-group col-md-6 ">
                 <label for="inputEmail4">Email</label>
                 <input type="email" class="form-control" name="Email" required>
             </div>
             <div class="form-group col-md-6 ">
                 <label for="inputPassword4">Contraseña (Mínimo 8 caracteres)</label>
-                <input id="pwd1" type="password" onfocusout="comprobarPass(1)" class="form-control" name="Password" required>
+                <input id="pwd1" type="password" onfocusout="comprobarPass(1)" class="check-seguridad form-control" name="Password" required>
+
             </div>
             <div class="form-group col-md-6 ">
                 <label for="inputPassword4">Repita la contraseña</label>
-                <input id="pwd2" type="password" onfocusout="comprobarPass(2)" class="form-control" name="PasswordRep" required>
+                <input id="pwd2" type="password" onfocusout="comprobarPass(2)" class="check-seguridad form-control" name="PasswordRep" required>
+            </div>
+            <div class="form-group col-md-6 text-center align-self-center ">
+                    <button class=" form-control col-md-6 btn btn-primary " type="button" onclick="mostrarContrasena()">Mostrar</button>
             </div>
         </div>
+
+
         <!-- 
             2 alertas ocultas, cuando pass2 pierde el foco se va a la función.
         -->
@@ -113,13 +121,51 @@
                  document.getElementById('danger').style.display = 'none';
              }, 3000);*/
             //se vacían los campos pass
-            if (num == 2) {
+            /*if (num == 2) {
                 document.getElementById('pwd1').value = '';
                 document.getElementById('pwd2').value = '';
-            }
+            }*/
 
         }
 
     }
 </script>
 
+<script>
+    function mostrarContrasena() {
+        var tipo = document.getElementById("pwd1");
+        var tipoRep = document.getElementById("pwd2");
+        if (tipo.type == "password" && tipoRep.type == "password") {
+            tipo.type = "text";
+            tipoRep.type = "text";
+        } else {
+            tipo.type = "password";
+            tipoRep.type = "password";
+        }
+    }
+</script>
+
+
+<script>
+    jQuery(function($) {
+
+        $(".check-seguridad").strength({
+
+            scoreLables: {
+                empty: 'Vacío',
+                invalid: 'Invalido',
+                weak: 'Débil',
+                good: 'Bueno',
+                strong: 'Fuerte'
+            },
+            scoreClasses: {
+                empty: '',
+                invalid: 'label-danger',
+                weak: 'label-warning',
+                good: 'label-info',
+                strong: 'label-success'
+            },
+
+        });
+    });
+</script>

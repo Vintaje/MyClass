@@ -39,9 +39,13 @@
 
     ?>
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/estilos.css" rel="stylesheet">
+	<script src="js/jquery_fortaleza.min.js"></script>
+	
+	<script src="js/password_strength.js"></script>
+	<script src="js/jquery-strength.js"></script>
 
+
+    
 
 </head>
 
