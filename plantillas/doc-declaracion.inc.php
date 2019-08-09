@@ -37,8 +37,8 @@
 
     ?>
 
+    <!-- Contraseñas -->
 	<script src="js/jquery_fortaleza.min.js"></script>
-	
 	<script src="js/password_strength.js"></script>
 	<script src="js/jquery-strength.js"></script>
 
