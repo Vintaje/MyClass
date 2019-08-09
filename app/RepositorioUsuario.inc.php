@@ -36,7 +36,7 @@ class RepositorioUsuario
                 $sentencia->bindParam(':familia_prof', $familia_proftemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':edad', $edadtemp, PDO::PARAM_INT);
                 $sentencia->bindParam(':dni', $dnitemp, PDO::PARAM_STR);
-                $sentencia->bindParam(':sexo', $sexotemp, PDO::PARAM_STR_CHAR);
+                $sentencia->bindParam(':sexo', $sexotemp, PDO::PARAM_STR);
 
                 $usuario_insertado = $sentencia->execute();
             } catch (PDOException $ex) {
@@ -146,7 +146,7 @@ class RepositorioUsuario
                 $sentencia->bindParam(':avatar', $avatartemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':nombre_full', $nombretemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':familia_prof', $familia_proftemp, PDO::PARAM_STR);
-                $sentencia->bindParam(':sexo', $sexotemp, PDO::PARAM_STR_CHAR);
+                $sentencia->bindParam(':sexo', $sexotemp, PDO::PARAM_STR);
 
                 $usuario_actualizado = $sentencia->execute();
             } catch (PDOException $ex) {
