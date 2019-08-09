@@ -90,7 +90,7 @@ class RepositorioUsuario
                 print 'ERROR' . $ex->getMessage();
             }
         }
-
+ 
         conexion::desconectarBD();
 
         return $usuario;
