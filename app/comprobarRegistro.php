@@ -9,7 +9,7 @@ $conexion = new conexion();
 $conexion->conectarBD();
 $kernel = new kernel();
 
-$avatar="www.myclass.es/img/avatardefault.jpg";
+$avatar=date('m/d/Y h:i:s a', time());;
 //se trae los datos del formulario por post.
 
 $emailForm = $kernel-> encrypt_decrypt("encrypt",$_POST['Email']);
@@ -32,7 +32,7 @@ echo $sexoForm;
 echo $checkForm;
 */
 
-$usuario= new Usuario($emailForm, $nombreForm,"null", $passFormRep, $sexoForm, $familiaForm, "null", $edadForm, "null", $avatar);
+$usuario= new Usuario($emailForm, $nombreForm,date('m/d/Y h:i:s a', time()), $passFormRep, $sexoForm, $familiaForm, "null", $edadForm, "null", $avatar);
 
 
 $usuario_insertado=RepositorioUsuario::setUsuario($conexion,$usuario);
