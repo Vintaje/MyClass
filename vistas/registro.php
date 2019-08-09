@@ -36,7 +36,7 @@
                 <input id="pwd2" type="password" onfocusout="comprobarPass(2)" class="check-seguridad form-control" name="PasswordRep" required>
             </div>
             <div class="form-group col-md-6 text-center align-self-center ">
-                    <button class=" form-control col-md-6 btn btn-primary " type="button" onclick="mostrarContrasena()">Mostrar</button>
+                    <button class=" form-control col-md-6 btn btn-primary mt-2" type="button" onclick="mostrarContrasena()">Mostrar</button>
             </div>
         </div>
 

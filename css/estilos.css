@@ -1,112 +1,144 @@
+html div {
+    background-color: var(--main-background);
+}
 
-html div{
-  background-color: var(--main-background);
+.row {
+    margin: auto 0px !important;
+}
+
+.feeds {
+    overflow: hidden !important;
+    overflow-y: scroll !important;
+    max-height: 600px !important;
+    padding: 10px;
+    /*border: 1px black solid !important;*/
+    background-color: var(--main-content) !important;
+}
+
+.card-body {
+    background-color: var(--main-content) !important;
+}
+
+#banner {
+    width: 90%;
+    height: 150px !important;
+    /*border: 1px black solid !important;*/
+}
+
+.main {
+    margin: auto 10px !important;
+    padding: 20px !important;
+}
+
+.login div {
+    background-color: var(--main-content) !important;
+}
+
+#inputTwitter {
+    position: relative !important;
+    left: 350px !important;
+}
+
+.rrss {
+    width: 50px;
+}
+
+.card-body .row {
+    background-color: var(--main-content) !important;
+}
+
+.card-body .row .col-md-2 {
+    background-color: var(--main-content) !important;
+}
+
+.card-body .row .col-md-10 {
+    background-color: var(--main-content) !important;
 }
 
 
-.row{
-  margin: auto 0px !important;
-}
-.feeds{
-  overflow: hidden !important;
-  overflow-y: scroll !important;
-  max-height: 600px !important;
-  padding: 10px;
-  /*border: 1px black solid !important;*/
-  background-color: var(--main-content) !important;
-}
-.card-body{
-  background-color: var(--main-content) !important;
-}
-
-#banner{
-  width: 90%;
-  height: 150px !important;
-  /*border: 1px black solid !important;*/
-}
-.main{
-  margin: auto 10px !important;
-  padding: 20px !important;
-  
-}
-.login div{
-  background-color: var(--main-content) !important;
-}
-
-
-
-#inputTwitter{
-  position: relative !important;
-  left: 350px !important; 
-}
-.rrss{
-  width: 50px;
-}
-
-.card-body .row{
-  background-color: var(--main-content) !important;
-}
-
-.card-body .row .col-md-2{
-  background-color: var(--main-content) !important;
-
-}
-.card-body .row .col-md-10{
-  background-color: var(--main-content) !important;
-
-}
-
-/*Hola*/ 
+/*Hola*/
 
 .fa {
-  padding: 10px;
-  font-size: 30px;
-  width: 45px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
+    padding: 10px;
+    font-size: 30px;
+    width: 45px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
 }
+
 .fa-facebook {
-  background: #3B5998;
-  color: white;
+    transition: 0.3s;
+    color: #3B5998;
+    background: white;
 }
 
 .fa-twitter {
-  background: #55ACEE;
-  color: white;
+    transition: 0.3s;
+    color: #55ACEE;
+    background: white;
 }
 
 .fa-linkedin {
-  background: #007bb5;
-  color: white;
+    transition: 0.3s;
+    color: #007bb5;
+    background: white;
 }
 
 .fa-youtube {
-  background: #bb0000;
-  color: white;
+    transition: 0.3s;
+    color: #bb0000;
+    background: white;
 }
 
 .fa-instagram {
-  background: #f46f30;
-  color: white;
+    transition: 0.3s;
+    color: #f46f30;
+    background: white;
 }
 
-.desc{
-  text-align: center; 
+.desc {
+    text-align: center;
 }
 
 
 /*Animación para los botones*/
 
+.fa-facebook:hover {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter:hover {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-linkedin:hover {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-youtube:hover {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram:hover {
+    background: #f46f30;
+    color: white;
+}
+
 
 /*Ajustar footer para todo el ancho de la pantalla */
-#footer{
-  background-color: white;
-  color: black;  
-  width: 100% !important;
-  padding: 0px !important;
-  margin: 0px !important;
+
+#footer {
+    background-color: white;
+    color: black;
+    width: 100% !important;
+    padding: 0px !important;
+    margin: 0px !important;
 }
 
 

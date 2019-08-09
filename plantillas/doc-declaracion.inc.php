@@ -23,9 +23,7 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/estilos.css" rel="stylesheet">
-
+    
     <!--Para iconos-->
     <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -44,8 +42,10 @@
 	<script src="js/password_strength.js"></script>
 	<script src="js/jquery-strength.js"></script>
 
-
     
+    
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
 
 </head>
 
