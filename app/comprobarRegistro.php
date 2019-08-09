@@ -38,7 +38,12 @@ $usuario= new Usuario($emailForm, $nombreForm,date('m/d/Y h:i:s a', time()), $pa
 $usuario_insertado=RepositorioUsuario::setUsuario($conexion,$usuario);
 
 if($usuario_insertado){
-      Redireccion::redirigir("../");
+      //Redireccion::redirigir("../");
+
+      
+header ("Location: ../Bienvenido");
+
+
 }else {
     echo "No te has podido registrar";
 }
