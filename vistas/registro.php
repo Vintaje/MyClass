@@ -51,7 +51,7 @@
             <input type="text" class="form-control" name="nombreCompleto" required>
         </div>
 
-        <div class="form-row align-items-center">
+        <div class="form-row align-items-center" >
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Familia Profesional</label>
                 <select class="custom-select mr-sm-2" name="familia" required>
@@ -133,6 +133,7 @@
 
 <script>
     function mostrarContrasena() {
+        
         var tipo = document.getElementById("pwd1");
         var tipoRep = document.getElementById("pwd2");
         if (tipo.type == "password" && tipoRep.type == "password") {
