@@ -41,17 +41,25 @@
                 Ya puedes iniciar sesión
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Perfecto</button>
+                <button type="button" onclick="volver()" class="btn btn-primary" data-dismiss="modal">Perfecto</button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
+
+    function volver(){
+        var URL = window.location.href.replace("Bienvenido","");
+        location.href = URL; 
+    }
+
     var URLactual = window.location.href;
-    if (URLactual.includes("Bienvenido")) {
+    if (URLactual.includes("/Bienvenido")) {
         $(document).ready(function() {
             $("#exampleModalCenter").modal("show");
         });
     }
+
+
 </script>
