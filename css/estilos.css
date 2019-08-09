@@ -100,10 +100,6 @@ html div{
 
 /*Animación para los botones*/
 
-#botones > li > a:hover{
-  box-shadow: 0px 0px 30px black;
-  transition: 0.5ms all; 
-}
 
 /*Ajustar footer para todo el ancho de la pantalla */
 #footer{
