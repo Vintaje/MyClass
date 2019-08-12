@@ -1,0 +1,42 @@
+FRIENDS LIST DATABASE STRUCTURE — PHP MYSQL
+A2Z Videos
+A2Z Videos
+Follow
+Aug 28, 2018 · 2 min read
+Check the blog . here . also
+HI friend’s
+In this tutorial i just want to explain you regarding the friends list database structure . So let’s start
+suppose there are the two table one is ” User ” and Other is the ” Friends ” and the Structure something like this
+User Table
+CREATE TABLE `User` (
+`UserId` int(11) NOT NULL,
+`Username` varchar(255) NOT NULL,
+`Email` varchar(512) NOT NULL,
+`Password` text NOT NULL,
+`Image` text NOT NULL,
+)ENGINE=MyISAM DEFAULT CHARSET=latin1;
+And Friends Table
+CREATE TABLE `Friends` (
+`FriendsId` int(11) NOT NULL,
+`UserOne` varchar(255) NOT NULL,
+`UserTwo` varchar(512) NOT NULL,
+`Status` int(11) NOT NULL,
+)ENGINE=MyISAM DEFAULT CHARSET=latin1;
+Here i just divide this tutorial into 4 steps that is below
+1 ) : Send friend request
+2 ) : Check the friend request
+3 ) : Update the request status
+4 ) : Get the Friends List
+Step 1 : — Send friend request
+INSERT INTO `Friends`(`FriendsId`, `UserOne`, `UserTwo`, `Status`) VALUES (null,’21',’23',’0');
+Here UserOne is the user that currently login and the user that want to send the request to other user , and UserTwo are the other user whom you are sending the friends request . and the UserTwo are the other user that receive your friends request .
+Step 2 : — Check the friend request
+SELECT * FROM `Friends` AS F , `User` AS U WHERE CASE WHEN F.UserOne = 23 THEN F.UserTwo = U.UserId WHEN F.UserTwo = 23 THEN F.UserOne = U.UserId END AND F.Status = 0 AND GROUP BY U.UserId;
+3 ) : Update the request status
+UPDATE `Friends` SET `Status`=1 WHERE FriendsId=?
+Here you need to update the only Friends table with status value , you can also delete or just update t
+he status as per your requirement , in this example i just follow the status like this , if Status = 0 means requested , if Status = 1 means approve , if Status = 2 means rejected , you can change it as per your requirement . In the above query just use the table id instead of ?
+4 ) : Get the Friends List
+SELECT * FROM `Friends` AS F , `User` AS U WHERE CASE WHEN F.UserOne = 23 THEN F.UserTwo = U.UserId WHEN
+F.UserTwo = 23 THEN F.UserOne = U.UserId END AND F.Status = 1 AND GROUP BY U.UserId;
+the above query will return all the friend list .
