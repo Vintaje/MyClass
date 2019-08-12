@@ -64,7 +64,7 @@ if ($uri_segments[0] == 'myclass') {
                 $titulo = 'MyClass | Registro';
                 break;
             case 'panel-usuario':
-                //$ruta_elegida = 'vistas/panel-usuario.php';
+                $ruta_elegida = 'vistas/principal.php';
                 $titulo = 'MyClass | Panel de Control';
                 break;
             case 'condiciones':
