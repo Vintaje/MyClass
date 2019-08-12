@@ -12,10 +12,10 @@
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" name="pwd" placeholder="Introduce tu password" required>
+                    <input type="password" class="form-control" name="pwd" placeholder="Introduce tu contraseña" required>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-success btn-lg">Entrar</button>
                     <div class="a_registro"><a id="a_registro" href="registro">Regístrate ahora</a></div>
                 </div>
 
