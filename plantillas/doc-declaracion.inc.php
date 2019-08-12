@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="keywords" content="MyClass, Classroom, Class, FTPClass">
-    <meta name="description" content="Web MyClass de gestion de grupos, alumnos y archivos compartidos">
+    <meta name="keywords" content="MyClass, Classroom, Class, FTPClass,myclass,myClass,classroom,aula,virtual,aula virtual, portal">
+    <meta name="description" content="Web myClass de gestión de grupos, alumnos y archivos compartidos, En myclass tenemos un objetivo claro: Ofrecer a todos los estudiantes, en cualquier nivel
+                            de estudios, una herramienta para compartir sus conocimientos.
+                            Pero no solo eso. En MyClass, nos preocupamos de tu presente (ofreciéndote noticias en función de tu
+                            familia profesional) y de tu futuro (conectándote con una red de empresas que buscan tu talento).
+                            Así que, ¿qué esperas? ¡Entra en la clase del futuro! ">
     <meta name="image" content="">
 
     <meta property="og:url" content="">
