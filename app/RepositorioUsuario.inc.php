@@ -41,8 +41,8 @@ class RepositorioUsuario
                 $usuario_insertado = $sentencia->execute();
             } catch (PDOException $ex) {
                 if($ex->getCode()==23000){
-                    echo"Este correo ya está registrado.";
                     $_SESSION['modal']  = algo;
+                    Redireccion::redirigir("../ErrorRegistro");
                 }
             }
         }

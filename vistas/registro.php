@@ -89,6 +89,46 @@
         <button id="botonSubmit" type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </div>
+
+<!-- modal-->
+<div data-toggle="modal" class="modal fade" id="ErrorRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"> Error. Este correo ya existe.
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               Por favor, introduce un correo distinto.
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="volver()" class="btn btn-primary" data-dismiss="modal">Perfecto</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    function volver(){
+        var URL = window.location.href.replace("ErrorRegistro","registro");
+        location.href = URL; 
+    }
+
+    var URLactual = window.location.href;
+    if (URLactual.includes("/ErrorRegistro")) {
+        $(document).ready(function() {
+            $("#ErrorRegistro").modal("show");
+        });
+    }
+
+
+</script>
+
 <script type="text/javascript">
     var num;
 
