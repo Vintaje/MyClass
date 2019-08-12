@@ -64,8 +64,8 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6 ">
-                <label for="inputCity">Edad</label>
-                <input type="number" class="form-control" name="edad" required>
+                <label for="inputCity">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" name="edad" required>
             </div>
             <div class="form-group col-md-6 ">
                 <label for="inputState">Sexo</label>
