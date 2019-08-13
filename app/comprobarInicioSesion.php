@@ -38,5 +38,7 @@ if ($usuarioCompleto == null) {
     } else {
         //pass no correcta
         echo "Usuario o contraseña incorrectos";
+        $url = '../home'; 
+        Redireccion::redirigir($url); 
     }
 }
