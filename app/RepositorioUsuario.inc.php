@@ -367,4 +367,42 @@ class RepositorioUsuario
             }
         }
     }
+
+    public static function GenerarCodigoUsuario($conexion){
+        $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $longitud= strlen($caracteres);
+        $solucion='';
+
+        //bucle que generará un codigo y lo comparará con la base de datos
+        do {
+
+            //bucle que genera un codigo de 5 caracteres segun el array dado
+            for ($i=0; $i <= 5 ; $i++) { 
+                $numero= rand(0,$longitud);
+                $solucion = $solucion . $caracteres[$numero];
+            }
+
+            //metodo para realizar la consulta y ver si se encuentra el codigo en la base de datos
+            if (isset($conexion)) {
+
+                try {
+                    $sql = "SELECT codigo FROM usuario WHERE codigo= $solucion";
+                    $sentencia = $conexion->prepare($sql);
+                    $sentencia->bindParam(':codigo', $solucion, PDO::PARAM_STR);
+                    $sentencia->execute();
+    
+                    $resultado = $sentencia->fetch();
+    
+                    if (!empty($resultado)) {
+                        $salida= true;
+                    }
+                } catch (Exception $ex) {
+                    print 'ERROR' . $ex->getMessage();
+                }
+            }
+        } while ($salida);
+
+        return $solucion;
+    }
+
 }
