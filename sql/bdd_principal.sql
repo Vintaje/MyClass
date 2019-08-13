@@ -165,6 +165,14 @@ ALTER TABLE `usuario`
   ADD UNIQUE KEY `AVATAR` (`AVATAR`),
   ADD KEY `user_prof_fk` (`FAMILIA_PROF`);
 
+
+CREATE TABLE `amigos` (
+  `ID` int(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL AUTO_INCREMENT,
+  `USER1` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `USER2` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ESTADO` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -215,3 +223,19 @@ ALTER TABLE `usernotas`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+ALTER TABLE `AMIGOS`
+  ADD KEY `existe_usuarios_fk` (`USER1`),
+  ADD KEY `existe_usuario2_fk` (`USER2`);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `AMIGOS`
+--
+ALTER TABLE `AMIGOS`
+  ADD CONSTRAINT `existe_usuario2_fk` FOREIGN KEY (`USER2`) REFERENCES `usuario` (`CODIGO`),
+  ADD CONSTRAINT `existe_usuarios_fk` FOREIGN KEY (`USER1`) REFERENCES `usuario` (`CODIGO`);
