@@ -97,6 +97,9 @@ class RepositorioUsuario
         return $usuario;
     }
 
+    /**
+     * Buscar usuario por Codigo
+     */
     public static function getUsuarioCod($conexion, $codigo_user)
     {
         $codigo = strval($codigo_user);
@@ -284,17 +287,83 @@ class RepositorioUsuario
                 
                 $sentencia = $conexion->prepare($sql);
                 $sentencia->bindParam(':user1', $user1, PDO::PARAM_STR, 255);
-                $sentencia->bindParam(':user1', $user1, PDO::PARAM_STR, 255);
                 $sentencia->bindParam(':user2', $codigo, PDO::PARAM_STR, 255);
                 $sentencia->execute();
 
                 if($sentencia){
-                    echo 'Aceptado';
+
+                    $sql2 = "INSERT INTO amigos(user1, user2, estado) values(:user1, :user2, 0)";
+
+                    $sentencia2 = $conexion->prepare($sql2);
+    
+                    $sentencia2->bindParam(':user1', $codigo, PDO::PARAM_STR, 255);
+                    $sentencia2->bindParam(':user2', $_SESSION['codigo_user'], PDO::PARAM_STR, 255);
+                    $sentencia2->execute();
+                    if($sentencia2){
+                        echo 'Agregado correctamente';
+                    }
                 }
+
+                
             }catch(Exception $ex){
                 echo 'Error inesperado, por favor contacte con el administrador';
             }
         }
 
+    }
+
+    public static function solicitudes($conexion){
+        if(isset($conexion)){
+            try{
+                $sql = "SELECT * FROM amigos WHERE user1 = :user1 AND estado = 0";
+
+                $sentencia = $conexion->prepare($sql);
+                $sentencia->bindParam(':user1', $_SESSION['cod_user'], PDO::PARAM_STR, 255);
+
+                $sentencia->execute();
+
+                $resultado = $sentencia->fetch();
+
+
+                if (!empty($resultado)) {
+
+                    $solicitudes = new Solicitudes(
+                        $resultado['id'],
+                        $resultado['user1'],
+                        RepositorioUsuario::getUsuarioCod($conexion, $resultado[user2]),
+                        $resultado['estado']
+                    );
+                }
+            }catch(Exception $ex){
+                echo 'Error interno, por favor contacte con un administrador';
+            }
+        }
+    }
+
+    public static function getAmigos($conexion){
+        if(isset($conexion)){
+            try{
+                $sql = "SELECT * FROM amigos WHERE user1 = :user1 AND estado = 1";
+
+                $sentencia = $conexion->prepare($sql);
+                $sentencia->bindParam(':user1', $_SESSION['cod_user'], PDO::PARAM_STR, 255);
+
+                $sentencia->execute();
+
+                $resultado = $sentencia->fetch();
+
+
+                if (!empty($resultado)) {
+
+                    $solicitudes = new Solicitudes(
+                        $resultado['id'],
+                        $resultado['user1'],
+                        RepositorioUsuario::getUsuarioCod($conexion, $resultado[user2]),
+                        $resultado['estado']
+                    );
+                }
+            }catch(Exception $ex){
+
+            }
     }
 }
