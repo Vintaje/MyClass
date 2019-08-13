@@ -279,42 +279,41 @@ class RepositorioUsuario
         }
     }
 
-    public static function aceptarAmigo($conexion, $codigo){
-        if(isset($conexion)){
-            try{
+    public static function aceptarAmigo($conexion, $codigo)
+    {
+        if (isset($conexion)) {
+            try {
                 $user1 = $_SESSION['codigo_user'];
                 $sql = "UPDATE amigos SET estado = 1 WHERE user1 = :user1 AND user2 = :user2";
-                
+
                 $sentencia = $conexion->prepare($sql);
                 $sentencia->bindParam(':user1', $user1, PDO::PARAM_STR, 255);
                 $sentencia->bindParam(':user2', $codigo, PDO::PARAM_STR, 255);
                 $sentencia->execute();
 
-                if($sentencia){
+                if ($sentencia) {
 
                     $sql2 = "INSERT INTO amigos(user1, user2, estado) values(:user1, :user2, 0)";
 
                     $sentencia2 = $conexion->prepare($sql2);
-    
+
                     $sentencia2->bindParam(':user1', $codigo, PDO::PARAM_STR, 255);
                     $sentencia2->bindParam(':user2', $_SESSION['codigo_user'], PDO::PARAM_STR, 255);
                     $sentencia2->execute();
-                    if($sentencia2){
+                    if ($sentencia2) {
                         echo 'Agregado correctamente';
                     }
                 }
-
-                
-            }catch(Exception $ex){
+            } catch (Exception $ex) {
                 echo 'Error inesperado, por favor contacte con el administrador';
             }
         }
-
     }
 
-    public static function solicitudes($conexion){
-        if(isset($conexion)){
-            try{
+    public static function solicitudes($conexion)
+    {
+        if (isset($conexion)) {
+            try {
                 $sql = "SELECT * FROM amigos WHERE user1 = :user1 AND estado = 0";
 
                 $sentencia = $conexion->prepare($sql);
@@ -334,15 +333,16 @@ class RepositorioUsuario
                         $resultado['estado']
                     );
                 }
-            }catch(Exception $ex){
+            } catch (Exception $ex) {
                 echo 'Error interno, por favor contacte con un administrador';
             }
         }
     }
 
-    public static function getAmigos($conexion){
-        if(isset($conexion)){
-            try{
+    public static function getAmigos($conexion)
+    {
+        if (isset($conexion)) {
+            try {
                 $sql = "SELECT * FROM amigos WHERE user1 = :user1 AND estado = 1";
 
                 $sentencia = $conexion->prepare($sql);
@@ -362,8 +362,9 @@ class RepositorioUsuario
                         $resultado['estado']
                     );
                 }
-            }catch(Exception $ex){
-
+            } catch (Exception $ex) {
+                echo 'Error interno, por favor contacte con un administrador';
             }
+        }
     }
 }
