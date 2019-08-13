@@ -25,6 +25,8 @@ $usuarioCompleto = RepositorioUsuario::getUsuario($conexion, $kernel->encrypt_de
 if ($usuarioCompleto == null) {
     //correo no encontrado
     echo "Usuario o contraseña incorrectos";
+    $url = '../'; 
+    Redireccion::redirigir($url); 
 } else {
     //$emailBD = $usuarioCompleto->getCorreo();
     //echo $kernel-> encrypt_decrypt("decrypt",$emailBD);
