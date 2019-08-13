@@ -40,8 +40,9 @@
                 <li class="list-group-item"><i class="fas fa-users"></i> 12</li>
             </ul>
             <div class="card-body">
-                <a href="#" class="card-link"><i class="far fa-envelope"></i> Mis mensajes</a> <br />
-                <a href="#" class="card-link"> <i class="fas fa-sliders-h"></i> Configuración</a>
+                <a href="#" class="card-link"><i class="far fa-envelope"></i> Mis mensajes</a><br/>
+                <a href="#" class="card-link"><i class="far fa-bell"></i> Notificaciones</a><br/>
+                <a href="#" class="card-link"><i class="fas fa-sliders-h"></i> Configuración</a>
             </div>
         </div>
     </div>
