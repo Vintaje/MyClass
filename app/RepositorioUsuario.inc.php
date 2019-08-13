@@ -388,7 +388,7 @@ class RepositorioUsuario
                 try {
                     $sql = "SELECT codigo FROM usuario WHERE codigo= $solucion";
                     $sentencia = $conexion->prepare($sql);
-                    $sentencia->bindParam(':codigo', $solucion, PDO::PARAM_STR);
+                    $sentencia->bindParam(':solucion', $solucion, PDO::PARAM_STR);
                     $sentencia->execute();
     
                     $resultado = $sentencia->fetch();
