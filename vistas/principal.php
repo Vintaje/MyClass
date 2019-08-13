@@ -3,6 +3,10 @@
     #menu {
         margin-bottom: 20px;
     }
+
+    #segunda {
+        margin-left: 0px;
+    }
 </style>
 <div class="container">
 
@@ -10,13 +14,11 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"> <a class="nav-link" href="#"> Mi perfil <span class="sr-only">(current)</span></a> </li>
+                <li class="nav-item active"> <a class="nav-link" href="#"> Inicio <span class="sr-only">(current)</span></a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#">Agregar amigo</a> </li>
                 <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Noticias
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="#">General</a> <a class="dropdown-item" href="#">Mi familia profesional</a>
-                        <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Animación
-                            here</a>
                     </div>
                 </li>
             </ul>
@@ -27,108 +29,160 @@
     </nav>
 </div>
 
-<!--Parte del perfil del usuario-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <!--Parte del perfil del usuario-->
+            <div class="row">
+                <div class="col-md-12">
 
-<div class="row">
-    <div class="container">
-        <div class="card" style="width: 18rem;" id="perfil">
-            <img src="https://i0.wp.com/geekazos.com/wp-content/uploads/2015/02/fb2.jpg?fit=1280%2C720" class="card-img-top" alt="avatar">
-            <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-user"></i> Mi perfil</h5>
+                    <div class="card" style="width: 18rem;" id="perfil">
+                        <img src="https://i0.wp.com/geekazos.com/wp-content/uploads/2015/02/fb2.jpg?fit=1280%2C720" class="card-img-top" alt="avatar">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-user"></i> Mi perfil</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="fas fa-users"></i> 12</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link"><i class="far fa-envelope"></i> Mis mensajes</a><br />
+                            <a href="#" class="card-link"><i class="far fa-bell"></i> Notificaciones</a><br />
+                            <a href="#" class="card-link"><i class="fas fa-sliders-h"></i> Configuración</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i class="fas fa-users"></i> 12</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link"><i class="far fa-envelope"></i> Mis mensajes</a><br/>
-                <a href="#" class="card-link"><i class="far fa-bell"></i> Notificaciones</a><br/>
-                <a href="#" class="card-link"><i class="fas fa-sliders-h"></i> Configuración</a>
+
+            <!-- Calendario -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container">
+                        <div id="cal">
+                            <div class="header">
+                                <span class="left button" id="prev"> &lang; </span>
+                                <span class="left hook"></span>
+                                <span class="month-year" id="label"> June 20&0 </span>
+                                <span class="right hook"></span>
+                                <span class="right button" id="next"> &rang; </span>
+                            </div>
+                            <table id="days">
+                                <td>sun</td>
+                                <td>mon</td>
+                                <td>tue</td>
+                                <td>wed</td>
+                                <td>thu</td>
+                                <td>fri</td>
+                                <td>sat</td>
+
+                            </table>
+                            <div id="cal-frame">
+                                <table class="curr">
+                                    <tbody>
+                                        <tr>
+                                            <td class="nil"></td>
+                                            <td class="nil"></td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>7</td>
+                                            <td>8</td>
+                                            <td>9</td>
+                                            <td>10</td>
+                                            <td class="today">11</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>14</td>
+                                            <td>15</td>
+                                            <td>16</td>
+                                            <td>17</td>
+                                            <td>18</td>
+                                            <td>19</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20</td>
+                                            <td>21</td>
+                                            <td>22</td>
+                                            <td>23</td>
+                                            <td>24</td>
+                                            <td>25</td>
+                                            <td>26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>27</td>
+                                            <td>28</td>
+                                            <td>29</td>
+                                            <td>30</td>
+                                            <td class="nil"></td>
+                                            <td class="nil"></td>
+                                            <td class="nil"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-</div>
 
-<!-- Calendario -->
+        <!-- Parte central de la página -->
+        <div class="col-md-8">
 
-<div class="row">
-    <div class="container">
-        <div id="cal">
-            <div class="header">
-                <span class="left button" id="prev"> &lang; </span>
-                <span class="left hook"></span>
-                <span class="month-year" id="label"> June 20&0 </span>
-                <span class="right hook"></span>
-                <span class="right button" id="next"> &rang; </span>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <h1 class="display-4">Inicio</h1>
+                            <p class="lead">Bienvenid@ al panel principal de myClass</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <table id="days">
-                <td>sun</td>
-                <td>mon</td>
-                <td>tue</td>
-                <td>wed</td>
-                <td>thu</td>
-                <td>fri</td>
-                <td>sat</td>
 
-            </table>
-            <div id="cal-frame">
-                <table class="curr">
-                    <tbody>
-                        <tr>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>10</td>
-                            <td class="today">11</td>
-                            <td>12</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>14</td>
-                            <td>15</td>
-                            <td>16</td>
-                            <td>17</td>
-                            <td>18</td>
-                            <td>19</td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>21</td>
-                            <td>22</td>
-                            <td>23</td>
-                            <td>24</td>
-                            <td>25</td>
-                            <td>26</td>
-                        </tr>
-                        <tr>
-                            <td>27</td>
-                            <td>28</td>
-                            <td>29</td>
-                            <td>30</td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <img src="https://www.ealde.es/wp-content/uploads/2017/03/brainstorming.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Mis clases</h5>
+                            <p class="card-text">En este apartado podrás ver las clases a las que perteneces</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <img src="https://www.ealde.es/wp-content/uploads/2017/03/comunicacion-interna.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Mis grupos</h5>
+                            <p class="card-text">En este apartado podrás ver los grupos a los que perteneces</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+
     </div>
 </div>
 
 <!--JavaScript para el calendario -->
 <script>
-    var cal = CALENDAR(); 
-    cal.init(); 
+    var cal = CALENDAR();
+    cal.init();
 </script>
 <script>
     var CALENDAR = function() {
