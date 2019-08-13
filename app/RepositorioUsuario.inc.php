@@ -40,7 +40,7 @@ class RepositorioUsuario
 
                 $usuario_insertado = $sentencia->execute();
             } catch (PDOException $ex) {
-                if($ex->getCode()==23000){
+                if ($ex->getCode() == 23000) {
                     $_SESSION['modal']  = algo;
                     Redireccion::redirigir("../ErrorRegistro");
                 }
@@ -52,9 +52,9 @@ class RepositorioUsuario
 
     //codigo cambiado por correo.
 
-    public static function getUsuario($conexion,$correo_user)
+    public static function getUsuario($conexion, $correo_user)
     {
-        $correo=strval($correo_user);
+        $correo = strval($correo_user);
         $usuario = null;
 
         $conexion = conexion::getConexion();
@@ -66,14 +66,14 @@ class RepositorioUsuario
                 $sentencia = $conexion->prepare($sql);
 
                 $sentencia->bindParam(':correo', $correo, PDO::PARAM_STR, 255);
-                
+
                 $sentencia->execute();
 
                 $resultado = $sentencia->fetch();
 
 
                 if (!empty($resultado)) {
-                    
+
                     $usuario = new Usuario(
                         $resultado['CORREO'],
                         $resultado['NOMBRE_FULL'],
@@ -91,7 +91,52 @@ class RepositorioUsuario
                 print 'ERROR' . $ex->getMessage();
             }
         }
- 
+
+        conexion::desconectarBD();
+
+        return $usuario;
+    }
+
+    public static function getUsuarioCod($conexion, $codigo_user)
+    {
+        $codigo = strval($codigo_user);
+        $usuario = null;
+
+        $conexion = conexion::getConexion();
+
+        if (isset($conexion)) {
+            try {
+                $sql = "select CODIGO,CORREO,PASSWD,AVATAR,NOMBRE_FULL,FAMILIA_PROF,FECHA_REG,EDAD,DNI,SEXO from usuario where codigo = :codigo";
+
+                $sentencia = $conexion->prepare($sql);
+
+                $sentencia->bindParam(':codigo', $codigo, PDO::PARAM_STR, 255);
+
+                $sentencia->execute();
+
+                $resultado = $sentencia->fetch();
+
+
+                if (!empty($resultado)) {
+
+                    $usuario = new Usuario(
+                        $resultado['CORREO'],
+                        $resultado['NOMBRE_FULL'],
+                        $resultado['CODIGO'],
+                        $resultado['PASSWD'],
+                        $resultado['SEXO'],
+                        $resultado['FAMILIA_PROF'],
+                        $resultado['FECHA_REG'],
+                        $resultado['EDAD'],
+                        $resultado['DNI'],
+                        $resultado['AVATAR']
+                    );
+                }
+            } catch (PDOException $ex) {
+                print 'ERROR' . $ex->getMessage();
+            }
+        }
+
         conexion::desconectarBD();
 
         return $usuario;
@@ -187,5 +232,69 @@ class RepositorioUsuario
         }
 
         return $usuario_borrado;
+    }
+
+
+    public static function agregarAmigo($conexion, $codigo)
+    {
+
+        if (isset($conexion)) {
+            try {
+
+                $sql = "INSERT INTO amigos(user1, user2, estado) values(:user1, :user2, 0)";
+
+                $sentencia = $conexion->prepare($sql);
+
+                $sentencia->bindParam(':user1', $_SESSION['codigo_user'], PDO::PARAM_STR, 255);
+                $sentencia->bindParam(':user2', $codigo, PDO::PARAM_STR, 255);
+                $sentencia->execute();
+            } catch (Exception $ex) {
+                echo 'El usuario no existe';
+            }
+        }
+    }
+
+    public static function rechazarAmigo($conexion, $codigo)
+    {
+        if (isset($conexion)) {
+
+            try {
+                $user1 = $_SESSION['codigo_user'];
+                $sql = "DELETE FROM amigos WHERE USER1 = :user1 AND USER2 = :user2";
+
+                $sentencia = $conexion->prepare($sql);
+                $sentencia->bindParam(':user1', $user1, PDO::PARAM_STR, 255);
+                $sentencia->bindParam(':user2', $codigo, PDO::PARAM_STR, 255);
+                $sentencia->execute();
+
+                if ($sentencia) {
+                    echo 'borrado';
+                }
+            } catch (Exception $ex) {
+                echo 'Error inesperado, por favor contacte con el administrador';
+            }
+        }
+    }
+
+    public static function aceptarAmigo($conexion, $codigo){
+        if(isset($conexion)){
+            try{
+                $user1 = $_SESSION['codigo_user'];
+                $sql = "UPDATE amigos SET estado = 1 WHERE user1 = :user1 AND user2 = :user2";
+                
+                $sentencia = $conexion->prepare($sql);
+                $sentencia->bindParam(':user1', $user1, PDO::PARAM_STR, 255);
+                $sentencia->bindParam(':user1', $user1, PDO::PARAM_STR, 255);
+                $sentencia->bindParam(':user2', $codigo, PDO::PARAM_STR, 255);
+                $sentencia->execute();
+
+                if($sentencia){
+                    echo 'Aceptado';
+                }
+            }catch(Exception $ex){
+                echo 'Error inesperado, por favor contacte con el administrador';
+            }
+        }
+
     }
 }
