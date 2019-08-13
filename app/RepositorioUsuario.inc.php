@@ -394,7 +394,7 @@ class RepositorioUsuario
                     $resultado = $sentencia->fetch();
     
                     if (!empty($resultado)) {
-                        $salida= false;
+                        $salida= true;
                     }
                 } catch (\PDOException $ex) {
                     print 'ERROR' . $ex->getMessage();
