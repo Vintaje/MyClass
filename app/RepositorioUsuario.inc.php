@@ -396,7 +396,7 @@ class RepositorioUsuario
                     if (!empty($resultado)) {
                         $salida= true;
                     }
-                } catch (\PDOException $ex) {
+                } catch (Exception $ex) {
                     print 'ERROR' . $ex->getMessage();
                 }
             }
