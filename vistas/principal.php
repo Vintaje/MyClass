@@ -32,7 +32,7 @@
 <div class="row">
     <div class="container">
         <div class="card" style="width: 18rem;" id="perfil">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="https://i0.wp.com/geekazos.com/wp-content/uploads/2015/02/fb2.jpg?fit=1280%2C720" class="card-img-top" alt="avatar">
             <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-user"></i> Mi perfil</h5>
             </div>
