@@ -68,13 +68,13 @@
                                 <span class="right button" id="next"> &rang; </span>
                             </div>
                             <table id="days">
-                                <td>sun</td>
-                                <td>mon</td>
-                                <td>tue</td>
-                                <td>wed</td>
-                                <td>thu</td>
-                                <td>fri</td>
-                                <td>sat</td>
+                                <td>DOM</td>
+                                <td>LUN</td>
+                                <td>MAR</td>
+                                <td>MIE</td>
+                                <td>JUE</td>
+                                <td>VIE</td>
+                                <td>SAB</td>
 
                             </table>
                             <div id="cal-frame">
