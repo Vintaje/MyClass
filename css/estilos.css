@@ -147,7 +147,7 @@ html div {
     margin-bottom: 30px; 
 }
 /* CSS para el calendario */
-
+@media screen and (min-width: 768px){
 #cal { 
     -moz-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
     -webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
@@ -287,4 +287,13 @@ html div {
 } 
 #cal #cal-frame table.temp { 
     position:absolute; 
+}
+}
+@media screen and (max-width: 767px){
+    #cal{
+        display: none;
+    }
+    #inicio{
+        display: none;
+    }
 }
