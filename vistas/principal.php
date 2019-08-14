@@ -14,10 +14,18 @@
         }
     }
 </style>
+
+
 <div class="container p0">
 
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-light" id="menu" style="background-color: #e3f2fd;"> <a class="navbar-brand" href="#">myClass</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+=======
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menu"> <a class="navbar-brand" href="#">myClass</a>
+        <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">     <div class="animated-icon1"><span></span><span></span><span></span></div>
+</button>
+>>>>>>> c43bd68ae57a6c7ae63cb80e9c2c66c911e41dce
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"> <a class="nav-link" href="#"> Inicio <span class="sr-only">(current)</span></a> </li>
@@ -62,7 +70,7 @@
 
             <!-- Calendario -->
 
-            <div class="row">
+            <div class="row pb-4">
                 <div class="col-md-12">
                     <div class="container p0">
                         <div id="cal" style="margin: auto !important">
@@ -147,6 +155,18 @@
 <!--JavaScript para el calendario -->
 
 <script>
+
+$(document).ready(function () {
+
+$('.first-button').on('click', function () {
+
+  $('.animated-icon1').toggleClass('open');
+});
+
+});
+
+
+
     var CALENDAR = function() {
         var wrap, label,
             months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
@@ -253,12 +273,7 @@
             }
 
             if (calendar[5]) {
-                for (i = 0; i < calendar[5].length; i++) {
-                    if (calendar[5][i] !== "") {
-                        calendar[4][i] = "<span>" + calendar[4][i] + "</span><span>" + calendar[5][i] + "</span>";
-                    }
-                }
-                calendar = calendar.slice(0, 5);
+                calendar = calendar.slice(0, 6);
             }
 
             for (i = 0; i < calendar.length; i++) {
