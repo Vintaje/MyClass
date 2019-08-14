@@ -253,12 +253,7 @@
             }
 
             if (calendar[5]) {
-                for (i = 0; i < calendar[5].length; i++) {
-                    if (calendar[5][i] !== "") {
-                        calendar[4][i] = "<span>" + calendar[4][i] + "</span><span>" + calendar[5][i] + "</span>";
-                    }
-                }
-                calendar = calendar.slice(0, 5);
+                calendar = calendar.slice(0, 6);
             }
 
             for (i = 0; i < calendar.length; i++) {
