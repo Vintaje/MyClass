@@ -14,10 +14,13 @@
         }
     }
 </style>
+
+
 <div class="container p0">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menu"> <a class="navbar-brand" href="#">myClass</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">     <div class="animated-icon1"><span></span><span></span><span></span></div>
+</button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"> <a class="nav-link" href="#"> Inicio <span class="sr-only">(current)</span></a> </li>
@@ -62,7 +65,7 @@
 
             <!-- Calendario -->
 
-            <div class="row">
+            <div class="row pb-4">
                 <div class="col-md-12">
                     <div class="container p0">
                         <div id="cal" style="margin: auto !important">
@@ -147,6 +150,25 @@
 <!--JavaScript para el calendario -->
 
 <script>
+
+$(document).ready(function () {
+
+$('.first-button').on('click', function () {
+
+  $('.animated-icon1').toggleClass('open');
+});
+$('.second-button').on('click', function () {
+
+  $('.animated-icon2').toggleClass('open');
+});
+$('.third-button').on('click', function () {
+
+  $('.animated-icon3').toggleClass('open');
+});
+});
+
+
+
     var CALENDAR = function() {
         var wrap, label,
             months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
