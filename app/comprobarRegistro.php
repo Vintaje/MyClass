@@ -32,7 +32,14 @@ echo $sexoForm;
 echo $checkForm;
 */
 
-$usuario= new Usuario($emailForm, $nombreForm,date('m/d/Y h:i:s a', time()), $passFormRep, $sexoForm, $familiaForm, "null", $edadForm, "null", $avatar);
+
+    
+    $conexion = conexion::getConexion();
+    $aleatorio= RepositorioUsuario::GenerarCodigoUsuario($conexion); 
+
+
+
+$usuario= new Usuario($emailForm, $nombreForm,$aleatorio, $passFormRep, $sexoForm, $familiaForm, "null", $edadForm, "null", $avatar);
 
 
 $usuario_insertado=RepositorioUsuario::setUsuario($conexion,$usuario);

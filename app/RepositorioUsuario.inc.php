@@ -24,7 +24,6 @@ class RepositorioUsuario
                 $dnitemp = $usuario->getDni();
                 $sexotemp = $usuario->getSexo();
 
-                $conexion = conexion::getConexion();
 
 
                 $sentencia = $conexion->prepare($sql);
