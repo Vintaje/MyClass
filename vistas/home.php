@@ -63,3 +63,20 @@
 
 
 </script>
+
+
+
+
+
+<!--PRUEBAS -->
+<?php
+/*
+    include_once 'app/RepositorioUsuario.inc.php'; 
+
+    $conexion = new conexion();
+    $conexion->conectarBD();
+    $conexion = conexion::getConexion();
+    echo RepositorioUsuario::GenerarCodigoUsuario($conexion); 
+*/
+
+?> 

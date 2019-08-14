@@ -372,35 +372,49 @@ class RepositorioUsuario
         $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $longitud= strlen($caracteres);
         $solucion='';
+        //$veces = 1; 
+        $salida = false; 
 
+        $conexion = conexion::getConexion();
         //bucle que generará un codigo y lo comparará con la base de datos
         do {
 
+            $solucion = ''; 
+
             //bucle que genera un codigo de 5 caracteres segun el array dado
-            for ($i=0; $i <= 5 ; $i++) { 
+            for ($i=0; $i <= 4 ; $i++) { 
                 $numero= rand(0,$longitud);
                 $solucion = $solucion . $caracteres[$numero];
             }
 
+            /*
+            if($veces == 1){
+                $solucion = 'JSCNz'; 
+                $veces++; 
+            }
+            */
             //metodo para realizar la consulta y ver si se encuentra el codigo en la base de datos
             if (isset($conexion)) {
 
                 try {
-                    $sql = "SELECT codigo FROM usuario WHERE codigo= $solucion";
+                    $sql = "SELECT codigo FROM usuario WHERE codigo= :solucion";
                     $sentencia = $conexion->prepare($sql);
                     $sentencia->bindParam(':solucion', $solucion, PDO::PARAM_STR);
                     $sentencia->execute();
     
                     $resultado = $sentencia->fetch();
-    
-                    if (!empty($resultado)) {
+                     
+
+                    if (empty($resultado)) {
                         $salida= true;
                     }
                 } catch (Exception $ex) {
                     print 'ERROR' . $ex->getMessage();
                 }
             }
-        } while ($salida);
+        } while (!$salida);
+
+        
 
         return $solucion;
     }
