@@ -7,6 +7,12 @@
     #segunda {
         margin-left: 0px;
     }
+
+    @media screen and (max-width: 767px) {
+        html {
+            padding: 0 !important;
+        }
+    }
 </style>
 <div class="container">
 
@@ -29,12 +35,12 @@
     </nav>
 </div>
 
-<div class="container p-0">
-    <div class="row p-0">
-        <div class="col-md-4 p-0">
+<div class="container p0">
+    <div class="row p0">
+        <div class="col-md-4 p0">
             <!--Parte del perfil del usuario-->
-            <div class="row p-0">
-                <div class="col-md-12 p-0">
+            <div class="row p0">
+                <div class="col-md-12 p0">
 
                     <div class="card" id="perfil">
                         <img src="https://i0.wp.com/geekazos.com/wp-content/uploads/2015/02/fb2.jpg?fit=1280%2C720" class="card-img-top" alt="avatar">
@@ -58,7 +64,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="container p-0">
+                    <div class="container p0">
                         <div id="cal" style="margin: auto !important">
                             <div class="header">
                                 <span class="left button" id="prev"> &lang; </span>
@@ -136,10 +142,10 @@
         </div>
 
         <!-- Parte central de la página -->
-        <div class="col-md-8 p-0" id="centro">
+        <div class="col-md-8 p0" id="centro">
 
-            <div class="row p-0" id="inicio">
-                <div class="col-md-12 p-0">
+            <div class="row p0" id="inicio">
+                <div class="col-md-12 p0">
                     <div class="jumbotron jumbotron-fluid">
                         <div class="container">
                             <h1 class="display-4">Inicio</h1>
@@ -149,8 +155,8 @@
                 </div>
             </div>
 
-            <div class="row p-0">
-                <div class="col-md-12 p-0">
+            <div class="row p0">
+                <div class="col-md-12 p0">
                     <div class="card mb-3">
                         <img src="https://www.ealde.es/wp-content/uploads/2017/03/brainstorming.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -162,8 +168,8 @@
                 </div>
             </div>
 
-            <div class="row p-0">
-                <div class="col-md-12 p-0">
+            <div class="row p0">
+                <div class="col-md-12 p0">
                     <div class="card mb-3">
                         <img src="https://www.ealde.es/wp-content/uploads/2017/03/comunicacion-interna.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
