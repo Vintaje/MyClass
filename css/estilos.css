@@ -283,7 +283,8 @@ html div {
     top:5px; 
 }
 #cal #cal-frame table.curr { 
-    float:left;      
+    float:left; 
+    width: 100% !important;      
 } 
 #cal #cal-frame table.temp { 
     position:absolute; 
