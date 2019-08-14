@@ -69,7 +69,7 @@
                             <div class="header">
                                 <span class="left button" id="prev"> &lang; </span>
                                 <span class="left hook"></span>
-                                <span class="month-year" id="label"> June 20&0 </span>
+                                <span class="month-year" id="label">  </span>
                                 <span class="right hook"></span>
                                 <span class="right button" id="next"> &rang; </span>
                             </div>
@@ -87,49 +87,19 @@
                                 <table class="curr">
                                     <tbody>
                                         <tr>
-                                            <td class="nil"></td>
-                                            <td class="nil"></td>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
+                                           
                                         </tr>
                                         <tr>
-                                            <td>6</td>
-                                            <td>7</td>
-                                            <td>8</td>
-                                            <td>9</td>
-                                            <td>10</td>
-                                            <td class="today">11</td>
-                                            <td>12</td>
+                                            
                                         </tr>
                                         <tr>
-                                            <td>13</td>
-                                            <td>14</td>
-                                            <td>15</td>
-                                            <td>16</td>
-                                            <td>17</td>
-                                            <td>18</td>
-                                            <td>19</td>
+                                            
                                         </tr>
                                         <tr>
-                                            <td>20</td>
-                                            <td>21</td>
-                                            <td>22</td>
-                                            <td>23</td>
-                                            <td>24</td>
-                                            <td>25</td>
-                                            <td>26</td>
+                                            
                                         </tr>
                                         <tr>
-                                            <td>27</td>
-                                            <td>28</td>
-                                            <td>29</td>
-                                            <td>30</td>
-                                            <td class="nil"></td>
-                                            <td class="nil"></td>
-                                            <td class="nil"></td>
+                                            
                                         </tr>
                                     </tbody>
                                 </table>
@@ -143,17 +113,6 @@
 
         <!-- Parte central de la página -->
         <div class="col-md-8 p0" id="centro">
-
-            <div class="row p0" id="inicio">
-                <div class="col-md-12 p0">
-                    <div class="jumbotron jumbotron-fluid">
-                        <div class="container">
-                            <h1 class="display-4">Inicio</h1>
-                            <p class="lead">Bienvenid@ al panel principal de myClass</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="row p0">
                 <div class="col-md-12 p0">
