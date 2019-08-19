@@ -35,7 +35,8 @@ if ($usuarioCompleto == null) {
     if ($usuarioCompleto->getPassword() ==  $kernel->encrypt_decrypt("encrypt", $pwdForm)) {
         echo "Sesión iniciada";
         $url = '../panel-usuario';
-        ControlSesion::IniciarSesion($usuarioCompleto->getCodigo, $usuarioCompleto->getNombreCompleto());
+        session_start();
+        $_SESSION['name_user'] = $usuarioCompleto->getNombreCompleto();
         Redireccion::redirigir($url);
     } else {
         //pass no correcta

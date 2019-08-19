@@ -1,3 +1,10 @@
+<?php
+
+if(isset($_SESSION['name_user'])){
+    $usuario = $_SESSION['name_user'];
+?>
+
+
 <!--Menú de navegación-->
 <style>
     #menu {
@@ -32,7 +39,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav navbar-right">
-                <li class="nav-item"><a class="nav-link" href="#">Cerrar sesión</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout">Cerrar sesión</a></li>
             </ul>
         </div>
     </nav>
@@ -48,7 +55,7 @@
                     <div class="card" id="perfil">
                         <img src="https://i0.wp.com/geekazos.com/wp-content/uploads/2015/02/fb2.jpg?fit=1280%2C720" class="card-img-top" alt="avatar">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-user"></i> Mi perfil</h5>
+                            <h5 class="card-title"><i class="fas fa-user"></i> <?php echo kernel::encrypt_decrypt('decrypt', $usuario) ?></h5>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><i class="fas fa-users"></i> 12</li>
@@ -304,3 +311,9 @@ $('.first-button').on('click', function () {
     var cal = CALENDAR();
     cal.init();
 </script>
+
+<?php
+}else{
+
+    header('Location: http://localhost/myclass');
+}
