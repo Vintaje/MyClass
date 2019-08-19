@@ -239,7 +239,7 @@ class RepositorioUsuario
 
     public static function agregarAmigo($conexion, $codigo)
     {
-
+        session_start();
         if (isset($conexion)) {
             try {
 
@@ -258,6 +258,7 @@ class RepositorioUsuario
 
     public static function rechazarAmigo($conexion, $codigo)
     {
+        session_start();
         if (isset($conexion)) {
 
             try {
@@ -280,6 +281,7 @@ class RepositorioUsuario
 
     public static function aceptarAmigo($conexion, $codigo)
     {
+        session_start();
         if (isset($conexion)) {
             try {
                 $user1 = $_SESSION['codigo_user'];
@@ -311,6 +313,7 @@ class RepositorioUsuario
 
     public static function solicitudes($conexion)
     {
+        session_start();
         if (isset($conexion)) {
             try {
                 $sql = "SELECT * FROM amigos WHERE user1 = :user1 AND estado = 0";
@@ -340,6 +343,7 @@ class RepositorioUsuario
 
     public static function getAmigos($conexion)
     {
+        session_start();
         if (isset($conexion)) {
             try {
                 $sql = "SELECT * FROM amigos WHERE user1 = :user1 AND estado = 1";
