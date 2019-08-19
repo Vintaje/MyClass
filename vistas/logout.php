@@ -2,7 +2,7 @@
 session_destroy();
 
 
-header('Location: http://localhost/myclass');
+header('Location: ../myclass/');
 
 ?>
 
