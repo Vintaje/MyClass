@@ -67,9 +67,10 @@ if ($uri_segments[0] == 'myclass') {
                 $ruta_elegida = 'vistas/principal.php';
                 $titulo = 'MyClass | Panel de Control';
                 break;
-            case 'mis_clases':
+            case 'mis-clases':
                 $ruta_elegida = 'vistas/mis_clases.php';
                 $titulo = 'MyClass | Mis Clases';
+                break;
             case 'condiciones':
                 $ruta_elegida = 'vistas/condiciones.php';
                 $titulo = 'MyClass | Condiciones de uso';
