@@ -20,12 +20,16 @@ if(isset($_SESSION['name_user'])){
             padding: 0 !important;
         }
     }
+
+    .principal{
+        margin-top: 70px; 
+    }
 </style>
 
 
 <div class="container p0">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menu"> <a class="navbar-brand" href="#">myClass</a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" id="menu"> <a class="navbar-brand" href="#">myClass</a>
         <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">     <div class="animated-icon1"><span></span><span></span><span></span></div>
 </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -45,7 +49,7 @@ if(isset($_SESSION['name_user'])){
     </nav>
 </div>
 
-<div class="container p0">
+<div class="container p0 principal">
     <div class="row p0">
         <div class="col-md-4 p0">
             <!--Parte del perfil del usuario-->
