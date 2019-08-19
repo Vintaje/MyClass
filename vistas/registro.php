@@ -4,6 +4,12 @@ if (isset($_SESSION['name_user'])) {
         header('Location: http://localhost/myclass/panel-usuario');
     }
 }
+
+
+if(strpos($_SERVER['REQUEST_URI'],'.php')){
+    header('Location: http://localhost/myclass/');
+
+}
 ?>
 
 <style>
