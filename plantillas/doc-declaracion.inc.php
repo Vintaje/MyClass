@@ -64,7 +64,4 @@
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // some code..
         }
-        if (document.referrer != "http://localhost/myclass/") {
-            location.href = "http://localhost/myclass/";
-        }
     </script>

@@ -1,3 +1,12 @@
+<?php
+    if(isset($_SESSION['name_user'])){
+        if($_SESSION['name_user'] != ''){
+            header('Location: http://localhost/myclass/panel-usuario');
+        }
+    }
+
+?>
+
 <link rel="stylesheet" href="css/iniciar_sesion.css" />
 <div class="row">
     <div class="container foto" id="registration-form">
