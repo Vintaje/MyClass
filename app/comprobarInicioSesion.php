@@ -37,6 +37,7 @@ if ($usuarioCompleto == null) {
         $url = '../panel-usuario';
         session_start();
         $_SESSION['name_user'] = $usuarioCompleto->getNombreCompleto();
+        $_SESSION['codigo_user'] = $usuarioCompleto->getCodigo();
         Redireccion::redirigir($url);
     } else {
         //pass no correcta
