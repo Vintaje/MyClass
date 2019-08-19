@@ -4,6 +4,9 @@
             header('Location: http://localhost/myclass/panel-usuario');
         }
     }
+if(strpos($_SERVER['REQUEST_URI'],'.php')){
+    header('Location: ../');
+}
 
 ?>
 
