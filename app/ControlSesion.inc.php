@@ -3,14 +3,14 @@
 class ControlSesion
 {
 
-    public static function IniciarSesion($id_usuario, $nombre_usuario)
+    public static function IniciarSesion($cod_usuario, $nombre_usuario)
     {
         if (session_id() == '') {
             session_start();
         }
 
-        $_SESSION['name_usuario'] = $id_usuario;
-        $_SESSION['cod_usuario'] = $nombre_usuario;
+        $_SESSION['name_usuario'] = $cod_usuario;
+        $_SESSION['codigo_user'] = $nombre_usuario;
     }
 
 
@@ -23,8 +23,8 @@ class ControlSesion
         if (isset($_SESSION['name_usuario'])) {
             unset($_SESSION['name_usuario']);
         }
-        if (isset($_SESSION['cod_usuario'])) {
-            unset($_SESSION['cod_usuario']);
+        if (isset($_SESSION['codigo_user'])) {
+            unset($_SESSION['codigo_user']);
         }
         session_destroy();
     }
@@ -35,7 +35,7 @@ class ControlSesion
             session_start();
         }
 
-        if (isset($_SESSION['name_usuario']) && ($_SESSION['cod_usuario'])) {
+        if (isset($_SESSION['name_usuario']) && ($_SESSION['codigo_user'])) {
             return true;
         } else {
             return false;

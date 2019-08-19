@@ -316,7 +316,7 @@ class RepositorioUsuario
                 $sql = "SELECT * FROM amigos WHERE user1 = :user1 AND estado = 0";
 
                 $sentencia = $conexion->prepare($sql);
-                $sentencia->bindParam(':user1', $_SESSION['cod_user'], PDO::PARAM_STR, 255);
+                $sentencia->bindParam(':user1', $_SESSION['codigo_user'], PDO::PARAM_STR, 255);
 
                 $sentencia->execute();
 
@@ -345,7 +345,7 @@ class RepositorioUsuario
                 $sql = "SELECT * FROM amigos WHERE user1 = :user1 AND estado = 1";
 
                 $sentencia = $conexion->prepare($sql);
-                $sentencia->bindParam(':user1', $_SESSION['cod_user'], PDO::PARAM_STR, 255);
+                $sentencia->bindParam(':user1', $_SESSION['codigo_user'], PDO::PARAM_STR, 255);
 
                 $sentencia->execute();
 
