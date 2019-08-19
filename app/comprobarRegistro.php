@@ -2,7 +2,6 @@
 include_once 'kernel.inc.php';
 include_once 'RepositorioUsuario.inc.php';
 include_once 'Redireccion.inc.php';
-include_once 'ControlSesion.inc.php';
 include_once 'Usuario.class.php';
 
 $conexion = new conexion();
