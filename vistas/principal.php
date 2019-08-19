@@ -3,6 +3,11 @@
 if(isset($_SESSION['name_user'])){
     $usuario = $_SESSION['name_user'];
 ?>
+<?php
+if(strpos($_SERVER['REQUEST_URI'],'.php')){
+    header('Location: ../');
+}
+?>
 
 
 <!--Menú de navegación-->

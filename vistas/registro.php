@@ -7,8 +7,7 @@ if (isset($_SESSION['name_user'])) {
 
 
 if(strpos($_SERVER['REQUEST_URI'],'.php')){
-    header('Location: http://localhost/myclass/');
-
+    header('Location: ../');
 }
 ?>
 
