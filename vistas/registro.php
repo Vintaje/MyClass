@@ -1,3 +1,11 @@
+<?php
+if (isset($_SESSION['name_user'])) {
+    if ($_SESSION['name_user'] != '') {
+        header('Location: http://localhost/myclass/panel-usuario');
+    }
+}
+?>
+
 <style>
     a:hover {
         text-decoration: none !important;
@@ -36,7 +44,7 @@
                 <input id="pwd2" type="password" onfocusout="comprobarPass(2)" class="check-seguridad form-control" name="PasswordRep" required>
             </div>
             <div class="form-group col-md-6 text-center align-self-center ">
-                    <button class=" form-control col-md-6 btn btn-primary mt-2" type="button" onclick="mostrarContrasena()">Mostrar</button>
+                <button class=" form-control col-md-6 btn btn-primary mt-2" type="button" onclick="mostrarContrasena()">Mostrar</button>
             </div>
         </div>
 
@@ -51,7 +59,7 @@
             <input type="text" class="form-control" name="nombreCompleto" required>
         </div>
 
-        <div class="form-row align-items-center" >
+        <div class="form-row align-items-center">
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Familia Profesional</label>
                 <select class="custom-select mr-sm-2" name="familia" required>
@@ -102,7 +110,7 @@
                 </button>
             </div>
             <div class="modal-body">
-               Por favor, introduce un correo distinto.
+                Por favor, introduce un correo distinto.
             </div>
             <div class="modal-footer">
                 <button type="button" onclick="volver()" class="btn btn-primary" data-dismiss="modal">Perfecto</button>
@@ -113,10 +121,9 @@
 
 
 <script>
-
-    function volver(){
-        var URL = window.location.href.replace("ErrorRegistro","registro");
-        location.href = URL; 
+    function volver() {
+        var URL = window.location.href.replace("ErrorRegistro", "registro");
+        location.href = URL;
     }
 
     var URLactual = window.location.href;
@@ -125,8 +132,6 @@
             $("#ErrorRegistro").modal("show");
         });
     }
-
-
 </script>
 
 <script type="text/javascript">
@@ -173,7 +178,7 @@
 
 <script>
     function mostrarContrasena() {
-        
+
         var tipo = document.getElementById("pwd1");
         var tipoRep = document.getElementById("pwd2");
         if (tipo.type == "password" && tipoRep.type == "password") {
