@@ -133,7 +133,7 @@ if(isset($_SESSION['name_user'])){
                     <div class="card mb-3">
                         <img src="https://www.ealde.es/wp-content/uploads/2017/03/brainstorming.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="mis_clases"></a>Mis clases</h5>
+                            <h5 class="card-title"><a href="mis_clases">Mis clases</a></h5>
                             <p class="card-text">En este apartado podrás ver las clases a las que perteneces</p>
                         </div>
                     </div>
