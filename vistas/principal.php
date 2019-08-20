@@ -58,7 +58,7 @@ if (isset($_SESSION['name_user'])) {
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"> <a class="nav-link" href="#"> Inicio <span class="sr-only">(current)</span></a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#"> Agregar amigo</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#"> Crear clase</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="NuevaClase"> Crear clase</a> </li>
                 <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Noticias
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="#"> General</a> <a class="dropdown-item" href="#"> Mi familia profesional</a>
