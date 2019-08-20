@@ -26,6 +26,14 @@ if (isset($_SESSION['name_user'])) {
         }
     }
 
+
+
+    .gustos {
+        margin-bottom: 30px;
+    }
+
+
+
     .principal {
         margin-top: 70px;
     }
@@ -34,8 +42,8 @@ if (isset($_SESSION['name_user'])) {
         margin-bottom: 10px;
     }
 
-    .acordeon{
-        border: none !important; 
+    .acordeon {
+        border: none !important;
     }
 </style>
 
@@ -210,6 +218,36 @@ if (isset($_SESSION['name_user'])) {
                         <div class="card-body">
                             <h5 class="card-title"><i class="fas fa-search"></i> Explorar</h5>
                             <p class="card-text">Encuentra las clases perfectas para ti</p>
+                            <div class="card-body d-flex">
+                                <button class="btn btn-primary ml-auto boton" type="button" data-toggle="collapse" data-target="#explorar" aria-expanded="false" aria-controls="explorar">
+                                    Empezar
+                                </button>
+                            </div>
+                            <!--Parte que se oculta -->
+                            <div class="collapse" id="explorar">
+                                <div class="card-body">
+                                    <h6>Selecciona intereses:</h6>
+                                    <div class="btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-outline-primary">
+                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Informática
+                                        </label>
+                                        <label class="btn btn-outline-success">
+                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Comercio
+                                        </label>
+                                        <label class="btn btn-outline-danger">
+                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Deporte
+                                        </label>
+                                        <label class="btn btn-outline-warning">
+                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Química
+                                        </label>
+                                        <label class="btn btn-outline-info">
+                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Idiomas
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
