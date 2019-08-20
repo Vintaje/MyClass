@@ -43,7 +43,9 @@ CREATE TABLE `grupo` (
   `CODIGO` varchar(255) NOT NULL,
   `NOMBRE` varchar(255) NOT NULL,
   `CAPACIDAD` int(10) NOT NULL DEFAULT 30,
-  `COD_OWNER` varchar(255) NOT NULL
+  `COD_OWNER` varchar(255) NOT NULL,
+  `PRIVADO` tinyint(1) NOT NULL,
+  `TEMATICA` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
