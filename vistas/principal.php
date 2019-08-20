@@ -49,10 +49,11 @@ if (isset($_SESSION['name_user'])) {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"> <a class="nav-link" href="#"> Inicio <span class="sr-only">(current)</span></a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#">Agregar amigo</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Agregar amigo</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Crear clase</a> </li>
                 <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Noticias
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="#">General</a> <a class="dropdown-item" href="#">Mi familia profesional</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="#"> General</a> <a class="dropdown-item" href="#"> Mi familia profesional</a>
                     </div>
                 </li>
             </ul>
@@ -147,7 +148,7 @@ if (isset($_SESSION['name_user'])) {
                     <div class="card mb-3">
                         <img src="https://www.ealde.es/wp-content/uploads/2017/03/brainstorming.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"></h5>
+                            <h5 class="card-title"><i class="fas fa-graduation-cap"></i> Mis Clases</h5>
                             <p class="card-text">En este apartado podrás ver las clases a las que perteneces</p>
                             <div class="card-body d-flex">
                                 <button class="btn btn-primary ml-auto boton" type="button" data-toggle="collapse" data-target="#clases" aria-expanded="false" aria-controls="clases">
@@ -207,8 +208,8 @@ if (isset($_SESSION['name_user'])) {
                     <div class="card mb-3">
                         <img src="https://www.ealde.es/wp-content/uploads/2017/03/comunicacion-interna.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Mis grupos</h5>
-                            <p class="card-text">En este apartado podrás ver los grupos a los que perteneces</p>
+                            <h5 class="card-title"><i class="fas fa-search"></i> Explorar</h5>
+                            <p class="card-text">Encuentra las clases perfectas para ti</p>
                         </div>
                     </div>
 
