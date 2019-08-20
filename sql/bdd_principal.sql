@@ -227,7 +227,7 @@ ALTER TABLE `usernotas`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-ALTER TABLE `AMIGOS`
+ALTER TABLE `amigos`
   ADD KEY `existe_usuarios_fk` (`USER1`),
   ADD KEY `existe_usuario2_fk` (`USER2`);
 
@@ -238,6 +238,6 @@ ALTER TABLE `AMIGOS`
 --
 -- Filtros para la tabla `AMIGOS`
 --
-ALTER TABLE `AMIGOS`
+ALTER TABLE `amigos`
   ADD CONSTRAINT `existe_usuario2_fk` FOREIGN KEY (`USER2`) REFERENCES `usuario` (`CODIGO`),
   ADD CONSTRAINT `existe_usuarios_fk` FOREIGN KEY (`USER1`) REFERENCES `usuario` (`CODIGO`);
