@@ -33,6 +33,10 @@ if (isset($_SESSION['name_user'])) {
     .boton {
         margin-bottom: 10px;
     }
+
+    .acordeon{
+        border: none !important; 
+    }
 </style>
 
 
@@ -152,7 +156,7 @@ if (isset($_SESSION['name_user'])) {
                             </div>
                             <!--Parte que se oculta -->
                             <div class="collapse" id="clases">
-                                <div class="card card-body">
+                                <div class="card card-body acordeon">
                                     <div id="accordion">
                                         <div class="card">
                                             <div class="card-header" id="headingTwo">
