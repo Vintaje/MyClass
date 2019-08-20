@@ -169,11 +169,11 @@ ALTER TABLE `usuario`
 
 
 CREATE TABLE `amigos` (
-  `ID` int(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL AUTO_INCREMENT PRIMARY KEY,
-  `USER1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `USER2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL AUTO_INCREMENT PRIMARY KEY,
+  `USER1` varchar(255) DEFAULT NULL,
+  `USER2` varchar(255) DEFAULT NULL,
   `ESTADO` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
