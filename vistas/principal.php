@@ -228,19 +228,19 @@ if (isset($_SESSION['name_user'])) {
                                 <div class="card-body">
                                     <h6>Selecciona intereses:</h6>
                                     <div class="btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-outline-primary">
+                                        <label class="btn btn-outline-primary m-2">
                                             <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Informática
                                         </label>
-                                        <label class="btn btn-outline-success">
+                                        <label class="btn btn-outline-success m-2">
                                             <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Comercio
                                         </label>
-                                        <label class="btn btn-outline-danger">
+                                        <label class="btn btn-outline-danger m-2">
                                             <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Deporte
                                         </label>
-                                        <label class="btn btn-outline-warning">
+                                        <label class="btn btn-outline-warning m-2">
                                             <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Química
                                         </label>
-                                        <label class="btn btn-outline-info">
+                                        <label class="btn btn-outline-info m-2">
                                             <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Idiomas
                                         </label>
                                     </div>
