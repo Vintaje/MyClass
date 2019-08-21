@@ -167,45 +167,19 @@ if (isset($_SESSION['name_user'])) {
                             <div class="collapse" id="clases">
                                 <div class="card card-body acordeon">
                                     <div id="accordion">
-                                        <div class="card">
-                                            <div class="card-header" id="headingTwo">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Bases de Datos
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Clase de primero de BBDD
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" id="headingThree">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Programación
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Clase de primero de Programación
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php
+                                            $conexion = new conexion();
+                                            $conexion->conectarBD();
+                                            $conexion = conexion::getConexion();
+                                            RepositorioGrupo::recogerGrupos($conexion);
+
+                                            ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -243,19 +217,18 @@ if (isset($_SESSION['name_user'])) {
                             </div>
                             <!--Parte que se oculta -->
                             <div class="collapse" id="explorar">
-                                <ul class="list-group list-group-flush" style="width:100%;">
-                                    <li class="list-group-item">Cras justo odio<a class="btn btn-primary ml-auto" href="mis-clases" role="button">Apuntarse</a></li>
-                                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                                    <li class="list-group-item">Morbi leo risus</li>
-                                    <li class="list-group-item">Porta ac consectetur ac</li>
-                                    <li class="list-group-item">Vestibulum at eros</li>
-                                </ul>
+                                <div class="card-body">
+
+                                </div>
                             </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 

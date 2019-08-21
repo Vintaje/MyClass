@@ -19,9 +19,14 @@ Adrian Sanchez
 
 <?php
 include_once 'app/conexion.inc.php';
-conexion::conectarBD();
+$conexion = new conexion();
+$conexion->conectarBD();
+$conexion = conexion::getConexion();
 
 include_once 'app/kernel.inc.php';
+include_once 'app/RepositorioGrupo.inc.php';
+include_once 'app/Grupo.class.php';
+
 
 /**
  * Indexar URL

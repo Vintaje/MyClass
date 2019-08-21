@@ -86,7 +86,8 @@ class RepositorioGrupo
 
             try {
 
-                $sqlSelect = 'SELECT codigo, nombre, capacidad,cod_owner, privado, tematica, descripcion FROM grupo WHERE codigo=$codigo';
+                $sqlSelect = 'SELECT codigo, nombre, capacidad,cod_owner, privado,
+                 tematica, descripcion FROM grupo WHERE codigo=:codigo';
                 $sentencia = $conexion->prepare($sqlSelect);
                 $sentencia->bindParam(':codigo', $codigo, PDO::PARAM_STR);
                 $sentencia->execute();
@@ -207,9 +208,9 @@ class RepositorioGrupo
         }
     }
 
-    public static function buscarPorUsuario($conexion, $usuariocod)
+    public static function buscarPorUsuario($conexion)
     {
-        $grupo = null;
+
 
         if (isset($conexion)) {
 
@@ -233,55 +234,57 @@ class RepositorioGrupo
     }
 
 
-    public static function mostrarGrupos($conexion, $codigo)
+    public static function recogerGrupos($conexion)
     {
-
-
-        if (isset($conexion)) {
-
-            try {
-
-                $sqlSelect = 'SELECT codigo, nombre, capacidad,cod_owner, privado, tematica, descripcion FROM grupo WHERE codigo=$codigo';
-                $sentencia = $conexion->prepare($sqlSelect);
-                $sentencia->bindParam(':codigo', $codigo, PDO::PARAM_STR);
-                $sentencia->execute();
-
-                $resultado = $sentencia->fetch();
-
-                if (!empty($resultado)) {
-                    $grupo = new Grupo(
-                        $resultado['CODIGO'],
-                        $resultado['NOMBRE'],
-                        $resultado['CAPACIDAD'],
-                        $resultado['COD_OWNER'],
-                        $resultado['PRIVADO'],
-                        $resultado['TEMATICA'],
-                        $resultado['DESCRIPCION']
-                    );
-                }
-            } catch (PDOException $ex) {
-                print 'ERROR' . $ex->getMessage();
-            }
+        $codigosgrupos = self::buscarPorUsuario($conexion);
+        $grupos = null;
+        if(count($codigosgrupos) != 0){
+        foreach ($codigosgrupos as $cod_grupo) {
+            array_push($grupos, self::getGrupo($conexion, $cod_grupo));
         }
-        
-        echo " 
-        <div class='card'>
-            <div class='card-header' id='headingTwo'>
-                <h5 class='mb-0'>
-                    <button class='btn btn-link collapsed' data-toggle='collapse' data-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo'>
-                    "+$grupo->getNombre()+"
-                    </button>
-                </h5>
+
+        foreach($grupos as $grupo){
+            self::mostrarGrupo($grupo);
+        }
+    }else{
+        ?>
+            <h1>
+                Nada que listar
+            </h1>
+        <?php
+    }
+    }
+
+
+    public static function mostrarGrupo($grupo)
+    {
+        if (!isset($grupo)) {
+            return;
+        }
+
+        ?>
+<div class="card">
+    <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <?php
+                        $grupo->getNombre();
+                        ?>
+            </button>
+        </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+            <?php
+                    $grupo->getDescripcion();
+                    ?>
+            <div class="card-body d-flex">
+                <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
             </div>
-            <div id='collapseTwo' class='collapse' aria-labelledby='headingTwo' data-parent='#accordion'>
-                <div class='card-body'>
-                "+$grupo->getDescripcion()+"
-                    <div class='card-body d-flex'>
-                    <a class='btn btn-primary ml-auto' href='mis-clases' role='button'>Ir</a>
-                    </div>
-                </div>
-            </div>
-        </div>";
-        
+        </div>
+    </div>
+</div>
+<?php
+
     }
 }
