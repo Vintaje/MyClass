@@ -45,7 +45,6 @@ if (isset($_SESSION['name_user'])) {
     .acordeon {
         border: none !important;
     }
-
 </style>
 
 
@@ -244,31 +243,19 @@ if (isset($_SESSION['name_user'])) {
                             </div>
                             <!--Parte que se oculta -->
                             <div class="collapse" id="explorar">
-                                <div class="card-body d-flex">
-                                    <div class="card text-center m-2" style="width: 18rem;">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Clase 1º DAM</h5>
-                                            <p class="card-text"> Bienvenidos a nuestra clase </p>
-                                            <a href="#" class="btn btn-primary"> Apuntarse </a>
-                                        </div>
-                                    </div>
-                                    <div class="card text-center m-2" style="width: 18rem;">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Clase 1º ASIR</h5>
-                                            <p class="card-text"> Bienvenidos a nuestra clase </p>
-                                            <a href="#" class="btn btn-primary"> Apuntarse </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ul class="list-group list-group-flush" style="width:100%;">
+                                    <li class="list-group-item">Cras justo odio<a class="btn btn-primary ml-auto" href="mis-clases" role="button">Apuntarse</a></li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Morbi leo risus</li>
+                                    <li class="list-group-item">Porta ac consectetur ac</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
