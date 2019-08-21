@@ -163,7 +163,7 @@ if (isset($_SESSION['name_user'])) {
         </div>
 
         <!-- Parte central de la página -->
-        <div class="col-md-8 p0" id="centro">
+        <label class="col-md-8 p0" id="centro">
 
             <div class="row p0">
                 <div class="col-md-12 p0">
@@ -196,16 +196,16 @@ if (isset($_SESSION['name_user'])) {
                 </div>
             </div>
 
-            <div class="row p0">
-                <div class="col-md-12 p0">
-                    <div class="card mb-3">
+            <label class="row p0">
+                <label class="col-md-12 p0">
+                    <label class="card mb-3">
                         <img src="https://www.ealde.es/wp-content/uploads/2017/03/comunicacion-interna.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
+                        <label class="card-body">
                             <h5 class="card-title"><i class="fas fa-search"></i> Explorar</h5>
                             <p class="card-text">Encuentra las clases perfectas para ti</p>
-                            <div class="card-body">
+                            <label class="card-body">
                                 <h6>Selecciona intereses:</h6>
-                                <div class="btn-group-toggle" data-toggle="buttons">
+                                <label class="btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-primary m-2">
                                         <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Informática
                                     </label>
@@ -221,8 +221,8 @@ if (isset($_SESSION['name_user'])) {
                                     <label class="btn btn-outline-info m-2">
                                         <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Idiomas
                                     </label>
-                                </div>
-                            </div>
+                                </label>
+                            </label>
                             <div class="card-body d-flex">
                                 <button class="btn btn-primary ml-auto boton" type="button" data-toggle="collapse" data-target="#explorar" aria-expanded="false" aria-controls="explorar">
                                     Buscar
@@ -236,10 +236,10 @@ if (isset($_SESSION['name_user'])) {
                                     <a href="#" class="list-group-item enlaceClase">Tercer elemento</a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </label>
+                    </label>
+                </label>
+            </label>
         </div>
     </div>
 </div>
