@@ -14,8 +14,13 @@ $conexion = conexion::getConexion();
 $codigo = RepositorioGrupo::GenerarCodigoClases($conexion);
 $usuario = $_SESSION['codigo_user'];
 echo $usuario;
+if(isset($_POST)){
+    $privado = 1;
+}else{
+    $privado = 0;
+}
 $grupo = new Grupo($codigo, $_POST['NombreClase'], 30, $usuario,
-                    $_POST['privado'], $_POST['tematica'], $_POST['descripcion']);
+                    $privado, $_POST['tematica'], $_POST['descripcion']);
 
 $grupo_insertado = RepositorioGrupo::setGrupo($conexion, $grupo);
 

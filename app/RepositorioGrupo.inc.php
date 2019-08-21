@@ -1,6 +1,7 @@
 <?php
 
 include_once 'Grupo.class.php';
+include_once 'CodUserGroup.class.php';
 
 class RepositorioGrupo
 {
@@ -96,13 +97,13 @@ class RepositorioGrupo
 
                 if (!empty($resultado)) {
                     $grupo = new Grupo(
-                        $resultado['CODIGO'],
-                        $resultado['NOMBRE'],
-                        $resultado['CAPACIDAD'],
-                        $resultado['COD_OWNER'],
-                        $resultado['PRIVADO'],
-                        $resultado['TEMATICA'],
-                        $resultado['DESCRIPCION']
+                        $resultado['codigo'],
+                        $resultado['nombre'],
+                        $resultado['capacidad'],
+                        $resultado['cod_owner'],
+                        $resultado['privado'],
+                        $resultado['tematica'],
+                        $resultado['descripcion']
                     );
                 }
             } catch (PDOException $ex) {
@@ -210,49 +211,54 @@ class RepositorioGrupo
 
     public static function buscarPorUsuario($conexion)
     {
-
+        $res = [];
 
         if (isset($conexion)) {
 
             try {
 
-                $sqlSelect = 'SELECT cod_group FROM usergroup WHERE cod_user = :cod_user';
+                $sqlSelect = 'SELECT * FROM usergroup WHERE cod_user = :cod_user';
                 $sentencia = $conexion->prepare($sqlSelect);
                 $sentencia->bindParam(':cod_user', $_SESSION['codigo_user'], PDO::PARAM_STR);
                 $sentencia->execute();
 
                 $resultado = $sentencia->fetchAll();
 
-                if (!empty($resultado)) {
-                    return $resultado;
+                if (count($resultado)) {
+                    foreach ($resultado as $fila) {
+                        $res[] = new CodUserGroup($fila['COD_USER'], $fila['COD_GROUP']);
+                    }
                 }
             } catch (PDOException $ex) {
                 print 'ERROR' . $ex->getMessage();
             }
         }
-        return null;
+        return $res;
     }
 
 
     public static function recogerGrupos($conexion)
     {
         $codigosgrupos = self::buscarPorUsuario($conexion);
-        $grupos = null;
-        if(count($codigosgrupos) != 0){
-        foreach ($codigosgrupos as $cod_grupo) {
-            array_push($grupos, self::getGrupo($conexion, $cod_grupo));
-        }
 
-        foreach($grupos as $grupo){
-            self::mostrarGrupo($grupo);
+
+        if (count($codigosgrupos) != 0) {
+            foreach ($codigosgrupos as $cod_grupo) {
+                
+                $grupo =  self::getGrupo($conexion, $cod_grupo->getCodigoGrupo());
+                $grupos[] = $grupo;
+            }
+            
+            foreach ($grupos as $grupo) {
+                self::mostrarGrupo($grupo);
+            }
+        } else {
+            ?>
+<h1>
+    Nada que listar
+</h1>
+<?php
         }
-    }else{
-        ?>
-            <h1>
-                Nada que listar
-            </h1>
-        <?php
-    }
     }
 
 
@@ -268,7 +274,7 @@ class RepositorioGrupo
         <h5 class="mb-0">
             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 <?php
-                        $grupo->getNombre();
+                        echo $grupo->getNombre();
                         ?>
             </button>
         </h5>
@@ -276,7 +282,7 @@ class RepositorioGrupo
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
             <?php
-                    $grupo->getDescripcion();
+                    echo $grupo->getDescripcion();
                     ?>
             <div class="card-body d-flex">
                 <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
