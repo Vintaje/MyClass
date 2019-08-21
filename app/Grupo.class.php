@@ -6,16 +6,22 @@ class Grupo
     private $nombre;
     private $capacidad;
     private $owner;
+    private $privado;
+    private $tematica;
+    private $descripcion;
 
     //
     //  Constructor
     //
-    public function __construct($codigo, $nombre, $capacidad, $owner)
+    public function __construct($codigo, $nombre, $capacidad, $owner, $privado, $tematica, $descripcion)
     {
         $this->codigo = $codigo;
         $this->nombre = $nombre;
         $this->capacidad = $capacidad;
         $this->owner = $owner;
+        $this->privado = $privado;
+        $this->tematica = $tematica;
+        $this->descripcion = $descripcion;
     }
 
     //
@@ -37,6 +43,18 @@ class Grupo
     {
         return $this->owner;
     }
+    public function getPrivacidad()
+    {
+        return $this->privado;
+    }
+    public function getTematica()
+    {
+        return $this->tematica;
+    }
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
 
     //
     //Setters
@@ -53,4 +71,17 @@ class Grupo
     {
         $this->owner = $owner;
     }
+    public function setPrivacidad($privado)
+    {
+        $this->privado = $privado;
+    }
+    public function setTematica($tematica)
+    {
+        $this->tematica = $tematica;
+    }
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+    }
+    
 }
