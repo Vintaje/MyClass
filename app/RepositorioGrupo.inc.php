@@ -114,6 +114,42 @@ class RepositorioGrupo
     }
 
 
+    public static function getGrupoPublico($conexion, $tematica)
+    {
+        $grupos = [];
+
+        if (isset($conexion)) {
+
+            try {
+
+                $sqlSelect = 'SELECT codigo, nombre, capacidad,cod_owner, privado,
+                 tematica, descripcion FROM grupo WHERE privado = 1 AND tematica = :tematica';
+                $sentencia = $conexion->prepare($sqlSelect);
+                $sentencia->bindParam(':tematica', $tematica, PDO::PARAM_STR);
+                $sentencia->execute();
+
+                $resultado = $sentencia->fetchAll();
+
+                if (count($resultado)) {
+                    foreach ($resultado as $fila) {
+                        $grupos[] = new Grupo(
+                            $fila['codigo'],
+                            $fila['nombre'],
+                            $fila['capacidad'],
+                            $fila['cod_owner'],
+                            $fila['privado'],
+                            $fila['tematica'],
+                            $fila['descripcion']
+                        );
+                    }
+                }
+            } catch (PDOException $ex) {
+                print 'ERROR' . $ex->getMessage();
+            }
+        }
+        return $grupos;
+    }
+
 
     //  DELETE
     //  METODO QUE BORRA UN GRUPO
@@ -244,11 +280,11 @@ class RepositorioGrupo
 
         if (count($codigosgrupos) != 0) {
             foreach ($codigosgrupos as $cod_grupo) {
-                
+
                 $grupo =  self::getGrupo($conexion, $cod_grupo->getCodigoGrupo());
                 $grupos[] = $grupo;
             }
-            
+
             foreach ($grupos as $grupo) {
                 self::mostrarGrupo($grupo);
             }
@@ -293,4 +329,9 @@ class RepositorioGrupo
 <?php
 
     }
+
+
+
+    public static function recogerPublicos($conexion)
+    { }
 }
