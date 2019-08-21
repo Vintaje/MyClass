@@ -1,21 +1,15 @@
--- Ejecutar antes del siguiente script
---GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'root' WITH GRANT OPTION;
-
-
-
--- Ejecutar despues del grant
---DROP DATABASE MYCLASS;
-CREATE DATABASE MYCLASS;
-USE MYCLASS;
-
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-06-2019 a las 13:45:03
--- Versión del servidor: 10.3.16-MariaDB
--- Versión de PHP: 7.3.6
+-- Tiempo de generación: 21-08-2019 a las 13:44:30
+-- Versión del servidor: 10.1.34-MariaDB
+-- Versión de PHP: 5.6.37
+CREATE DATABASE MYCLASS;
+USE MYCLASS;
+
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,6 +29,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `amigos`
+--
+
+CREATE TABLE `amigos` (
+  `ID` int(11) NOT NULL,
+  `USER1` varchar(5) DEFAULT NULL,
+  `USER2` varchar(5) DEFAULT NULL,
+  `ESTADO` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `grupo`
 --
 
@@ -42,13 +49,16 @@ CREATE TABLE `grupo` (
   `ID` int(10) NOT NULL,
   `CODIGO` varchar(5) NOT NULL,
   `NOMBRE` varchar(255) NOT NULL,
-  `CAPACIDAD` int(10) NOT NULL DEFAULT 30,
+  `CAPACIDAD` int(10) NOT NULL DEFAULT '30',
   `COD_OWNER` varchar(255) NOT NULL,
   `PRIVADO` tinyint(1) NOT NULL,
   `TEMATICA` varchar(255) NOT NULL,
   `DESCRIPCION` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `grupo`
+--
 -- --------------------------------------------------------
 
 --
@@ -85,6 +95,16 @@ CREATE TABLE `usergroup` (
   `COD_GROUP` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `usergroup`
+--
+
+INSERT INTO `usergroup` (`COD_USER`, `COD_GROUP`) VALUES
+('FMdsM', 'WZ8Fk'),
+('FMdsM', 'H9ZzB'),
+('FMdsM', 'AYtEH'),
+('XGSf6', 'hXAdH');
+
 -- --------------------------------------------------------
 
 --
@@ -115,13 +135,27 @@ CREATE TABLE `usuario` (
   `FECHA_REG` datetime NOT NULL,
   `EDAD` int(10) NOT NULL,
   `DNI` varchar(255) DEFAULT NULL,
-  `ADMIN_VALUE` tinyint(1) NOT NULL DEFAULT 0,
-  `SEXO` CHAR(1) NOT NULL DEFAULT 'N'
+  `ADMIN_VALUE` tinyint(1) NOT NULL DEFAULT '0',
+  `SEXO` char(1) NOT NULL DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `amigos`
+--
+ALTER TABLE `amigos`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `existe_usuarios_fk` (`USER1`),
+  ADD KEY `existe_usuario2_fk` (`USER2`);
 
 --
 -- Indices de la tabla `grupo`
@@ -168,33 +202,38 @@ ALTER TABLE `usuario`
   ADD UNIQUE KEY `AVATAR` (`AVATAR`),
   ADD KEY `user_prof_fk` (`FAMILIA_PROF`);
 
-
-CREATE TABLE `amigos` (
-  `ID` int(11) DEFAULT NULL AUTO_INCREMENT PRIMARY KEY,
-  `USER1` varchar(5) DEFAULT NULL,
-  `USER2` varchar(5) DEFAULT NULL,
-  `ESTADO` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
+-- AUTO_INCREMENT de la tabla `amigos`
+--
+ALTER TABLE `amigos`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `grupo`
 --
 ALTER TABLE `grupo`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `amigos`
+--
+ALTER TABLE `amigos`
+  ADD CONSTRAINT `existe_usuario2_fk` FOREIGN KEY (`USER2`) REFERENCES `usuario` (`CODIGO`),
+  ADD CONSTRAINT `existe_usuarios_fk` FOREIGN KEY (`USER1`) REFERENCES `usuario` (`CODIGO`);
 
 --
 -- Filtros para la tabla `grupo`
@@ -221,24 +260,8 @@ ALTER TABLE `usergroup`
 ALTER TABLE `usernotas`
   ADD CONSTRAINT `task_notas_fk` FOREIGN KEY (`COD_TAREA`) REFERENCES `tareas` (`CODIGO`),
   ADD CONSTRAINT `user_notas_fk` FOREIGN KEY (`COD_USER`) REFERENCES `usuario` (`CODIGO`);
-
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-ALTER TABLE `amigos`
-  ADD KEY `existe_usuarios_fk` (`USER1`),
-  ADD KEY `existe_usuario2_fk` (`USER2`);
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `AMIGOS`
---
-ALTER TABLE `amigos`
-  ADD CONSTRAINT `existe_usuario2_fk` FOREIGN KEY (`USER2`) REFERENCES `usuario` (`CODIGO`),
-  ADD CONSTRAINT `existe_usuarios_fk` FOREIGN KEY (`USER1`) REFERENCES `usuario` (`CODIGO`);
