@@ -99,11 +99,6 @@ CREATE TABLE `usergroup` (
 -- Volcado de datos para la tabla `usergroup`
 --
 
-INSERT INTO `usergroup` (`COD_USER`, `COD_GROUP`) VALUES
-('FMdsM', 'WZ8Fk'),
-('FMdsM', 'H9ZzB'),
-('FMdsM', 'AYtEH'),
-('XGSf6', 'hXAdH');
 
 -- --------------------------------------------------------
 
