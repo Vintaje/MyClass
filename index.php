@@ -83,11 +83,11 @@ if ($uri_segments[0] == 'myclass') {
                 $ruta_elegida = 'vistas/registro.php';
                 $titulo = 'MyClass | Registro';
                 break;
-                case 'logout':
+            case 'logout':
                 $ruta_elegida = 'vistas/logout.php';
                 $titulo = 'MyClass | Logout';
                 break;
-                case 'NuevaClase':
+            case 'NuevaClase':
                 $ruta_elegida = 'vistas/crearClase.php';
                 $titulo = 'MyClass | NuevaClase';
                 break;
