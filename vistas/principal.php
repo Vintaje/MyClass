@@ -218,32 +218,34 @@ if (isset($_SESSION['name_user'])) {
                         <div class="card-body">
                             <h5 class="card-title"><i class="fas fa-search"></i> Explorar</h5>
                             <p class="card-text">Encuentra las clases perfectas para ti</p>
+                            <div class="card-body">
+                                <h6>Selecciona intereses:</h6>
+                                <div class="btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-outline-primary m-2">
+                                        <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Informática
+                                    </label>
+                                    <label class="btn btn-outline-success m-2">
+                                        <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Comercio
+                                    </label>
+                                    <label class="btn btn-outline-danger m-2">
+                                        <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Deporte
+                                    </label>
+                                    <label class="btn btn-outline-warning m-2">
+                                        <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Química
+                                    </label>
+                                    <label class="btn btn-outline-info m-2">
+                                        <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Idiomas
+                                    </label>
+                                </div>
+                            </div>
                             <div class="card-body d-flex">
                                 <button class="btn btn-primary ml-auto boton" type="button" data-toggle="collapse" data-target="#explorar" aria-expanded="false" aria-controls="explorar">
-                                    Empezar
+                                    Buscar
                                 </button>
                             </div>
                             <!--Parte que se oculta -->
                             <div class="collapse" id="explorar">
                                 <div class="card-body">
-                                    <h6>Selecciona intereses:</h6>
-                                    <div class="btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-outline-primary m-2">
-                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Informática
-                                        </label>
-                                        <label class="btn btn-outline-success m-2">
-                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Comercio
-                                        </label>
-                                        <label class="btn btn-outline-danger m-2">
-                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Deporte
-                                        </label>
-                                        <label class="btn btn-outline-warning m-2">
-                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Química
-                                        </label>
-                                        <label class="btn btn-outline-info m-2">
-                                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Idiomas
-                                        </label>
-                                    </div>
 
                                 </div>
                             </div>
