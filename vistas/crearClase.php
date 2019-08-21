@@ -56,7 +56,7 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
 
 <div class="container d-flex justify-content-center mt-5">
 
-    <form id="formClase" method="POST" action="insertarClase">
+    <form id="formClase" method="POST" action="app/comprobarNuevaClase.inc.php">
         <h1 class="display-4 mb-5 mt-3"><a href="home">myClass</a> Crear Clase</h1>
 
         <div class="form-row">
@@ -65,6 +65,11 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
                 <input type="text" class="form-control" name="NombreClase" required>
             </div>
         </div>
+        <div class="form-group">
+            <label for="descripcion">Descripcion</label>
+            <textarea maxlenght="100" name="descripcion" class="form-control rounded-0" id="descripcion" rows="3"></textarea>
+        </div>
+        
 
         <div class="form-row align-items-center">
             <div class="col-auto my-1">
@@ -77,6 +82,12 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
                 </select>
             </div>
         </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="privado" class="form-check-input" id="privado">
+            <label class="form-check-label" for="privado">Privado</label>
+        </div>
+
 
         <div class="form-row align-items-center">
             <div class="col-auto my-1 mt-3">

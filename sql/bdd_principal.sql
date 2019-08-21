@@ -40,12 +40,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `grupo` (
   `ID` int(10) NOT NULL,
-  `CODIGO` varchar(255) NOT NULL,
+  `CODIGO` varchar(5) NOT NULL,
   `NOMBRE` varchar(255) NOT NULL,
   `CAPACIDAD` int(10) NOT NULL DEFAULT 30,
   `COD_OWNER` varchar(255) NOT NULL,
   `PRIVADO` tinyint(1) NOT NULL,
-  `TEMATICA` varchar(255) NOT NULL
+  `TEMATICA` varchar(255) NOT NULL,
+  `DESCRIPCION` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -66,8 +67,8 @@ CREATE TABLE `noticias` (
 --
 
 CREATE TABLE `tareas` (
-  `CODIGO` varchar(255) NOT NULL,
-  `COD_GRUPO` varchar(255) NOT NULL,
+  `CODIGO` varchar(5) NOT NULL,
+  `COD_GRUPO` varchar(5) NOT NULL,
   `TITLE_TAREA` varchar(255) NOT NULL,
   `BODY_TAREA` varchar(255) NOT NULL,
   `FECHA_ENTREGA` datetime NOT NULL
@@ -80,8 +81,8 @@ CREATE TABLE `tareas` (
 --
 
 CREATE TABLE `usergroup` (
-  `COD_USER` varchar(255) NOT NULL,
-  `COD_GROUP` varchar(255) NOT NULL
+  `COD_USER` varchar(5) NOT NULL,
+  `COD_GROUP` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -91,8 +92,8 @@ CREATE TABLE `usergroup` (
 --
 
 CREATE TABLE `usernotas` (
-  `COD_USER` varchar(255) NOT NULL,
-  `COD_TAREA` varchar(255) NOT NULL,
+  `COD_USER` varchar(5) NOT NULL,
+  `COD_TAREA` varchar(5) NOT NULL,
   `ENTREGA` varchar(255) DEFAULT '0',
   `NOTA` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -105,7 +106,7 @@ CREATE TABLE `usernotas` (
 
 CREATE TABLE `usuario` (
   `ID` int(10) NOT NULL,
-  `CODIGO` varchar(255) NOT NULL,
+  `CODIGO` varchar(5) NOT NULL,
   `CORREO` varchar(255) NOT NULL,
   `PASSWD` varchar(255) NOT NULL,
   `AVATAR` varchar(255) NOT NULL DEFAULT 'www.myclass.es/img/avatardefault.jpg',
@@ -170,8 +171,8 @@ ALTER TABLE `usuario`
 
 CREATE TABLE `amigos` (
   `ID` int(11) DEFAULT NULL AUTO_INCREMENT PRIMARY KEY,
-  `USER1` varchar(255) DEFAULT NULL,
-  `USER2` varchar(255) DEFAULT NULL,
+  `USER1` varchar(5) DEFAULT NULL,
+  `USER2` varchar(5) DEFAULT NULL,
   `ESTADO` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
