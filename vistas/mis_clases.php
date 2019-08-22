@@ -90,7 +90,7 @@ if (isset($_SESSION['name_user'])) {
                         <div class="card-body">
                             <a href="#" class="card-link"><i class="far fa-comments"></i> Chat de Clase</a>
                             <br />
-                            <a href="#" class="card-link"><i class="fas fa-award"></i> Calificaciones</a>
+                            <a href="#" class="card-link"><i class="fas fa-book"></i> Calificaciones</a>
                         </div>
                     </div>
 
@@ -128,7 +128,7 @@ if (isset($_SESSION['name_user'])) {
                                                 <div class="card-body">
                                                     ¿Que es la programación?
                                                     <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
+                                                        <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -145,7 +145,7 @@ if (isset($_SESSION['name_user'])) {
                                                 <div class="card-body">
                                                     Recursividad
                                                     <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
+                                                        <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -185,7 +185,7 @@ if (isset($_SESSION['name_user'])) {
                                                 <div class="card-body">
                                                     Power Point - Historia de la informática
                                                     <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
+                                                        <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -202,7 +202,7 @@ if (isset($_SESSION['name_user'])) {
                                                 <div class="card-body">
                                                     Juego de la mosca
                                                     <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
+                                                        <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
                                                     </div>
                                                 </div>
                                             </div>

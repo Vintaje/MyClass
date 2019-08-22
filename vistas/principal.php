@@ -229,13 +229,7 @@ if (isset($_SESSION['name_user'])) {
                                 </button>
                             </div>
                             <!--Parte que se oculta -->
-                            <div class="collapse" id="explorar">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item enlaceClase">Primer elemento</a>
-                                    <a href="#" class="list-group-item enlaceClase">Segundo elemento</a>
-                                    <a href="#" class="list-group-item enlaceClase">Tercer elemento</a>
-                                </div>
-                            </div>
+                        
                         </label>
                     </label>
                 </label>

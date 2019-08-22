@@ -76,6 +76,10 @@ if ($uri_segments[0] == 'myclass') {
                 $ruta_elegida = 'vistas/mis_clases.php';
                 $titulo = 'MyClass | Mis Clases';
                 break;
+            case 'tarea':
+                $ruta_elegida = 'vistas/tarea.php';
+                $titulo = 'MyClass | Tarea';
+                break;
             case 'condiciones':
                 $ruta_elegida = 'vistas/condiciones.php';
                 $titulo = 'MyClass | Condiciones de uso';
@@ -95,6 +99,10 @@ if ($uri_segments[0] == 'myclass') {
             case 'NuevaClase':
                 $ruta_elegida = 'vistas/crearClase.php';
                 $titulo = 'MyClass | NuevaClase';
+                break;
+            case 'BuscarClase':
+                $ruta_elegida = 'vistas/clases_encontradas.php';
+                $titulo = 'MyClass | Búsqueda';
                 break;
         }
     } else {
