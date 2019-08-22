@@ -98,7 +98,11 @@ if ($uri_segments[0] == 'myclass') {
                 break;
             case 'NuevaClase':
                 $ruta_elegida = 'vistas/crearClase.php';
-                $titulo = 'MyClass | NuevaClase';
+                $titulo = 'MyClass | Nueva Clase';
+                break;
+            case 'NuevaTarea':
+                $ruta_elegida = 'vistas/crearTarea.php';
+                $titulo = 'MyClass | Nueva Tarea';
                 break;
             case 'BuscarClase':
                 $ruta_elegida = 'vistas/clases_encontradas.php';
