@@ -109,7 +109,7 @@ if (isset($_SESSION['name_user'])) {
 
                     </p>
 
-
+                    
                     <div class="nuevo_fichero" style="float:right">
 
                         <label class="control-label" for="fichero1">
