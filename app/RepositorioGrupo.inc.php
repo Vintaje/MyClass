@@ -150,6 +150,41 @@ class RepositorioGrupo
         return $grupos;
     }
 
+    public static function getGrupoPublicoGeneral($conexion)
+    {
+        $grupos = [];
+
+        if (isset($conexion)) {
+
+            try {
+
+                $sqlSelect = 'SELECT codigo, nombre, capacidad,cod_owner, privado,
+                 tematica, descripcion FROM grupo WHERE privado = 1';
+                $sentencia = $conexion->prepare($sqlSelect);
+                $sentencia->execute();
+
+                $resultado = $sentencia->fetchAll();
+
+                if (count($resultado)) {
+                    foreach ($resultado as $fila) {
+                        $grupos[] = new Grupo(
+                            $fila['codigo'],
+                            $fila['nombre'],
+                            $fila['capacidad'],
+                            $fila['cod_owner'],
+                            $fila['privado'],
+                            $fila['tematica'],
+                            $fila['descripcion']
+                        );
+                    }
+                }
+            } catch (PDOException $ex) {
+                print 'ERROR' . $ex->getMessage();
+            }
+        }
+        return $grupos;
+    }
+
 
     //  DELETE
     //  METODO QUE BORRA UN GRUPO
@@ -331,7 +366,22 @@ class RepositorioGrupo
     }
 
 
-
-    public static function recogerPublicos($conexion)
-    { }
+/*Si el modo es 1, buscara todos los grupos que sean publicos, si es 0
+buscara los publicos de la tematica seleccionada
+*/
+    public static function recogerPublicos($conexion, $modo, $tematica)
+    { 
+        $grupos = [];
+        if($modo == 1){
+            $grupos = self::getGrupoPublicoGeneral($conexion);
+            foreach ($grupos as $grupo){
+                self::mostrarGrupo($grupo);
+            }
+        }else if($modo == 0){
+            $grupos = self::getGrupoPublico($conexion, $tematica);
+            foreach ($grupos as $grupo){
+                self::mostrarGrupo($grupo);
+            }
+        }
+    }
 }
