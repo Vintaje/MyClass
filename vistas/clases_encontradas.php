@@ -1,3 +1,14 @@
+<style>
+    .masthead {
+        height: 100vh;
+        max-height: 500px;
+        background-image: url('https://www.itgholding.com/upl/big/slc_cover_img_7.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
 <div class="container p0">
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" id="menu"> <a class="navbar-brand" href="#">myClass</a>
@@ -27,10 +38,13 @@
 
 </div>
 
-<div class="container p0 principal">
-    <div class="row p0">
-        <div class="col-md-12">
-        <img src="https://png.pngtree.com/element_origin_min_pic/08/03/20/1656dec818f387f.jpg" class="img-fluid" alt="Responsive image">
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="font-weight-light">Vertically Centered Masthead Content</h1>
+                <p class="lead">A great starter layout for a landing page</p>
+            </div>
         </div>
     </div>
-</div>
+</header>
