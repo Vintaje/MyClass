@@ -73,154 +73,78 @@ if (isset($_SESSION['name_user'])) {
     </nav>
 </div>
 
-
-<div class="container p0 principal">
-    <div class="row p0">
-        <div class="col-md-4 p0">
-            <!--Parte del perfil del usuario-->
-            <div class="row p0">
-                <div class="col-md-12 p0">
-
-                    <div class="card" id="perfil">
-
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-user"></i> <?php echo kernel::encrypt_decrypt('decrypt', $usuario) ?></h5>
-                        </div>
-                        <div class="card-body">
-                            <a href="#" class="card-link"><i class="far fa-comments"></i> Chat de Clase</a>
-                            <br />
-                            <a href="#" class="card-link"><i class="fas fa-book"></i> Calificaciones</a>
-                        </div>
-                    </div>
-
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card border-dark mb-3" style="margin-top: 10%;">
+                <div class="card-header">
+                    <h5> <?php echo kernel::encrypt_decrypt('decrypt', $usuario) ?> </h5>
                 </div>
-            </div>
-        </div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">Dark card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        <br />
+                        <br />
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        <br />
+                        <br />
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        <br />
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                        <br />
+                        <br />
+                        
 
-        <!-- Parte central de la página -->
-        <div class="col-md-8 p0" id="centro">
+                    </p>
 
-            <div class="row p0">
-                <div class="col-md-12 p0">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-graduation-cap"></i> Temario</h5>
-                            <p class="card-text">En este apartado podrás ver el contenido de la asignatura</p>
-                            <div class="card-body d-flex">
-                                <button class="btn btn-primary ml-auto boton" type="button" data-toggle="collapse" data-target="#temario" aria-expanded="false" aria-controls="temario">
-                                    Ver
-                                </button>
-                            </div>
-                            <!--Parte que se oculta -->
-                            <div class="collapse" id="temario">
-                                <div class="card card-body acordeon">
-                                    <div id="accordion">
-                                        <div class="card">
-                                            <div class="card-header" id="headingTwo">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Tema 1 - Historia de la informática
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    ¿Que es la programación?
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" id="headingThree">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Tema 2 - Programación orientada a objetos
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Recursividad
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                    <div class="nuevo_fichero" style="float:right">
+
+                        <label class="control-label" for="fichero1">
+                            <h6>Añadir nuevo fichero</h6>
+                        </label>
+                        <div class="controls">
+                            <input id="fichero1" type="file" style="display:none" name="fichero1">
+                            <div class="input-append">
+                                <input id="falso1" class="input-xlarge" type="text">
+                                <a class="btn btn-file"><i class="fa fa-folder-open-o"></i> <b> Seleccionar </b> </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row p0">
-                <div class="col-md-12 p0">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-graduation-cap"></i> Entrega de Ejercicios</h5>
-                            <p class="card-text">En este apartado podrás ver y entregar tus ejercicios</p>
-                            <div class="card-body d-flex">
-                                <button class="btn btn-primary ml-auto boton" type="button" data-toggle="collapse" data-target="#ejercicios" aria-expanded="false" aria-controls="ejercicios">
-                                    Ver
-                                </button>
-                            </div>
-                            <!--Parte que se oculta -->
-                            <div class="collapse" id="ejercicios">
-                                <div class="card card-body acordeon">
-                                    <div id="accordion">
-                                        <div class="card">
-                                            <div class="card-header" id="headingFour">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                        Tema 1 - Historia de la informática
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Power Point - Historia de la informática
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" id="headingFive">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                        Tema 2 - Programación orientada a objetos
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Juego de la mosca
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <script type="text/javascript">
+                            // http://duckranger.com/2012/06/pretty-file-input-field-in-bootstrap/ 
+                            // Cuando se pulsa el falso manda el click al autentico
+                            $('.btn-file').on('click', function() {
+                                $(this).parent().prev().click();
+                            });
+                            // Cuando el autentico cambia hace cambiar al falso
+                            $('input[type=file]').on('change', function(e) {
+                                $(this).next().find('input').val($(this).val());
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
+<?php
+} else {
 
-    <?php
-    } else {
-
-        header('Location: http://localhost/myclass');
-    }
+    header('Location: http://localhost/myclass');
+}
