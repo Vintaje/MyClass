@@ -2,8 +2,10 @@
 
 if (isset($_SESSION['name_user'])) {
     $usuario = $_SESSION['name_user'];
-    ?>
-<?php
+
+    include_once 'app/RepositorioTarea.inc.php';
+
+
     if (strpos($_SERVER['REQUEST_URI'], '.php')) {
         header('Location: ../');
     }
@@ -116,40 +118,12 @@ if (isset($_SESSION['name_user'])) {
                             <div class="collapse" id="temario">
                                 <div class="card card-body acordeon">
                                     <div id="accordion">
-                                        <div class="card">
-                                            <div class="card-header" id="headingTwo">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Tema 1 - Historia de la informática
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    ¿Que es la programación?
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" id="headingThree">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Tema 2 - Programación orientada a objetos
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Recursividad
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php
+
+                                            RepositorioTarea::recogerTareas($conexion, $_GET['grupo'], 0);
+
+                                            ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -173,40 +147,13 @@ if (isset($_SESSION['name_user'])) {
                             <div class="collapse" id="ejercicios">
                                 <div class="card card-body acordeon">
                                     <div id="accordion">
-                                        <div class="card">
-                                            <div class="card-header" id="headingFour">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                        Tema 1 - Historia de la informática
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Power Point - Historia de la informática
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" id="headingFive">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                        Tema 2 - Programación orientada a objetos
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Juego de la mosca
-                                                    <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
+
+                                        <?php
+
+                                            RepositorioTarea::recogerTareas($conexion, $_GET['grupo'], 1);
+
+                                            ?>
                                     </div>
                                 </div>
                             </div>

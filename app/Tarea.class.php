@@ -6,6 +6,7 @@ class Tarea
     private $cod_grupo;
     private $title_tarea;
     private $body_tarea;
+    private $tipo;
     private $fecha_entrega;
 
     /*Estructura de la clase*/
@@ -15,6 +16,7 @@ class Tarea
         $cod_grupo,
         $title_tarea,
         $body_tarea,
+        $tipo,
         $fecha_entrega
     ) {
         $this->codigo = $codigo;
@@ -22,6 +24,7 @@ class Tarea
         $this->title_tarea = $title_tarea;
         $this->body_tarea = $body_tarea;
         $this->fecha_entrega = $fecha_entrega;
+        $this->tipo = $tipo;
     }
 
     /* Getters & Setters */
@@ -52,6 +55,10 @@ class Tarea
         return $this->body_tarea;
     }
 
+    public function getTipo(){
+        return $this->tipo;
+    }
+
     public function setBody($body_tarea)
     {
         $this->body_tarea = $body_tarea;
@@ -66,4 +73,9 @@ class Tarea
     {
         $this->fecha_entrega = $fecha_entrega;
     }
+
+    public function setTipo($tipo){
+        $this->tipo = $tipo;
+    }
+    
 }
