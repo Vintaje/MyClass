@@ -57,36 +57,44 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
 <div class="container d-flex justify-content-center mt-5">
 
     <form id="formClase" method="POST" action="app/comprobarNuevaClase.inc.php">
-        <h1 class="display-4 mb-5 mt-3"><a href="home">myClass</a> Crear Clase</h1>
+        <h1 class="display-4 mb-5 mt-3"><a href="home">myClass</a> Crear Tarea</h1>
 
         <div class="form-row">
             <div class="form-group col-md-6 ">
-                <label>Nombre</label>
+                <label>Título</label>
                 <input type="text" class="form-control" name="NombreClase" required>
             </div>
         </div>
         <div class="form-group">
-            <label for="descripcion">Descripcion</label>
+            <label for="descripcion">Descripción</label>
             <textarea maxlenght="100" name="descripcion" class="form-control rounded-0" id="descripcion" rows="3"></textarea>
         </div>
-        
+
 
         <div class="form-row align-items-center">
             <div class="col-auto my-1">
-                <label class="mr-sm-2">Temática</label>
-                <select class="custom-select mr-sm-2" name="tematica" required>
-                    <option value="0" selected value>General</option>
-                    <option value="1">Informática</option>
-                    <option value="2">Comercio</option>
-                    <option value="3">Mecánica</option>
+                <label class="mr-sm-2">Tipo</label>
+                <select class="custom-select mr-sm-2" name="tipo" required>
+                    <option value="0" selected value>Temario</option>
+                    <option value="1">Entrega de ejercicios</option>
                 </select>
             </div>
         </div>
 
-        <div class="form-check">
-            <input type="checkbox" name="privado" class="form-check-input" id="privado">
-            <label class="form-check-label" for="privado">Privado</label>
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2">Clase</label>
+                <select class="custom-select mr-sm-2" name="nombre_clase" required>
+                    
+                </select>
+            </div>
         </div>
+
+        <div class="form-group col-md-6" style="padding-left: 0px;">
+            <label for="inputCity">Fecha de entrega</label>
+            <input type="date" class="form-control" name="fecha_entrega" required>
+        </div>
+
 
 
         <div class="form-row align-items-center">
@@ -111,7 +119,7 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
                 </button>
             </div>
             <div class="modal-body">
-                Clase creada con éxito.👍
+                Tarea creada con éxito.👍
             </div>
             <div class="modal-footer">
                 <button type="button" onclick="submit()" class="btn btn-primary" data-dismiss="modal">De acuerdo</button>
@@ -124,11 +132,11 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
 <script>
     function correcto() {
         $(document).ready(function() {
-            $("#clase").modal("show");
+            $("#tarea").modal("show");
         });
     }
 
     function submit() {
-        document.getElementById("formClase").submit();
+        document.getElementById("formTarea").submit();
     }
 </script>
