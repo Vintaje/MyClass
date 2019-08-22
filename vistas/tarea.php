@@ -8,7 +8,6 @@ if (isset($_SESSION['name_user'])) {
         header('Location: ../');
     }
     ?>
-
 <!--Menú de navegación-->
 <style>
     #menu {
@@ -185,7 +184,7 @@ if (isset($_SESSION['name_user'])) {
                                                 <div class="card-body">
                                                     Power Point - Historia de la informática
                                                     <div class="card-body d-flex">
-                                                        <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
+                                                        <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
                                                     </div>
                                                 </div>
                                             </div>
