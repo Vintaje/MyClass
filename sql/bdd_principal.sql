@@ -81,7 +81,8 @@ CREATE TABLE `tareas` (
   `COD_GRUPO` varchar(5) NOT NULL,
   `TITLE_TAREA` varchar(255) NOT NULL,
   `BODY_TAREA` varchar(255) NOT NULL,
-  `FECHA_ENTREGA` datetime NOT NULL
+  `FECHA_ENTREGA` datetime,
+  `TIPO` tinyint(1) not null
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
