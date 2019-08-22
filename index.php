@@ -96,6 +96,10 @@ if ($uri_segments[0] == 'myclass') {
                 $ruta_elegida = 'vistas/crearClase.php';
                 $titulo = 'MyClass | NuevaClase';
                 break;
+            case 'BuscarClase':
+                $ruta_elegida = 'vistas/clases_encontradas.php';
+                $titulo = 'MyClass | Búsqueda';
+                break; 
         }
     } else {
         $ruta_elegida = 'vistas/404.php';
