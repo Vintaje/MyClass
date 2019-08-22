@@ -13,6 +13,8 @@
                             familia profesional) y de tu futuro (conectándote con una red de empresas que buscan tu talento).
                             Así que, ¿qué esperas? ¡Entra en la clase del futuro! ">
     <meta name="image" content="">
+    <!--Color barra de navegación Google Chrome-->
+    <meta name="theme-color" content="#53A6DC">
 
     <meta property="og:url" content="">
     <meta property="og:type" content="">
