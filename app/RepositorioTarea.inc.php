@@ -23,11 +23,12 @@ class RepositorioTarea
                 if (count($resultado)) {
                     foreach ($resultado as $fila) {
                         $tareas[] = new Tarea(
-                            $fila['CODIGO'],
-                            $fila['COD_GRUPO'],
-                            $fila['TITLE_TAREA'],
-                            $fila['BODY_TAREA'],
-                            $fila["FECHA_ENTREGA"]
+                            $fila['codigo'],
+                            $fila['cod_grupo'],
+                            $fila['title_tarea'],
+                            $fila['body_tarea'],
+                            $fila['tipo'],
+                            $fila["fecha_entrega"]
                         );
                     }
                 } else {
@@ -41,7 +42,7 @@ class RepositorioTarea
     }
 
     //Método para crear una tarea e insertarla en la base de datos
-    public static function setTareas($tarea)
+    public static function setTareas($tarea, $codigogrupo)
     {
         $conexion = conexion::getConexion();
         $tarea_insertada = false;
@@ -57,7 +58,6 @@ class RepositorioTarea
 
                 //Se meten los datos del objeto en variables
                 $codigotemp = $tarea->getCodigo();
-                $cod_grup_temp = $tarea->getCodGrupo();
                 $titletemp = $tarea->getTitle();
                 $bodytemp = $tarea->getBody();
                 $fechatemp = $tarea->getFechaEntrega();
@@ -65,7 +65,7 @@ class RepositorioTarea
                 //Hacemos el insert sustituyendo las variables creadas por las de la sentencia
 
                 $sentencia->bindParam(':codigo', $codigotemp, PDO::PARAM_STR);
-                $sentencia->bindParam(':cod_grupo', $cod_grup_temp, PDO::PARAM_STR);
+                $sentencia->bindParam(':cod_grupo', $codigogrupo, PDO::PARAM_STR);
                 $sentencia->bindParam(':title_tarea', $titletemp, PDO::PARAM_STR);
                 $sentencia->bindParam(':body_tarea', $bodytemp, PDO::PARAM_STR);
 
@@ -126,7 +126,11 @@ class RepositorioTarea
     }
 
 
-    public static function buscarTareasGrupo($conexion, $codigogrupo)
+    /**
+     * Busca unicamente las tareas que sean entregas(valor tipo = 1)
+     * 
+     */
+    public static function buscarEntregas($conexion, $codigogrupo)
     {
 
         $res = [];
@@ -135,7 +139,7 @@ class RepositorioTarea
 
             try {
 
-                $sqlSelect = 'SELECT * FROM tareas WHERE cod_grupo = :cod_grupo';
+                $sqlSelect = 'SELECT * FROM tareas WHERE cod_grupo = :cod_grupo AND TIPO = 1';
                 $sentencia = $conexion->prepare($sqlSelect);
                 $sentencia->bindParam(':cod_grupo', $codigogrupo, PDO::PARAM_STR);
                 $sentencia->execute();
@@ -145,11 +149,12 @@ class RepositorioTarea
                 if (count($resultado)) {
                     foreach ($resultado as $fila) {
                         $res[] = new Tarea(
-                            $fila['codigo'],
-                            $fila['cod_grupo'],
-                            $fila['title_tarea'],
-                            $fila['body_tarea'],
-                            $fila['fecha_entrega']
+                            $fila['CODIGO'],
+                            $fila['COD_GRUPO'],
+                            $fila['TITLE_TAREA'],
+                            $fila['BODY_TAREA'],
+                            $fila['TIPO'],
+                            $fila['FECHA_ENTREGA']
                         );
                     }
                 }
@@ -160,19 +165,139 @@ class RepositorioTarea
         return $res;
     }
 
-    public static function recogerTareas($conexion, $codigogrupo){
-        $tareas = [];
 
-        $tareas = self::buscarTareasGrupo($conexion, $codigogrupo);
+    /**
+     * 
+     * Busca unicamente los temarios(valor tipo = 0)
+     */
+    public static function buscarTemario($conexion, $codigogrupo)
+    {
 
-        foreach($tareas as $tarea){
-            self::mostrarTarea($tarea);
+        $res = [];
+
+        if (isset($conexion)) {
+
+            try {
+
+                $sqlSelect = 'SELECT * FROM tareas WHERE cod_grupo = :cod_grupo AND tipo = 0';
+                $sentencia = $conexion->prepare($sqlSelect);
+                $sentencia->bindParam(':cod_grupo', $codigogrupo, PDO::PARAM_STR);
+                $sentencia->execute();
+
+                $resultado = $sentencia->fetchAll();
+
+                if (count($resultado)) {
+                    foreach ($resultado as $fila) {
+                        $res[] = new Tarea(
+                            $fila['CODIGO'],
+                            $fila['COD_GRUPO'],
+                            $fila['TITLE_TAREA'],
+                            $fila['BODY_TAREA'],
+                            $fila['TIPO'],
+                            $fila['FECHA_ENTREGA']
+                        );
+                    }
+                }
+            } catch (PDOException $ex) {
+                print 'ERROR' . $ex->getMessage();
+            }
         }
-        
-
+        return $res;
     }
 
-    public static function mostrarTarea($tarea){
-        
+    /**
+     * Recoge las tareas y las muestra llamando a mostrarTarea()
+     * 
+     */
+    public static function recogerTareas($conexion, $codigogrupo, $modo)
+    {
+        $tareas = [];
+
+        if ($modo == 1) {
+            $tareas = self::buscarEntregas($conexion, $codigogrupo);
+        } else if ($modo == 0) {
+            $tareas = self::buscarTemario($conexion, $codigogrupo);
+        }
+        if (count($tareas) != 0) {
+            foreach ($tareas as $tarea) {
+                self::mostrarTarea($tarea);
+            }
+        } else {
+            ?>
+<h1>
+    Nada que listar
+</h1>
+<?php
+
+        }
+    }
+    /**
+     * 
+     * Muestra la tarea de manera diferente si es temario(0) o entrega(1)
+     */
+    public static function mostrarTarea($tarea)
+    {
+        if ($tarea->getTipo() == 1) {
+            ?>
+
+<div class="card">
+    <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <?php
+                            echo $tarea->getTitle();
+
+                            ?>
+            </button>
+        </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">
+                <?php
+                            echo $tarea->getFechaEntrega();
+
+                            ?></h6>
+            <?php
+
+                        echo $tarea->getBody();
+                        ?>
+            <div class="card-body d-flex">
+                <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+        } else if ($tarea->getTipo() == 0) {
+            ?>
+
+<div class="card">
+    <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <?php
+                            echo $tarea->getTitle();
+
+                            ?>
+            </button>
+        </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+            <?php
+
+                        echo $tarea->getBody();
+                        ?>
+            <div class="card-body d-flex">
+                <a class="btn btn-primary ml-auto" href="tarea" role="button">Ir</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+        }
     }
 }
