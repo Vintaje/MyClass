@@ -89,6 +89,8 @@ if (isset($_SESSION['name_user'])) {
                         </div>
                         <div class="card-body">
                             <a href="#" class="card-link"><i class="far fa-comments"></i> Chat de Clase</a>
+                            <br />
+                            <a href="#" class="card-link"><i class="fas fa-award"></i> Calificaciones</a>
                         </div>
                     </div>
 
