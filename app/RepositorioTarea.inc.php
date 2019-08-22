@@ -124,4 +124,55 @@ class RepositorioTarea
         }
         return $borradas;
     }
+
+
+    public static function buscarTareasGrupo($conexion, $codigogrupo)
+    {
+
+        $res = [];
+
+        if (isset($conexion)) {
+
+            try {
+
+                $sqlSelect = 'SELECT * FROM tareas WHERE cod_grupo = :cod_grupo';
+                $sentencia = $conexion->prepare($sqlSelect);
+                $sentencia->bindParam(':cod_grupo', $codigogrupo, PDO::PARAM_STR);
+                $sentencia->execute();
+
+                $resultado = $sentencia->fetchAll();
+
+                if (count($resultado)) {
+                    foreach ($resultado as $fila) {
+                        $res[] = new Tarea(
+                            $fila['codigo'],
+                            $fila['cod_grupo'],
+                            $fila['title_tarea'],
+                            $fila['body_tarea'],
+                            $fila['fecha_entrega']
+                        );
+                    }
+                }
+            } catch (PDOException $ex) {
+                print 'ERROR' . $ex->getMessage();
+            }
+        }
+        return $res;
+    }
+
+    public static function recogerTareas($conexion, $codigogrupo){
+        $tareas = [];
+
+        $tareas = self::buscarTareasGrupo($conexion, $codigogrupo);
+
+        foreach($tareas as $tarea){
+            self::mostrarTarea($tarea);
+        }
+        
+
+    }
+
+    public static function mostrarTarea($tarea){
+        
+    }
 }

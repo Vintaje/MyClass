@@ -356,7 +356,7 @@ class RepositorioGrupo
                     echo $grupo->getDescripcion();
                     ?>
             <div class="card-body d-flex">
-                <a class="btn btn-primary ml-auto" href="mis-clases" role="button">Ir</a>
+                <a class="btn btn-primary ml-auto" href="mis-clases?grupo=<?php echo $grupo->getCodigo() ?>" role="button">Ir</a>
             </div>
         </div>
     </div>
