@@ -82,7 +82,7 @@ CREATE TABLE `tareas` (
   `TITLE_TAREA` varchar(255) NOT NULL,
   `BODY_TAREA` varchar(255) NOT NULL,
   `FECHA_ENTREGA` datetime,
-  `TIPO` tinyint(1) not null,
+  `TIPO` tinyint(1) not null
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
