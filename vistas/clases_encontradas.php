@@ -1,12 +1,13 @@
 <style>
     .masthead {
         height: 100vh;
-        max-height: 500px;
-        background-image: url('https://www.itgholding.com/upl/big/slc_cover_img_7.jpg');
+        max-height: 450px;
+        background-image: url('https://timedotcom.files.wordpress.com/2017/11/gettyimages-181819022.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        color: snow; 
+        color: snow;
+        margin-bottom: 10px;
     }
 </style>
 
@@ -49,3 +50,35 @@
         </div>
     </div>
 </header>
+
+<div class="row p0">
+    <div class="col-md-12 p0">
+        <div class="card">
+            <h5 class="card-header"><i class="fas fa-search"></i> Búsqueda</h5>
+            <div class="card-body">
+                <h5 class="card-title">Intereses</h5>
+                <p class="card-text">Dinos qué es lo que te gusta y comienza la búsqueda</p>
+                <label class="card-body">
+                    <label class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-outline-primary m-2">
+                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Informática
+                        </label>
+                        <label class="btn btn-outline-success m-2">
+                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Comercio
+                        </label>
+                        <label class="btn btn-outline-danger m-2">
+                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Deporte
+                        </label>
+                        <label class="btn btn-outline-warning m-2">
+                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Química
+                        </label>
+                        <label class="btn btn-outline-info m-2">
+                            <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Idiomas
+                        </label>
+                    </label>
+                </label>
+                <!-- Aquí iría el botón --> 
+            </div>
+        </div>
+    </div>
+</div>
