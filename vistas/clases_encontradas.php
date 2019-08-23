@@ -1,3 +1,7 @@
+<?php
+include_once 'app/RepositorioGrupo.inc.php';
+?>
+
 <style>
     .masthead {
         height: 100vh;
@@ -77,8 +81,103 @@
                         </label>
                     </label>
                 </label>
-                <!-- Aquí iría el botón --> 
+                <!-- Aquí iría el botón -->
+                <?php
+                $conexion = new conexion();
+                $conexion->conectarBD();
+                $conexion = conexion::getConexion();
+
+                $grupos = [];
+
+                $grupos = RepositorioGrupo::getGrupoPublico($conexion);
+
+                ?>
+                <div class="collapse" id="clases">
+                    <div class="card card-body acordeon">
+                        <div id="accordion">
+                            <div id="informatica">
+                                <?php
+
+                                ?>
+                            </div>
+                            <div id="comercio">
+                            </div>
+                            <div id="deporte">
+                            </div>
+                            <div id="quimica">
+                            </div>
+                            <div id="idioma">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    #informatica {
+                        display: none;
+                    }
+
+                    #comercio {
+                        display: none;
+                    }
+
+                    #deporte {
+                        display: none;
+                    }
+
+                    #quimica {
+                        display: none;
+                    }
+
+                    #idioma {
+                        display: none;
+                    }
+                </style>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function showInformatica(box) {
+
+        var chboxs = document.getElementsByName("informatica");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+
+
+    }
+    function showInformatica(box) {
+
+var chboxs = document.getElementsByName("informatica");
+var vis = "none";
+for (var i = 0; i < chboxs.length; i++) {
+    if (chboxs[i].checked) {
+        vis = "block";
+        break;
+    }
+}
+document.getElementById(box).style.display = vis;
+
+
+}
+function showMe(box) {
+
+        var chboxs = document.getElementsByName("publicos");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+
+
+    }
+</script>
