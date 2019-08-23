@@ -53,12 +53,12 @@
 
 <div class="row p0">
     <div class="col-md-12 p0">
-        <div class="card">
+        <div class="card p0">
             <h5 class="card-header"><i class="fas fa-search"></i> Búsqueda</h5>
             <div class="card-body">
-                <h5 class="card-title">Intereses</h5>
-                <p class="card-text">Dinos qué es lo que te gusta y comienza la búsqueda</p>
-                <label class="card-body">
+                <h5 class="card-title p0">Intereses</h5>
+                <p class="card-text p0">Dinos qué es lo que te gusta y comienza la búsqueda</p>
+                <label class="card-body p0">
                     <label class="btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-outline-primary m-2">
                             <input class="gustos" type="checkbox" name="options" id="option2" autocomplete="off"> Informática
