@@ -6,6 +6,7 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        color: snow; 
     }
 </style>
 
@@ -42,8 +43,8 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
-                <h1 class="font-weight-light">Vertically Centered Masthead Content</h1>
-                <p class="lead">A great starter layout for a landing page</p>
+                <h1 class="font-weight-light">Encuentra clases hechas para tus intereses</h1>
+                <p class="lead">Así de fácil</p>
             </div>
         </div>
     </div>
