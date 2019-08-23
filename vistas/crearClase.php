@@ -78,7 +78,9 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
                     <option value="0" selected value>General</option>
                     <option value="1">Informática</option>
                     <option value="2">Comercio</option>
-                    <option value="3">Mecánica</option>
+                    <option value="3">Deporte</option>
+                    <option value="4">Química</option>
+                    <option value="5">Idiomas</option>
                 </select>
             </div>
         </div>
