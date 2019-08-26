@@ -108,6 +108,10 @@ if ($uri_segments[0] == 'myclass') {
                 $ruta_elegida = 'vistas/clases_encontradas.php';
                 $titulo = 'MyClass | Búsqueda';
                 break;
+            case 'AgregarAmigo'.
+                $ruta_elegida = 'vistas/agregar_amigo.php';
+                $titulo = 'MyClass | Agregar Amigo';
+                break; 
         }
     } else {
         $ruta_elegida = 'vistas/404.php';
