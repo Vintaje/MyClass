@@ -112,6 +112,10 @@ if ($uri_segments[0] == 'myclass') {
                 $ruta_elegida = 'vistas/agregar_amigo.php';
                 $titulo = 'MyClass | Agregar Amigo';
                 break; 
+            case 'Credencial':
+                $ruta_elegida = 'vistas/cambiar_contrasenia.php';
+                $titulo = 'MyClass | Cambiar Contraseña';
+                break;
         }
     } else {
         $ruta_elegida = 'vistas/404.php';
