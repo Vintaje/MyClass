@@ -34,7 +34,7 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
 
             </form>
             <div class="form-group">
-                <div class="a_registro"><a id="a_registro" href="credencial"><u>Olvidé mi contraseña.</u></a></div>
+                <div class="a_registro"><a id="a_registro" href="Credencial"><u>Olvidé mi contraseña.</u></a></div>
                 </div>
         </div>
     </div>
