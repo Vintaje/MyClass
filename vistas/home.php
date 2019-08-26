@@ -30,8 +30,12 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
                     <button type="submit" class="btn btn-success btn-lg">Entrar</button>
                     <div class="a_registro"><a id="a_registro" href="registro">Regístrate ahora</a></div>
                 </div>
+                
 
             </form>
+            <div class="form-group">
+                <div class="a_registro"><a id="a_registro" href="credencial"><u>Olvidé mi contraseña.</u></a></div>
+                </div>
         </div>
     </div>
 </div>
