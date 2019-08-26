@@ -132,7 +132,8 @@ CREATE TABLE `usuario` (
   `EDAD` int(10) NOT NULL,
   `DNI` varchar(255) DEFAULT NULL,
   `ADMIN_VALUE` tinyint(1) NOT NULL DEFAULT '0',
-  `SEXO` char(1) NOT NULL DEFAULT 'N'
+  `SEXO` char(1) NOT NULL DEFAULT 'N',
+  `ACTIVADO` tinyint(1) NOT NULL DEFAULT '0',
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

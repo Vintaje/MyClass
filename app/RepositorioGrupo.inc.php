@@ -310,14 +310,14 @@ class RepositorioGrupo
 <div class="card">
     <div class="card-header" id="headingTwo">
         <h5 class="mb-0">
-            <button class="btn btn-link collapsed btnClases" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <button class="btn btn-link collapsed btnClases" data-toggle="collapse" data-target="#<?php echo $grupo->getCodigo() ?>" aria-expanded="false" aria-controls="collapseTwo">
                 <?php
                         echo $grupo->getNombre();
                         ?>
             </button>
         </h5>
     </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+    <div id="<?php echo $grupo->getCodigo() ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
             <?php
                     echo $grupo->getDescripcion();
