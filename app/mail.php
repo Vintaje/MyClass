@@ -4,7 +4,8 @@
     //ini_set( 'display_errors', 1 );
     //error_reporting( E_ALL );
     $from = "contacto@myclass.es";
-    $to = "jorge96gaming@gmail.com";
+    $to = $_POST["email"];
+    echo $to;
     $subject = "Probando";
     $message = "Funciona";
     $headers = "From:" . $from;
