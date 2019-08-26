@@ -6,12 +6,24 @@ include_once 'app/RepositorioGrupo.inc.php';
     .masthead {
         height: 100vh;
         max-height: 450px;
-        background-image: url('https://timedotcom.files.wordpress.com/2017/11/gettyimages-181819022.jpg');
+        background-image: url('img/desdearriba.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         color: snow;
         margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 767px) {
+        .masthead {
+            background-image: url('img/myclass.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: snow;
+            margin-bottom: 10px;
+        }
+
     }
 </style>
 
@@ -152,21 +164,23 @@ include_once 'app/RepositorioGrupo.inc.php';
 
 
     }
+
     function showInformatica(box) {
 
-var chboxs = document.getElementsByName("informatica");
-var vis = "none";
-for (var i = 0; i < chboxs.length; i++) {
-    if (chboxs[i].checked) {
-        vis = "block";
-        break;
+        var chboxs = document.getElementsByName("informatica");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+
+
     }
-}
-document.getElementById(box).style.display = vis;
 
-
-}
-function showMe(box) {
+    function showMe(box) {
 
         var chboxs = document.getElementsByName("publicos");
         var vis = "none";
