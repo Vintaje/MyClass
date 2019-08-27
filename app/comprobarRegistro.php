@@ -44,8 +44,15 @@ $usuario= new Usuario($emailForm, $nombreForm,$aleatorio, $passFormRep, $sexoFor
 $usuario_insertado=RepositorioUsuario::setUsuario($conexion,$usuario);
 
 if($usuario_insertado){
-      //Redireccion::redirigir("../");
 
+    ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );
+    $from = "contacto@myclass.es";
+    $to = $_POST["Email"];
+    $subject = "Confirmación de cuenta";
+    $message = "Por favor haga click en el link para confirmar la cuenta de usuario de myClass. www.google.es";
+    $headers = "Desde:" . $from;
+    mail($to,$subject,$message, $headers);
       
 header ("Location: ../Bienvenido");
 

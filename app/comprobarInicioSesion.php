@@ -13,8 +13,6 @@ $kernel = new kernel();
 
 //echo $kernel-> encrypt_decrypt("decrypt","dDB0aDliTnZuU1hCajU0Sk10Smtqdz09");
 
-$conexion = new conexion();
-$conexion->conectarBD();
 
 //buscamos usuario en la bbdd pasándole la conexión con bbdd y el email del formulario encriptado.
 

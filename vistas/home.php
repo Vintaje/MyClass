@@ -54,7 +54,7 @@ if(strpos($_SERVER['REQUEST_URI'],'.php')){
             </div>
             <div class="modal-body">
                 Te has registrado correctamente!👍
-                Ya puedes iniciar sesión
+                Ya puedes iniciar sesión, no olvides verificar tu correo con el mensaje que te hemos enviado.
             </div>
             <div class="modal-footer">
                 <button type="button" onclick="volver()" class="btn btn-primary" data-dismiss="modal">Perfecto</button>

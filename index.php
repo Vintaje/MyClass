@@ -108,13 +108,17 @@ if ($uri_segments[0] == 'myclass') {
                 $ruta_elegida = 'vistas/clases_encontradas.php';
                 $titulo = 'MyClass | Búsqueda';
                 break;
-            case 'AgregarAmigo'.
+            case 'AgregarAmigo' .
                 $ruta_elegida = 'vistas/agregar_amigo.php';
                 $titulo = 'MyClass | Agregar Amigo';
-                break; 
+                break;
             case 'Credencial':
                 $ruta_elegida = 'vistas/cambiar_contrasenia.php';
                 $titulo = 'MyClass | Cambiar Contraseña';
+                break;
+            case 'Calendario':
+                $ruta_elegida = 'vistas/calendario.php';
+                $titulo = 'MyClass | Calendario de tareas';
                 break;
         }
     } else {
